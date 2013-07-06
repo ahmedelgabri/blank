@@ -1,0 +1,305 @@
+// Typography
+//
+// Styleguide 2
+
+//==============================
+// $TYPOGRAPHY
+//===============================
+
+// If having local font-face fonts import them like so
+// @include font-face($fontname, $filename, $fontstack: $sans-serif);
+
+
+// Headers
+//
+// You can get the same styling anywhere using classes .h1-.h6
+//
+// Markup:
+// <h1>Header 1</h1>
+// <h2>Header 2</h2>
+// <h3>Header 3</h3>
+// <h4>Header 4</h4>
+// <h5>Header 5</h5>
+// <h6>Header 6</h6>
+//
+// Styleguide 2.1
+
+h1,h2,h3,h4,h5,h6,
+.h1,.h2,.h3,.h4,.h5,.h6{
+}
+
+h1,
+.h1 {
+    @include headers(48);
+}
+
+h2,
+.h2{
+    @include headers(36);
+}
+
+h3,
+.h3 {
+    @include headers(24);
+}
+
+h4,
+.h4 {
+    @include headers(21);
+}
+
+h5,
+.h5,
+h6,
+.h6 {
+    @include headers(18);
+}
+
+// Section titles
+//
+// Markup:
+// <h5 class="bl-title {$modifiers}"> Header 5 as a title</h5>
+//
+// .bl-title--primary - Primary title
+// .bl-title--secondary - Secondary title
+//
+// Styleguide 2.2
+
+.bl-title{
+    border-bottom: .1em double;
+}
+
+.bl-title--primary{
+    padding: 1em;
+    background-color: darken($bgColor, 10%);
+    color: white;
+}
+
+.bl-title--secondary{
+    background-color: $themeGreen;
+    color: $textColor;
+    padding: .5em 1em;
+}
+
+// Section subtitles
+//
+// Markup:
+// <h5 class="bl-subtitle {$modifiers}"> Header 5 as a subtitle</h5>
+// <p class="bl-subtitle {$modifiers}"> Paragraph 5 as a subtitle</p>
+//
+// .bl-subtitle - Primary subtitle
+//
+// Styleguide 2.3
+
+.bl-subtitle{
+    color: $themeGreen;
+    text-transform: uppercase;
+    border-bottom: .1em solid $themeGrey;
+    @include rem(font-size, 14px);
+    padding-bottom: .2em;
+    margin-bottom: 1em;
+    display: block;
+    width: 100%;
+}
+
+
+// Paragraphs
+//
+// Markup:
+// <p class="{$modifiers}"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, deleniti adipisci cupiditate quibusdam labore saepe! Cumque, et, fuga assumenda tempora nisi similique quae dicta ab repellendus eum nam aperiam quas.</p>
+//
+// .bl-p--big - big paragraph, maybe for intros & stuff like this"
+// .bl-p--small - small paragraph, don't use instead of the "small" element
+//
+// Styleguide 2.4
+
+p {
+    @include rem(margin, 0 0 $verticalspace);
+    @include rem(font-size, $basefont);
+}
+
+.bl-p--big{
+    font-size: 1.4em;
+}
+
+.bl-p--small{
+    font-size: .9em;
+}
+
+// Blockquotes
+//
+//
+//
+// Markup:
+// <blockquote class="{$modifiers}">
+//   This is a blockquote
+// <footer class="blockquote-source"> Someone </blockquote>
+// </blockquote>
+//
+// .bl-blockquote--left
+// .bl-blockquote--right
+// .bl-blockquote--center
+//
+// Styleguide 2.5
+
+blockquote{
+    quotes: "“" "”";
+}
+
+blockquote p:before{
+    content: "“";
+    content: open-quote;
+}
+
+blockquote p:after{
+    content: "";
+    content: no-close-quote;
+}
+
+blockquote p:last-of-type:after{
+    content: "”";
+    content: close-quote;
+}
+
+blockquote{
+    @include rem(margin, 0 0 $verticalspace);
+}
+
+.bl-blockquote--left{
+    border-left: .3em solid #222;
+    padding-left: 1em;
+}
+
+.bl-blockquote--right{
+    border-right: .3em solid #222;
+    padding-right: 1em;
+    text-align: right;
+}
+
+.bl-blockquote--center{
+    border-top: .3em solid #222;
+    border-bottom: .3em solid #222;
+    padding: 1em;
+    text-align: center;
+}
+
+.bl-blockquote-source{
+    @include rem(font-size, 12px);
+}
+
+.bl-blockquote-source:before{
+    content:"—";
+}
+
+
+
+
+em,
+i,
+cite,
+q {
+    font-style: italic;
+}
+
+small {
+    font-size: 75%;
+}
+
+strong,
+th,
+b {
+    font-weight: bold;
+}
+
+abbr[title],
+dfn[title] {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+pre,
+code,
+kbd,
+samp {
+    font-family: $monospace;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    padding: 1em;
+    overflow: auto;
+    @include rem(margin-bottom, $verticalspace);
+}
+
+code {
+    line-height: 1;
+}
+
+ins{
+    background-color: #ff9;
+    color: #000;
+    text-decoration: none;
+}
+
+mark{
+    background-color: #ff9;
+    color: #000;
+    font-style: italic;
+    font-weight: bold;
+}
+
+del,
+s {
+    text-decoration: line-through;
+}
+
+q {
+    quotes:"‘" "’" "“" "”";
+}
+
+q:before{
+    content:"‘";
+    content:open-quote;
+}
+
+q:after{
+    content:"’";
+    content:close-quote;
+}
+
+q q:before{
+    content: "“";
+    content: open-quote;
+}
+
+q q:after{
+    content: "”";
+    content: close-quote;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #cccccc; // change border colour to suit your needs
+    margin:1em 0;
+    padding: 0;
+}

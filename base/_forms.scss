@@ -1,0 +1,302 @@
+// Forms
+//
+// Styleguide 7
+
+//==============================
+// $FORMS
+//==============================;
+$fieldPadding: .5em;
+$fieldBorderColor: #ccc;
+
+
+.bl-form{
+    &,
+    fieldset{
+        @include rem(margin-bottom, ($lineheight * strip-units($basefont)) * 1px);
+    }
+}
+
+legend { //http://www.456bereastreet.com/archive/201210/how_to_line_wrap_text_in_legend_elements_even_in_ie/
+    display:table; // Enable line-wrapping in IE8+
+    white-space:normal; // Enable line-wrapping in old versions of some other browsers
+}
+
+input,
+textarea,
+button,
+select {
+    margin: 0;
+    font-size: 100%;
+    font-family: $sans-serif;
+    line-height: normal;
+    vertical-align: baseline;
+}
+
+label,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="image"],
+button {
+    cursor: pointer;
+}
+
+input,
+button{
+    &::-moz-focus-inner{
+        padding: 0;
+        border: 0;
+    }
+}
+
+[disbaled]{
+    cursor: default;
+}
+
+input[type="search"] {
+    -webkit-appearance : textfield;
+}
+
+input[type="search"]::-webkit-search-decoration {
+    display : none;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+}
+
+input:-moz-placeholder {
+}
+
+input:-ms-input-placeholder {
+}
+
+textarea {
+    @include resizable(vertical);
+    min-height: 6em;
+}
+
+input[type="checkbox"],
+input[type="radio"]{
+    @include rem(margin-right, 5px);
+    @include rtl{
+        margin-right: 0;
+        @include rem(margin-left, 5px);
+    }
+}
+
+input[type="color"]{
+
+}
+
+input[type="range"]{
+
+}
+
+input[type="image"]{
+
+}
+
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="datetime"],
+input[type="datetime-local"]{
+
+}
+
+input[type="tel"],
+input[type="number"],
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+select,
+textarea{
+    width: 100%;
+}
+
+
+input[type="tel"],
+input[type="number"],
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+.bl-select,
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-border-radius:0;
+    border: 1px solid $fieldBorderColor;
+    padding: $fieldPadding;
+    box-shadow: inset 0 .15em .15em rgba($fieldBorderColor, .5);
+
+    &:hover{
+
+    }
+
+    &:focus{
+
+    }
+}
+
+select{
+    cursor: pointer;
+}
+
+input[type="submit"],
+button{
+}
+
+input[type="reset"]{
+}
+
+.bl-form-list{
+}
+
+.bl-form--inline{
+    list-style:none;
+    margin-left:0;
+    width: 100%;
+
+    > .bl-form__holder {
+        display: inline-block;
+        width: 100%;
+
+        @include mq($mq-small, true){
+            padding-right: $grid-gutter;
+            width: auto;
+            &:last-of-type{
+                padding-right: 0;
+            }
+        }
+
+    }
+}
+
+.bl-form--full{
+    list-style:none;
+    margin-left:0;
+    display:table;
+    width: 100%;
+
+    > li {
+        display: table-cell;
+        width: 100%;
+        padding-right: $grid-gutter;
+
+        &:last-of-type{
+            padding-right: 0;
+        }
+    }
+}
+
+.bl-form__holder{
+    @include rem(margin-bottom, 10px);
+    &:last-of-type{
+        margin-bottom: 0;
+    }
+
+    .bl-btn{
+        display: inline-block;
+        width: auto;
+    }
+}
+
+.bl-form__field{
+    width: 100%;
+}
+
+
+////==============================
+// $CUSTOM FORM ELEMENTS
+//==============================
+
+.bl-select{
+    padding: $fieldPadding/2 $fieldPadding;
+    box-shadow: 0 .15em .15em rgba($fieldBorderColor, .5);
+    background-repeat: no-repeat;
+    background-position: right 50%;
+    background-image: url(../img/select-arrow.svg);
+    -webkit-background-size: 11px 100%;
+    background-size: 11px 100%;
+
+    .no-svg &{
+        background-image: url(../img/select-arrow.png);
+    }
+
+    &:hover,
+    &:focus{
+
+    }
+}
+
+
+.bl-toggle{
+    display: inline-block;
+    vertical-align: top;
+    @include rem(font-size, 14px);
+}
+
+.bl-toggle__switch{
+    &:checked,
+    &:not(:checked){
+        @extend .h-visuallyhidden;
+    }
+
+    + span{
+        position: relative;
+        display: inline-block;
+
+        &:before,
+        &:after{
+            line-height: 1;
+            height: 1.72222em;
+        }
+
+        &:before{
+            content: "Off";
+            display: inline-block;
+            margin-right: .5em;
+            background-color: lighten($textColor, 30%);
+            width: 5em;
+            text-align: right;
+            padding: .3em .6em;
+            color: $bgColor;
+        }
+
+        &:after{
+            content: "";
+            position: absolute;
+            display: block;
+            width: 2.5em;
+            background-color: $error;
+            top:0;
+            left:0;
+            @include vendor(transition, "left 75ms ease-in-out, background 75ms ease-in-out");
+        }
+    }
+
+
+    &:checked{
+        + span{
+            color: $success;
+            &:before{
+                content: "On";
+                text-align: left;
+            }
+
+            &:after{
+                left: 2.5em;
+                background-color: $success;
+            }
+        }
+    }
+}

@@ -1,0 +1,72 @@
+// Pagination object
+//
+// Turns any list element into pagination
+//
+// Markup:
+// <ul class="pagination">
+//      <li><a href="#">1</a></li>
+//      <li><a href="#">2</a></li>
+//      <li><a href="#">3</a></li>
+//      <li><a href="#" class="current">4</a></li>
+//      <li><a href="#">5</a></li>
+//      <li><a href="#">6</a></li>
+//      <li><a href="#">7</a></li>
+//      <li>...</li>
+//      <li><a href="#">12</a></li>
+//      <li><a href="#">13</a></li>
+//      <li><a href="#">14</a></li>
+// </ul>
+//
+// Styleguide 8.2
+
+//==============================
+// $VARIABLES
+//==============================
+
+
+//==============================
+// $PAGINATION MODULE
+//==============================
+
+.bl-pagination{
+    @include rem(margin-bottom, $verticalspace);
+    text-align:center;
+    letter-spacing: -0.31em;
+    text-rendering: optimizespeed;
+
+    .opera:-o-prefocus,
+    &{
+        word-spacing: -0.43em;
+    }
+
+    li{
+        &:first-child a,
+        &:last-child a{
+            border:none;
+        }
+    }
+
+    li,
+    a {
+        display:inline-block;
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-rendering: auto;
+        line-height: normal;
+    }
+
+    a{
+        padding:.2em .5em;
+        margin:0 .2em;
+        text-decoration: none;
+        color: $textColor;
+        background-color: darken($bgColor, 30%);
+        @include border-radius(1px);
+
+        &:hover,
+        &.current{
+            background-color: $textColor;
+            color:darken($bgColor, 30%);
+        }
+    }
+}

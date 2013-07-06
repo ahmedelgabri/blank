@@ -1,0 +1,104 @@
+//========================================
+// $ GENERIC HELPER CLASSES & PLACEHOLDERS
+//========================================
+
+//==============================
+// $CLASSES
+//==============================
+.h-visuallyhidden{
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+
+    // &:focus,
+    // &:active{
+    //     position : static;
+    //     clip : auto;
+    //     overflow : visible;
+    //     height : auto;
+    //     margin : 0;
+    //     width : auto;
+    // }
+}
+
+.h-break {
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
+
+
+.h-ellipsis {
+    // width:;
+    white-space: nowrap;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis; // Required for IE8
+    -o-text-overflow: ellipsis; // Required for Opera
+    text-overflow: ellipsis;
+}
+
+.h-ir {
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+}
+
+.h-center-inline{
+    text-align: center;
+}
+
+//==============================
+// $PLACEHOLDERS
+//==============================
+
+.h-clearfix{
+    &:before,
+    &:after{
+        content:"";
+        display:table;
+    }
+
+    &:after{
+        clear:both;
+    }
+}
+
+//==============================
+// $RTL HELPERS
+//==============================
+
+%fl{
+    float:left;
+}
+
+%fr{
+    float:right;
+}
+
+%fn{
+    float:none;
+}
+
+%tr{
+    text-align:right;
+}
+
+%tl{
+    text-align:left;
+}
+
+%dr{
+    direction:rtl;
+}
+
+%dl{
+    direction:ltr;
+}

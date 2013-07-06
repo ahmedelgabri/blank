@@ -1,0 +1,57 @@
+// banner object
+//
+// Same as the media object but with vertical aligmnent
+//
+// Markup:
+// <div class="bl-banner {$modifires}">
+//     <div class="bl-banner__figure">
+//         <img src="http://placehold.it/150x150/bada55/000">
+//     </div>
+//     <div class="bl-banner__body">
+//         <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, quae, quidem, nam, suscipit assumenda voluptates laudantium nobis totam blanditiis iste laboriosam voluptas sapiente amet laborum debitis dolore consectetur enim ducimus.</p>
+//     </div>
+// </div>
+//
+//  .bl-banner--rev - filps the image to the right
+//  .bl-banner--top - aligns text to top
+//  .bl-banner--bottom - aligns text to bottom
+//
+// Styleguide 8.4
+
+// Needs a better name?
+.bl-banner{
+    display: table;
+    width: 100%;
+}
+
+.bl-banner__figure,
+.bl-banner__body{
+    display: table-cell;
+    vertical-align: middle;
+
+    .bl-banner--top &{
+        vertical-align: top;
+    }
+
+    .bl-banner--bottom &{
+        vertical-align: bottom;
+    }
+}
+
+.bl-banner__figure{
+    @include rem(padding-right, $grid-gutter);
+
+    > img{
+        display: block;
+        max-width: none;
+    }
+
+    .bl-banner--rev &{
+        padding-right: 0;
+        @include rem(padding-left, $grid-gutter);
+    }
+}
+
+.bl-banner__body{
+    width: 100%;
+}

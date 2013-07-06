@@ -1,0 +1,44 @@
+// Nav Object
+//
+// Abstruction for the Nav http://csswizardry.com/2011/09/the-nav-abstraction/
+//
+// Markup:
+// <ul class="nav">
+//     <li>
+//         something
+//     </li>
+//     <li>
+//         <a href="#"> link </a>
+//     </li>
+// </ul>
+//
+// Styleguide 8.1
+
+//==============================
+// $NAV MODULE
+//==============================
+
+.bl-nav{
+    list-style:none;
+    margin-left:0;
+    letter-spacing: -0.31em;
+    text-rendering: optimizespeed;
+
+    .opera:-o-prefocus,
+    & {
+        word-spacing: -0.43em;
+    }
+
+    > li{
+        @include mq($mq-medium){
+            display:inline-block;
+        }
+
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-rendering: auto;
+    }
+
+    a{
+    }
+}

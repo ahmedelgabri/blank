@@ -1,0 +1,56 @@
+// Alerts
+//
+// Alerts
+//
+// Markup:
+// <div class="bl-alert {$modifires}"> Alert </div>
+//
+// .bl-alert--success
+// .bl-alert--error
+// .bl-alert--default
+// .bl-alert--info
+//
+// styleguide 9
+
+//==============================
+// $ALERT VARIABLES
+//==============================
+
+// Alert only related Variables
+
+
+//==============================
+// $ALERT MODULE
+//==============================
+
+.bl-alert{
+    padding: .5em 1em;
+    @include rem(margin-bottom, $verticalspace);
+    border-style: solid;
+    border-width: 1px;
+    position: relative;
+}
+
+.bl-alert--default{
+    color: $default;
+    background-color: lighten($default, 50%);
+    border-color: $default;
+}
+
+.bl-alert--success{
+    color: $success;
+    background-color: lighten($success, 50%);
+    border-color: $success;
+}
+
+.bl-alert--error{
+    color: $error;
+    background-color: lighten($error, 50%);
+    border-color: $error;
+}
+
+.bl-alert--info{
+    color: $info;
+    background-color: lighten($info, 50%);
+    border-color: $info;
+}

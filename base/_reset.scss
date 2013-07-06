@@ -1,0 +1,109 @@
+//==============================
+// $BASE
+//===============================
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+audio,
+canvas,
+video,
+figure {
+    display: inline-block;
+}
+
+::-moz-selection {
+    text-shadow: none;
+}
+
+::selection {
+    text-shadow: none;
+}
+
+::selection:window-inactive {
+    text-shadow: none;
+}
+
+image::-moz-selection {
+    background: transparent;
+}
+
+image::selection {
+    background: transparent;
+}
+
+svg:not(:root) { overflow: hidden; }
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,
+body{
+    min-height:100%;
+}
+
+html {
+    -webkit-overflow-scrolling: touch;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    font-size: 52.5%; // 52.5% of 16 = 9px;
+
+    @include mq($mq-medium){
+        font-size: 62.5%;
+        boo: "m"
+    }
+
+    @include mq($mq-large){
+        font-size: 62.5%;
+        boo: "l"
+    }
+}
+
+body {
+    margin: 0;
+    @include rem(font-size, $basefont);
+    line-height:$lineheight;
+    font-family: $sans-serif;
+    background: $bgColor;
+    color: $textColor;
+    @include mq($mq-medium){
+        text-rendering: optimizeLegibility;
+    }
+}
+
+@if $IE != true {
+    @-webkit-viewport{
+        width:device-width
+    }
+    @-moz-viewport{
+        width:device-width
+    }
+    @-ms-viewport{
+        width:device-width
+    }
+    @-o-viewport{
+        width:device-width
+    }
+    @viewport{
+        width:device-width
+    }
+}
+

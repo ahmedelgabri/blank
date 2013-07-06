@@ -1,0 +1,384 @@
+// @TODO: Clean this file
+
+//==============================
+// $LAYOUT
+//==============================
+
+// Grid widths setup
+
+@mixin grid_widths($size-prefix: s, $cols: $grid-columns){
+    @if $IE{
+        @for $i from 1 through $cols {
+            .bl-g__u--l--#{$i}{
+                width: percentage($i/$cols);
+            }
+        }
+    } @else {
+        @for $i from 1 through $cols {
+            .bl-g__u--#{$size-prefix}--#{$i}{
+                width: percentage($i/$cols);
+            }
+        }
+    }
+}
+
+// CSS3 Content Columns
+@mixin css-columns($columnCount, $columnGap: 20px) {
+    -webkit-column-count: $columnCount;
+    -moz-column-count: $columnCount;
+    column-count: $columnCount;
+    -webkit-column-gap: $columnGap;
+    -moz-column-gap: $columnGap;
+    column-gap: $columnGap;
+}
+
+@mixin clearfix{
+    &:before,
+    &:after{
+        content:"";
+        display:table;
+    }
+
+    &:after{
+        clear:both;
+    }
+
+    .oldie &{
+        zoom:1;
+    }
+}
+
+//==============================
+// $TYPOGRAPHY
+//==============================
+
+@mixin font-face($fontname, $filename, $fontstack: $sans-serif){
+    @font-face {
+        font-family: #{$fontname}, $fontstack;
+        src: url('#{filename}.eot');
+        src: url('#{filename}.eot?#iefix') format('embedded-opentype'),
+        url('#{filename}.woff') format('woff'),
+        url('#{filename}.ttf') format('truetype'),
+        url('#{filename}.svg#svgFontName') format('svg');
+    }
+}
+
+// Headers & vertical rhythm
+
+@mixin headers($size){
+    @include rem(font-size, $size * 1px);
+    @include rem(margin, 0 0 (strip-units($basefont) * $lineheight) * 1px );
+}
+
+
+// ellipsis
+@mixin ellipsis{
+    white-space: nowrap;
+    overflow:hidden;
+    -o-text-overflow:ellipsis;
+    text-overflow:ellipsis;
+}
+
+// Word Wrapping
+@mixin word-wrap{
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
+
+//==============================
+// $UI
+//==============================
+
+@mixin arrow($width: 20px, $height: 20px, $direction: up, $color: red) {
+
+    width: 0;
+    height: 0;
+
+    // Right
+    @if $direction == right {
+        border-top: $height/2 solid transparent;
+        border-bottom: $height/2 solid transparent;
+        border-left: $width solid $color;
+    }
+
+    // Left
+    @if $direction == left {
+        border-top: $height/2 solid transparent;
+        border-bottom: $height/2 solid transparent;
+        border-right: $width solid $color;
+    }
+
+    // Up
+    @if $direction == up {
+        border-left: $width/2 solid transparent;
+        border-right: $width/2 solid transparent;
+        border-bottom: $height solid $color;
+    }
+
+    // Down
+    @if $direction == down {
+        border-left: $width/2 solid transparent;
+        border-right: $width/2 solid transparent;
+        border-top: $height solid $color;
+    }
+}
+
+
+// Border Radius
+@mixin border-radius($radius: 5px) {
+    -webkit-border-radius: #{$radius};
+    border-radius: #{$radius};
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+}
+
+// Add an alphatransparency value to any background or border color (via Elyse Holladay)
+@mixin background($color: $white, $alpha: 1) {
+    background-color: hsla(hue($color), saturation($color), lightness($color), $alpha);
+}
+
+@mixin border($color: $white, $alpha: 1) {
+    border-color: hsla(hue($color), saturation($color), lightness($color), $alpha);
+    background-clip: padding-box;
+}
+
+//==============================
+// $HELPERS
+//==============================
+
+// Baseline, measured in pixels
+// The value should be the same as the font-size value for the html element
+// If the html element's font-size is set to 62.5% (of the browser's default font-size of 16px),
+// then the variable below would be 10px.
+$baseline-px: (strip-units($basefont) * 62.5/100) * 1px;
+
+@mixin rem($property, $px-values) {
+    // Convert the baseline into rems
+    $baseline-rem: $baseline-px / 1rem;
+
+    @if $IE {
+        // Print the first line in pixel values
+        #{$property}: $px-values;
+    } @else {
+        // If there is only one (numeric) value, return the property/value line for it.
+        @if type-of($px-values) == "number" {
+            #{$property}: $px-values / $baseline-rem;
+        }
+        @else {
+            // Create an empty list that we can dump values into
+            $rem-values: unquote("");
+            @each $value in $px-values {
+            // If the value is zero, return 0
+                @if $value == 0 {
+                    $rem-values: append($rem-values, $value);
+                } @else {
+                    $rem-values: append($rem-values, $value / $baseline-rem);
+                }
+            }
+        // Return the property and its list of converted values
+        #{$property}: $rem-values;
+        }
+    }
+}
+
+// Vendor Prefixing
+@mixin vendor($property, $value, $prefixed: false ) {
+    $default-prefixes: webkit moz ms o;
+
+    @each $prefix in $default-prefixes {
+        @if $prefixed {
+            -#{$prefix}-#{$property}: -#{$prefix}-#{$value};
+        } @else {
+            -#{$prefix}-#{$property}: #{$value};
+        }
+    }
+
+    #{$property}: #{$value};
+}
+
+// Animation
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content
+    }
+    @-moz-keyframes #{$name} {
+        @content
+    }
+    @-ms-keyframes #{$name} {
+        @content
+    }
+    @-o-keyframes #{$name} {
+        @content
+    }
+    @keyframes #{$name} {
+        @content
+    }
+}
+
+@mixin resizable($direction: both) {
+    resize: $direction; // Options are horizontal, vertical, both
+    overflow: auto; // Safari fix
+}
+
+@mixin ir{ //image replacement
+    display : block;
+    text-indent : -9999em;
+    overflow : hidden;
+    background-repeat : no-repeat;
+    text-align : left;
+    direction : ltr;
+}
+
+@mixin hidden{
+    display : none;
+    visibility : hidden;
+}
+
+@mixin auto-numbers($numbered-element, $sep, $counter: item, $nested-parent: false ){
+    $sel: ();
+    @if $nested-parent {
+        $sel: append($sel, unquote($nested-parent));
+    }
+    $sel: append($sel, unquote('&'), comma);
+
+    #{$nested-parent}{
+        list-style: none;
+        margin-left: 0;
+    }
+
+    #{$sel}{
+        counter-reset: #{$counter};
+        > #{$numbered-element}{
+            &:before{
+                counter-increment: #{$counter};
+                content: counters(#{$counter}, "#{$sep} ") "#{$sep} " ;
+            }
+        }
+    }
+}
+
+@mixin offscreen($dir : ltr){
+    @if $dir == ltr {
+        position: absolute;
+        left: -9999px;
+    } @else {
+        left: auto;
+        right: -9999px;
+    }
+}
+
+//==============================
+// $RTL MIXINS
+//==============================
+@mixin rtl{
+    @if $rtl {
+        html[dir="rtl"] &{
+            @content;
+        }
+    }
+}
+
+@mixin flip($property, $right, $left){
+    @if $property == pos {
+        left: #{$left};
+        right: #{$right};
+    } @else {
+        #{$property}-right:#{$right};
+        #{$property}-left:#{$left};
+    }
+}
+
+//==============================
+// $DEBUG
+//==============================
+
+@mixin debug-display{
+    @if $debug {
+        display: normal !important;
+    } @else {
+        display: none;
+    }
+}
+
+
+
+//@FIX ME: Mixin this
+
+// //Reusable icons
+// .icon {
+//     display:inline-block;
+//     width:16px;
+//     height:16px;
+//     margin:0 5px 0 0;
+//     background:url(l);
+// }
+
+// .icon-a {
+//     background-position:0 0;
+// }
+
+//==============================
+// $MEDIA QUERIES http://alwaystwisted.com/post.php?s=2013-04-01-my-media-query-mixin
+//==============================
+
+@mixin mq($point, $fallback: nil, $query1: min, $query2: width) {
+    @if $fallback {
+        @if $IE{
+            @content;
+        } @else {
+            @media screen and (#{$query1}-#{$query2}: $point / 16 +em) {
+                @content;
+            }
+        }
+    } @else {
+        @media screen and (#{$query1}-#{$query2}: $point / 16 +em) {
+            @content;
+        }
+    }
+}
+
+@mixin orient($orientation: landscape) {
+    @media (orientation : $orientation) {
+        @content;
+    }
+}
+
+@mixin mq-retina($retina-config) {
+    @media #{ $retina-config }{
+        @content;
+    }
+}
+
+// $RETINA BGs
+
+@mixin hidpi($image: false, $extension: png, $width: false, $height: false, $retina-config: false) {
+    @if $image {
+        background-image: url(#{$img-path}#{$image}.#{$extension});
+    }
+    @include mq-retina(){
+        background-image: url(#{$img-path}#{$image}@2x.#{$extension});
+        -webkit-background-size: $width $height;
+        background-size: $width $height;
+    }
+}
+
+// Element Query
+// https://github.com/filamentgroup/scoped-media-query
+
+@mixin respond-to($queries...) {
+    $length: length($queries);
+    @for $i from 1 through $length{
+        @if $i % 2 == 1 {
+            @media #{nth($queries, $i)} {
+                #{nth($queries, $i+1)} {
+                  @content;
+                }
+            }
+        }
+    }
+}

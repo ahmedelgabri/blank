@@ -1,0 +1,63 @@
+// Matrix
+//
+// Fully fluid 12 columns Matrix based on 960 but can be anything.
+//
+// Markup:
+// <div class="bl-matrix bl-matrix--{n}">
+//     <div class="bl-matrix__unit">
+//        <div> contnet </div>
+//     </div>
+// </div>
+//
+// Styleguide 1.1
+
+//==============================
+// $MATRIX VARIABLES
+//==============================
+$matrixMargin: 5%;
+
+
+//==============================
+// $MATRIX MODULE
+//==============================
+
+.bl-matrix{
+    @include rem(margin-bottom, $verticalspace);
+    list-style:none;
+    margin-left:0;
+    letter-spacing: -0.31em;
+    text-rendering: optimizespeed;
+    text-align: justify;
+
+    .opera:-o-prefocus,
+    & {
+        word-spacing: -0.43em;
+    }
+
+
+    &:after{
+        content: "";
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+@for $i from 1 through $grid-columns {
+    .bl-matrix--#{$i}{
+        .bl-matrix__unit{
+            width: percentage($i/$grid-columns) - $matrixMargin/2;
+            // padding-top: percentage($i/$grid-columns-large) - $grid-gutter;
+            margin-bottom: $matrixMargin;
+        }
+    }
+}
+
+.bl-matrix__unit{
+    display: inline-block;
+    vertical-align: top;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-rendering: auto;
+    text-align: left;
+}
+

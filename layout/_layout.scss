@@ -1,0 +1,67 @@
+.bl-wrapper{
+    margin-left: auto;
+    margin-right: auto;
+    padding:0 5%;
+    @include rem(max-width, $no-mq);
+    @if $IE{
+        width: $no-mq;
+    }
+    @include mq($mq-large){
+        padding: 0 2em;
+    }
+}
+
+//==============================
+// $LAYOUTS
+//==============================
+// Different layout classes *must be added to the <body>*
+
+.bl-layout-a{
+    main{
+        width:100%;
+        padding: $grid-gutter;
+    }
+}
+
+.bl-layout-b{
+    main{
+        float: none;
+        width: 100%;
+        padding: $grid-gutter;
+
+        @include mq($mq-small){
+            float: left;
+            // width: percentage();
+        }
+    }
+
+    .side{
+        float: none;
+        width: 100%;
+        padding: $grid-gutter;
+
+        @include mq($mq-small){
+            float: right;
+            // width: percentage();
+        }
+    }
+}
+
+//==============================
+// $MAIN HEADER & FOOTER
+//==============================
+.bl-header{
+
+}
+
+.bl-footer{
+
+}
+
+//==============================
+// $PAGE SPECIFIFC
+//==============================
+
+// .p-<pagename> for page specific styling
+
+

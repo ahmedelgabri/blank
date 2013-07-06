@@ -1,0 +1,46 @@
+// Media Object
+//
+// The media object based on http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
+//
+// Markup:
+// <div class="bl-media {$modifires}">
+//     <div class="bl-media__figure">
+//         <img src="http://placehold.it/150x150/bada55/000">
+//     </div>
+//     <div class="bl-media__body">
+//         <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, quae, quidem, nam, suscipit assumenda voluptates laudantium nobis totam blanditiis iste laboriosam voluptas sapiente amet laborum debitis dolore consectetur enim ducimus.</p>
+//     </div>
+// </div>
+//
+//  .media--rev - filps the image to the right
+//
+// Styleguide 8.3
+
+//==============================
+// $MEDIA MODULE
+//==============================
+
+.bl-media{
+    @include clearfix;
+}
+
+.bl-media__figure{
+    float:left;
+    @include rem(margin-right, $grid-gutter);
+    .bl-media--rev &{
+        float: right;
+        margin-right:0;
+        @include rem(margin-left, $grid-gutter);
+    }
+}
+
+.bl-media__figure{
+    > img{
+        display:block;
+    }
+}
+
+.bl-media__body{
+    display:table-cell;
+    width:10000px;
+}

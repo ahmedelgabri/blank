@@ -1,0 +1,94 @@
+// Tabs
+//
+// Tabs
+//
+// Markup:
+// <div class="bl-tabs">
+//      <ul class="bl-tabs__nav">
+//          <li>
+//              <a href="#tab1"> Tab1 </a>
+//          </li>
+//          <li>
+//              <a href="#tab2"> Tab2 </a>
+//          </li>
+//          <li>
+//              <a href="#tab3"> Tab3 </a>
+//          </li>
+//       </ul>
+//       <div class="bl-tabs__panels">
+//          <div class="bl-tabs__panel" id="tab1">
+//              Panel 1
+//          </div>
+//          <div class="bl-tabs__panel" id="tab2">
+//              Panel 2
+//          </div>
+//          <div class="bl-tabs__panel" id="tab3">
+//              Panel 3
+//          </div>
+//       </div>
+// </div>
+//
+// .bl-tabs
+//
+// Styleguide 11
+
+//==============================
+// $VARIABLES
+//==============================
+
+
+//==============================
+// $TABS MODULE
+//==============================
+
+.bl-tabs{
+    position: relative;
+    overflow: hidden;
+    @include rem(margin-bottom, $verticalspace);
+}
+
+.bl-tabs__nav{
+    display: table;
+    width: 100%;
+
+    li{
+        display: table-cell;
+    }
+
+    a{
+        display: block;
+        padding: .5em 1em;
+        color: $textColor;
+        text-decoration: none;
+        @include vendor(transition, all .2s ease-in-out);
+
+        &.is-active,
+        &:hover{
+            background-color: $themeBlue;
+        }
+    }
+}
+
+.bl-tabs__panels{
+    position: relative;
+}
+
+.bl-tabs__panel{
+    padding: 1em;
+    background-color: $themeGrey;
+    color: $textColor;
+
+    .js &{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        visibility: hidden;
+        @include vendor(transition, visibility .2s ease-in-out);
+
+        &.is-active{
+            position: static;
+            visibility: visible;
+        }
+    }
+}

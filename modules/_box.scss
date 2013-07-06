@@ -1,0 +1,39 @@
+// Box
+//
+// Generic container
+//
+// Markup:
+// <div class="box {$modifiers}">
+//  Box
+// </div>
+//
+// Styleguide 8.5
+
+//==============================
+// $VARIABLES
+//==============================
+$boxPadding: 1em;
+
+//==============================
+// $BOX MODULE
+//==============================
+
+%box{
+    @include rem(margin-bottom, $verticalspace);
+    border: 1px solid $textColor;
+}
+
+.bl-box{
+    @extend %box;
+    padding: $boxPadding;
+}
+
+.bl-box--large{
+    @extend %box;
+    padding: $boxPadding*2;
+}
+
+.bl-box--small{
+    @extend %box;
+    padding: $boxPadding/2;
+}

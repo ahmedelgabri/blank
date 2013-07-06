@@ -1,0 +1,65 @@
+// Accrodions
+//
+// Accrodion, can be used with ul/ol too
+//
+// Markup:
+// <dl class="bl-accordion">
+//      <dt class="bl-accordion__title"> Title </dt>
+//      <dd class="bl-accordion__contnet"> Content </dd>
+// </dl>
+//
+// .bl-accrodion
+//
+// Styleguide 12
+
+
+//==============================
+// $VARIABLES
+//==============================
+
+//==============================
+// $ACCORDION MODULE
+//==============================
+
+.bl-accordion{
+    @include rem(margin-bottom, $verticalspace);
+}
+
+.bl-accordion__title{
+    padding: 1em;
+    background-color: $themeGrey;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+
+    .js &{
+        cursor: pointer;
+    }
+
+    &.is-active,
+    &:hover{
+        background-color: $themeBlue;
+        color: inherit;
+    }
+}
+
+.bl-accordion__content{
+    margin-bottom: 0;
+    background-color: white;
+    > div{
+        padding: 1em;
+    }
+
+    .js &{
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        @include vendor( transition, 'opacity .5s ease-in-out, max-height .5s ease-in-out' );
+    }
+
+    &.is-active{
+        opacity: 1;
+        max-height: 9999em; //Hack to make it look like 100%
+    }
+}

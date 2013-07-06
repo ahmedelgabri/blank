@@ -1,0 +1,24 @@
+//==============================
+// $COLORS
+//==============================
+
+// Base colors
+$textColor:               #444;
+$bgColor:                 #fff;
+$themeGreen:              #bada55;
+$themeBlue:               skyblue;
+$themeGrey:               #ddd;
+
+
+// Buttons
+$btn-primary-bg:          gold;
+$btn-primary-text:        darken($btn-primary-bg, 50%);
+$btn-secondary-bg:        skyblue;
+$btn-secondary-text:      darken($btn-secondary-bg, 50%);
+
+
+// Errors & Messages
+$default:                 #1c7285;
+$success:                 adjust-hue($default, 290);
+$error:                   adjust-hue($default, 170);
+$info:                    adjust-hue($default, 220);

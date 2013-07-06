@@ -1,0 +1,59 @@
+// Breadcrumbs
+//
+// Breadcrumbs
+//
+// Markup:
+// <ol class="bl-breadcrumbs">
+//    <li> <a href="#"> level 1</a> </li>
+//    <li> <a href="#"> level 2</a> </li>
+//    <li> you are here </li>
+// </ol>
+//
+// .bl-breadcrumbs
+//
+// Styleguide 10
+
+//==============================
+// $VARIABLES
+//==============================
+
+
+//==============================
+// $BREADCRUMBS MODULE
+//==============================
+
+.bl-breadcrumbs{
+    @include rem(margin-bottom, $verticalspace);
+
+    list-style:none;
+    margin-left:0;
+    letter-spacing: -0.31em;
+    text-rendering: optimizespeed;
+    padding: 1em;
+    line-height: normal;
+    background-color: darken($bgColor, 10%);
+    color: $textColor;
+
+    .opera:-o-prefocus,
+    & {
+        word-spacing: -0.43em;
+    }
+
+    > li {
+        display:inline-block;
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-rendering: auto;
+        margin-right: .5em;
+
+        &:last-of-type{
+            &:after{
+                content: normal;
+            }
+        }
+
+        &:after{
+            content: " \005C ";
+        }
+    }
+}

@@ -1,0 +1,44 @@
+// Links
+//
+// Links styling
+//
+// Markup:
+// <a href="#" class="{$modifiers}"> Link </a>
+//
+// :hover - Hover state
+// :active - active state
+// :focus - focus state
+// :visited - visited state
+//
+// Styleguide 5
+
+//==============================
+// $Link Variables
+//==============================
+$linkColor:               red;
+$linkColorHover:          green;
+$tabhighlight:            rgba(200,0,0,0.4);
+
+a {
+    -webkit-tap-highlight-color: $tabhighlight;
+    color:$linkColor;
+
+    &:visited{
+
+    }
+
+    &:hover,
+    &:focus{
+        color:$linkColorHover;
+    }
+
+    &:focus,
+    &:active{
+        position: relative;
+        top:1px;
+    }
+
+    &:focus{
+        outline: thin dotted;
+    }
+}

@@ -1,0 +1,53 @@
+// Badges
+//
+// Badges
+//
+// Markup:
+//  <span class="bl-badge {$modifiers}"> 100 </span>
+//
+// .bl-badge
+//
+// Styleguide 14
+
+//==============================
+// $VARIABLES
+//==============================
+
+//==============================
+// $BADGES MODULE
+//==============================
+
+.bl-badge{
+    @include rem(font-size, 12px);
+    @include rem(padding, 2px 4px);
+    @include rem(border-radius, 3px);
+
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    font-weight: bold;
+}
+
+.bl-badge--default{
+    color: $default;
+    background-color: lighten($default, 50%);
+    border-color: $default;
+}
+
+.bl-badge--info{
+    color: $info;
+    background-color: lighten($info, 50%);
+    border-color: $info;
+}
+
+.bl-badge--error{
+    color: $error;
+    background-color: lighten($error, 50%);
+    border-color: $error;
+}
+
+.bl-badge--success{
+    color: $success;
+    background-color: lighten($success, 50%);
+    border-color: $success;
+}

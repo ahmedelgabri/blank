@@ -71,13 +71,13 @@ h6,
 
 .bl-title--primary{
     padding: 1em;
-    background-color: darken($bgColor, 10%);
+    background-color: darken($color-bg, 10%);
     color: white;
 }
 
 .bl-title--secondary{
     background-color: $themeGreen;
-    color: $textColor;
+    color: $color-text;
     padding: .5em 1em;
 }
 

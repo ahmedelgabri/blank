@@ -31,8 +31,8 @@
     text-rendering: optimizespeed;
     padding: 1em;
     line-height: normal;
-    background-color: darken($bgColor, 10%);
-    color: $textColor;
+    background-color: darken($color-bg, 10%);
+    color: $color-text;
 
     .opera:-o-prefocus,
     & {

@@ -59,14 +59,14 @@
         padding:.2em .5em;
         margin:0 .2em;
         text-decoration: none;
-        color: $textColor;
-        background-color: darken($bgColor, 30%);
+        color: $color-text;
+        background-color: darken($color-bg, 30%);
         @include border-radius(1px);
 
         &:hover,
         &.current{
-            background-color: $textColor;
-            color:darken($bgColor, 30%);
+            background-color: $color-text;
+            color:darken($color-bg, 30%);
         }
     }
 }

@@ -78,20 +78,20 @@ $btnRoundedRadius: .2em;
 //
 
 $btns: primary, secondary;
-$btnBgColors: $btn-primary-bg, $btn-secondary-bg;
-$btnTextColors: $btn-primary-text, $btn-secondary-text;
+$btncolor-bgs: $btn-primary-bg, $btn-secondary-bg;
+$btncolor-texts: $btn-primary-text, $btn-secondary-text;
 
 @each $btn in $btns{
     $i: index($btns, $btn);
 
     .bl-btn--#{$btn}{
-        background-color: nth($btnBgColors, $i);
-        color: nth($btnTextColors, $i);
+        background-color: nth($btncolor-bgs, $i);
+        color: nth($btncolor-texts, $i);
 
         &:hover,
         &:focus{
-            background-color: lighten(nth($btnBgColors, $i), 50%);
-            color: lighten(nth($btnTextColors, $i), 50%);
+            background-color: lighten(nth($btncolor-bgs, $i), 50%);
+            color: lighten(nth($btncolor-texts, $i), 50%);
         }
     }
 }

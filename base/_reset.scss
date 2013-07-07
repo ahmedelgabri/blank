@@ -82,8 +82,8 @@ body {
     @include rem(font-size, $basefont);
     line-height:$lineheight;
     font-family: $sans-serif;
-    background: $bgColor;
-    color: $textColor;
+    background: $color-bg;
+    color: $color-text;
     @include mq($mq-medium){
         text-rendering: optimizeLegibility;
     }

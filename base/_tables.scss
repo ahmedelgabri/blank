@@ -108,7 +108,7 @@ td{
 // @TODO: Doesn't work well with tfoot, need to find a solution
 .bl-table--zebra{
     tr:nth-child(even){
-        background-color: darken($bgColor, 5%);
+        background-color: darken($color-bg, 5%);
     }
 }
 

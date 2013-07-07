@@ -58,7 +58,7 @@
     a{
         display: block;
         padding: .5em 1em;
-        color: $textColor;
+        color: $color-text;
         text-decoration: none;
         @include vendor(transition, all .2s ease-in-out);
 
@@ -76,7 +76,7 @@
 .bl-tabs__panel{
     padding: 1em;
     background-color: $themeGrey;
-    color: $textColor;
+    color: $color-text;
 
     .js &{
         position: absolute;

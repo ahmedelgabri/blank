@@ -20,7 +20,7 @@ $boxPadding: 1em;
 
 %box{
     @include rem(margin-bottom, $verticalspace);
-    border: 1px solid $textColor;
+    border: 1px solid $color-text;
 }
 
 .bl-box{

@@ -265,11 +265,11 @@ input[type="reset"]{
             content: "Off";
             display: inline-block;
             margin-right: .5em;
-            background-color: lighten($textColor, 30%);
+            background-color: lighten($color-text, 30%);
             width: 5em;
             text-align: right;
             padding: .3em .6em;
-            color: $bgColor;
+            color: $color-bg;
         }
 
         &:after{

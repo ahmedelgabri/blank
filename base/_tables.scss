@@ -71,7 +71,7 @@ caption{
 
 th{
     font-weight: bold;
-    background-color: lighten($themeBlue, 20%);
+    background-color: lighten($theme-blue, 20%);
 }
 
 th,
@@ -81,10 +81,10 @@ td{
 }
 
 .bl-table{
-    border: 1px solid $themeBlue;
+    border: 1px solid $theme-blue;
     th,
     td{
-        border-right: 1px solid $themeBlue;
+        border-right: 1px solid $theme-blue;
     }
 }
 
@@ -97,11 +97,11 @@ td{
 
 .bl-table--border{
     th{
-        border: 1px solid $themeBlue;
+        border: 1px solid $theme-blue;
     }
 
     td{
-        border: 1px solid lighten($themeBlue, 20%);
+        border: 1px solid lighten($theme-blue, 20%);
     }
 }
 

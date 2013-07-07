@@ -27,7 +27,7 @@
 
 .bl-accordion__title{
     padding: 1em;
-    background-color: $themeGrey;
+    background-color: $theme-grey;
     display: block;
     text-decoration: none;
     color: inherit;
@@ -39,7 +39,7 @@
 
     &.is-active,
     &:hover{
-        background-color: $themeBlue;
+        background-color: $theme-blue;
         color: inherit;
     }
 }

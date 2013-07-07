@@ -76,7 +76,7 @@ h6,
 }
 
 .bl-title--secondary{
-    background-color: $themeGreen;
+    background-color: $theme-green;
     color: $color-text;
     padding: .5em 1em;
 }
@@ -92,9 +92,9 @@ h6,
 // Styleguide 2.3
 
 .bl-subtitle{
-    color: $themeGreen;
+    color: $theme-green;
     text-transform: uppercase;
-    border-bottom: .1em solid $themeGrey;
+    border-bottom: .1em solid $theme-grey;
     @include rem(font-size, 14px);
     padding-bottom: .2em;
     margin-bottom: 1em;

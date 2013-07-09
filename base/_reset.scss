@@ -64,16 +64,14 @@ html {
     -webkit-overflow-scrolling: touch;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
-    font-size: 52.5%; // 52.5% of 16 = 9px;
+    font-size: 87.5%;
 
     @include mq($mq-medium){
-        font-size: 62.5%;
-        boo: "m"
+        font-size: 100%;
     }
 
     @include mq($mq-large){
-        font-size: 62.5%;
-        boo: "l"
+        font-size: 100%;
     }
 }
 

@@ -66,7 +66,7 @@
 // Headers & vertical rhythm
 
 @mixin headers($size){
-    @include rem(font-size, $size * 1px);
+    @include rem(font-size, $size);
     @include rem(margin, 0 0 (strip-units($basefont) * $lineheight) * 1px );
 }
 
@@ -159,7 +159,7 @@ $baseline-px: (strip-units($basefont) * 62.5/100) * 1px;
 
 @mixin rem($property, $px-values) {
     // Convert the baseline into rems
-    $baseline-rem: $baseline-px / 1rem;
+    $baseline-rem: 16px / 1rem;
 
     @if $IE {
         // Print the first line in pixel values

@@ -30,29 +30,29 @@ h1,h2,h3,h4,h5,h6,
 
 h1,
 .h1 {
-    @include headers(48);
+    @include headers(48px);
 }
 
 h2,
 .h2{
-    @include headers(36);
+    @include headers(36px);
 }
 
 h3,
 .h3 {
-    @include headers(24);
+    @include headers(24px);
 }
 
 h4,
 .h4 {
-    @include headers(21);
+    @include headers(21px);
 }
 
 h5,
 .h5,
 h6,
 .h6 {
-    @include headers(18);
+    @include headers(18px);
 }
 
 // Section titles

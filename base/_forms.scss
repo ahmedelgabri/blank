@@ -12,7 +12,7 @@ $fieldBorderColor: #ccc;
 .bl-form{
     &,
     fieldset{
-        @include rem(margin-bottom, ($lineheight * strip-units($basefont)) * 1px);
+        @include rem(margin-bottom, ($lineheight * n($basefont)) * 1px);
     }
 }
 

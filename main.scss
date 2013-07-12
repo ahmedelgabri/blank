@@ -51,7 +51,7 @@
 @import 'extras/_rtl';
 
 // Shame for quick fixes http://csswizardry.com/2013/04/shame-css/
-// @import '_shame';
+@import '_shame';
 
 // Debug: this can be turned on/off from store/_config.scss file
 @import 'extras/_debug';

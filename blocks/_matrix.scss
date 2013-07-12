@@ -59,5 +59,8 @@ $matrixMargin: 5%;
     word-spacing: normal;
     text-rendering: auto;
     text-align: left;
+    @if $rtl {
+        text-align: right;
+    }
 }
 

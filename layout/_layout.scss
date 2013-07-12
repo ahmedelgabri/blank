@@ -2,9 +2,9 @@
     margin-left: auto;
     margin-right: auto;
     padding:0 5%;
-    @include rem(max-width, $no-mq);
+    @include rem(max-width, $grid-width);
     @if $IE{
-        width: $no-mq;
+        width: $grid-width;
     }
     @include mq($mq-large){
         padding: 0 2em;

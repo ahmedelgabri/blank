@@ -77,6 +77,9 @@ th{
 th,
 td{
     text-align: left;
+    @if $rtl {
+        text-align: right;
+    }
     padding: $cellPadding/2 $cellPadding;
 }
 

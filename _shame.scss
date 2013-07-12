@@ -1,0 +1,8 @@
+// Styles for demo
+
+@for $i from 1 through 3{
+    .nested-#{$i}{
+        background-color: adjust-hue(red, 50% / $i);
+        color: adjust-hue(#fff, 50% / $i)
+    }
+}

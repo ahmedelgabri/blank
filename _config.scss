@@ -11,8 +11,6 @@ $rtl: false !default;
 $print: true !default;
 
 $IE: false !default;
-$no-mq: 1000px !default;
-
 //==============================
 // $TYPOGRAPHY BASICS
 //==============================
@@ -30,6 +28,7 @@ $monospace:               Inconsolata, monaco, consolas, 'andale mono', 'lucida 
 
 $grid-columns: 12;
 $grid-gutter: 20px; // will be converted to rems
+$grid-width: 1000px; // Used to calculate the grid & "if wanted" to be used as max-width
 
 //==============================
 // $MQ SETTINGS

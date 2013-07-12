@@ -4,24 +4,6 @@
 // $LAYOUT
 //==============================
 
-// Grid widths setup
-
-@mixin grid_widths($size-prefix: s, $cols: $grid-columns){
-    @if $IE{
-        @for $i from 1 through $cols {
-            .bl-g__u--l--#{$i}{
-                width: percentage($i/$cols);
-            }
-        }
-    } @else {
-        @for $i from 1 through $cols {
-            .bl-g__u--#{$size-prefix}--#{$i}{
-                width: percentage($i/$cols);
-            }
-        }
-    }
-}
-
 // CSS3 Content Columns
 @mixin css-columns($columnCount, $columnGap: 20px) {
     -webkit-column-count: $columnCount;
@@ -67,7 +49,7 @@
 
 @mixin headers($size){
     @include rem(font-size, $size);
-    @include rem(margin, 0 0 (strip-units($basefont) * $lineheight) * 1px );
+    @include rem(margin, 0 0 (n($basefont) * $lineheight) * 1px );
 }
 
 

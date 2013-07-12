@@ -36,7 +36,6 @@ $gutter-pct: percentage( n($grid-gutter) / n($grid-width) ); // Percentage gutte
 }
 
 .bl-g{
-    @include clearfix();
     list-style: none;
     letter-spacing: -0.31em;
     text-rendering: optimizespeed;

@@ -3,20 +3,19 @@
 // Same as the media object but with vertical aligmnent
 //
 // Markup:
-// <div class="bl-banner {$modifires}">
-//     <div class="bl-banner__figure">
+// <div class="bl-banner {$modifiers}">
+//    <div class="bl-banner__figure">
 //         <img src="http://placehold.it/150x150/bada55/000">
-//     </div>
-//     <div class="bl-banner__body">
+//    </div>
+//    <div class="bl-banner__body">
 //         <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, quae, quidem, nam, suscipit assumenda voluptates laudantium nobis totam blanditiis iste laboriosam voluptas sapiente amet laborum debitis dolore consectetur enim ducimus.</p>
-//     </div>
+//    </div>
 // </div>
 //
-//  .bl-banner--rev - filps the image to the right
-//  .bl-banner--top - aligns text to top
-//  .bl-banner--bottom - aligns text to bottom
+// .bl-banner--rev - filps the image to the right
+// .bl-banner--top - aligns text to top
+// .bl-banner--bottom - aligns text to bottom
 //
-// Styleguide 8.4
 
 // Needs a better name?
 .bl-banner{

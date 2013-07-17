@@ -3,11 +3,14 @@
 // Badges
 //
 // Markup:
-//  <span class="bl-badge {$modifiers}"> 100 </span>
+// <span class="bl-badge {$modifiers}"> 100 </span>
+// <span class="bl-badge {$modifiers}"> DANGER! </span>
 //
-// .bl-badge
-//
-// Styleguide 14
+// .bl-badge--default - default
+// .bl-badge--info - info
+// .bl-badge--success - success
+// .bl-badge--error - error
+
 
 //==============================
 // $VARIABLES

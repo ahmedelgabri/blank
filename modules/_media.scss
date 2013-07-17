@@ -3,18 +3,16 @@
 // The media object based on http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
 //
 // Markup:
-// <div class="bl-media {$modifires}">
-//     <div class="bl-media__figure">
-//         <img src="http://placehold.it/150x150/bada55/000">
-//     </div>
-//     <div class="bl-media__body">
-//         <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, quae, quidem, nam, suscipit assumenda voluptates laudantium nobis totam blanditiis iste laboriosam voluptas sapiente amet laborum debitis dolore consectetur enim ducimus.</p>
-//     </div>
+// <div class="bl-media {$modifiers}">
+//    <div class="bl-media__figure">
+//        <img src="http://placehold.it/150x150/bada55/000">
+//    </div>
+//    <div class="bl-media__body">
+//      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, quae, quidem, nam, suscipit assumenda voluptates laudantium nobis totam blanditiis iste laboriosam voluptas sapiente amet laborum debitis dolore consectetur enim ducimus.</p>
+//    </div>
 // </div>
 //
-//  .media--rev - filps the image to the right
-//
-// Styleguide 8.3
+// .bl-media--rev - filps the image to the right
 
 //==============================
 // $MEDIA MODULE

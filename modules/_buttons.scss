@@ -1,18 +1,15 @@
-/*
-Buttons
+// Buttons
+//
+// Styling for buttons
+//
+// Markup:
+// <a href="#" class="bl-btn {$modifiers}"> link </a>
+// <button class="bl-btn {$modifiers}"> Button </button>
+// <input type="submit" class="bl-btn {$modifiers}" value="input">
+//
+// .bl-btn--primary - Primary button styling
+// .bl-btn--secondary - Secondary button styling
 
-Styling for buttons
-
-Markup:
-<a href="#" class="bl-btn {$modifiers}"> link </a>
-<button class="bl-btn {$modifiers}"> Button </button>
-<input type="submit" class="bl-btn {$modifiers}" value="input">
-
-.bl-btn--primary - Primary button styling
-.bl-btn--secondary - Secondary button styling
-
-Styleguide 1
-*/
 
 //==============================
 // $BUTTON VARIABLES
@@ -42,6 +39,7 @@ $btnRoundedRadius: .2em;
     padding: $btnPadding/2 $btnPadding;
     line-height: normal;
     text-decoration: none;
+    background-color: transparent;
     @include vendor(transition, "all 100ms linear");
 
     @include mq($mq-medium){
@@ -98,21 +96,17 @@ $btncolor-texts: $btn-primary-text, $btn-secondary-text;
     }
 }
 
-/*
-Buttons with icons
-
-Buttons with Icons
-
-Markup:
-<a href="#" class="bl-btn {$modifiers}"> <i class="bl-btn__icon"></i>link </a>
-<button class="bl-btn {$modifiers}"> <i class="bl-btn__icon"></i> Button </button>
-<input type="submit" class="bl-btn bl-btn--icon {$modifiers}" value="input">
-
-.bl-btn__icon
-.bl-btn--icon               - for input[submit] only
-
-styleguide 1.1
-*/
+// Buttons with icons
+//
+// Buttons with Icons
+//
+// Markup:
+// <a href="#" class="bl-btn {$modifiers}"> <i class="bl-btn__icon"></i>link </a>
+// <button class="bl-btn {$modifiers}"> <i class="bl-btn__icon"></i> Button </button>
+// <input type="submit" class="bl-btn bl-btn--icon {$modifiers}" value="input">
+//
+// .bl-btn__icon
+// .bl-btn--icon               - for input[submit] only
 
 $icons: twitter, facebook, rss;
 
@@ -143,22 +137,18 @@ $icons: twitter, facebook, rss;
 }
 
 
-/*
-Buttons Group
-
-Buttons Group
-
-Markup:
-<div class="bl-btn-group">
-<a href="#" class="bl-btn bl-btn--icon {$modifiers}"> link </a>
-<button class="bl-btn bl-btn--icon {$modifiers}"> Button </button>
-<input type="submit" class="bl-btn bl-btn--icon {$modifiers}" value="input">
-</div>
-
-.bl-btn-group
-
-styleguide 1.2
-*/
+// Buttons Group
+//
+// Buttons Group
+//
+// Markup:
+// <div class="bl-btn-group">
+//    <a href="#" class="bl-btn bl-btn--icon {$modifiers}"> link </a>
+//    <button class="bl-btn bl-btn--icon {$modifiers}"> Button </button>
+//    <input type="submit" class="bl-btn bl-btn--icon {$modifiers}" value="input">
+// </div>
+//
+// .bl-btn-group
 
 //==============================
 // $Button group variables

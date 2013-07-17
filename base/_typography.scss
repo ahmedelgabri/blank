@@ -1,6 +1,8 @@
-// Typography
-//
-// Styleguide 2
+/*
+Typography
+
+Styleguide 2
+*/
 
 //==============================
 // $TYPOGRAPHY
@@ -9,20 +11,21 @@
 // If having local font-face fonts import them like so
 // @include font-face($fontname, $filename, $fontstack: $sans-serif);
 
+/*
+Headers
 
-// Headers
-//
-// You can get the same styling anywhere using classes .h1-.h6
-//
-// Markup:
-// <h1>Header 1</h1>
-// <h2>Header 2</h2>
-// <h3>Header 3</h3>
-// <h4>Header 4</h4>
-// <h5>Header 5</h5>
-// <h6>Header 6</h6>
-//
-// Styleguide 2.1
+You can get the same styling anywhere using classes .h1-.h6
+
+Markup:
+<h1>Header 1</h1>
+<h2>Header 2</h2>
+<h3>Header 3</h3>
+<h4>Header 4</h4>
+<h5>Header 5</h5>
+<h6>Header 6</h6>
+
+Styleguide 2.1
+*/
 
 h1,h2,h3,h4,h5,h6,
 .h1,.h2,.h3,.h4,.h5,.h6{
@@ -55,15 +58,17 @@ h6,
     @include headers(18px);
 }
 
-// Section titles
-//
-// Markup:
-// <h5 class="bl-title {$modifiers}"> Header 5 as a title</h5>
-//
-// .bl-title--primary - Primary title
-// .bl-title--secondary - Secondary title
-//
-// Styleguide 2.2
+/*
+Section titles
+
+Markup:
+<h5 class="bl-title {$modifiers}"> Header 5 as a title</h5>
+
+.bl-title--primary - Primary title
+.bl-title--secondary - Secondary title
+
+Styleguide 2.2
+*/
 
 .bl-title{
     border-bottom: .1em double;
@@ -81,15 +86,17 @@ h6,
     padding: .5em 1em;
 }
 
-// Section subtitles
-//
-// Markup:
-// <h5 class="bl-subtitle {$modifiers}"> Header 5 as a subtitle</h5>
-// <p class="bl-subtitle {$modifiers}"> Paragraph 5 as a subtitle</p>
-//
-// .bl-subtitle - Primary subtitle
-//
-// Styleguide 2.3
+/*
+Section subtitles
+
+Markup:
+<h5 class="bl-subtitle {$modifiers}"> Header 5 as a subtitle</h5>
+<p class="bl-subtitle {$modifiers}"> Paragraph 5 as a subtitle</p>
+
+.bl-subtitle - Primary subtitle
+
+Styleguide 2.3
+*/
 
 .bl-subtitle{
     color: $theme-green;
@@ -103,15 +110,17 @@ h6,
 }
 
 
-// Paragraphs
-//
-// Markup:
-// <p class="{$modifiers}"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, deleniti adipisci cupiditate quibusdam labore saepe! Cumque, et, fuga assumenda tempora nisi similique quae dicta ab repellendus eum nam aperiam quas.</p>
-//
-// .bl-p--big - big paragraph, maybe for intros & stuff like this"
-// .bl-p--small - small paragraph, don't use instead of the "small" element
-//
-// Styleguide 2.4
+/*
+Paragraphs
+
+Markup:
+<p class="{$modifiers}"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, deleniti adipisci cupiditate quibusdam labore saepe! Cumque, et, fuga assumenda tempora nisi similique quae dicta ab repellendus eum nam aperiam quas.</p>
+
+.bl-p--big - big paragraph, maybe for intros & stuff like this"
+.bl-p--small - small paragraph, don't use instead of the "small" element
+
+Styleguide 2.4
+*/
 
 p {
     @include rem(margin, 0 0 $verticalspace);
@@ -126,21 +135,23 @@ p {
     font-size: .9em;
 }
 
-// Blockquotes
-//
-//
-//
-// Markup:
-// <blockquote class="{$modifiers}">
-//   This is a blockquote
-// <footer class="blockquote-source"> Someone </blockquote>
-// </blockquote>
-//
-// .bl-blockquote--left
-// .bl-blockquote--right
-// .bl-blockquote--center
-//
-// Styleguide 2.5
+/*
+Blockquotes
+
+
+
+Markup:
+<blockquote class="{$modifiers}">
+This is a blockquote
+<footer class="blockquote-source"> Someone </blockquote>
+</blockquote>
+
+.bl-blockquote--left - aligned left
+.bl-blockquote--right - aligned right
+.bl-blockquote--center - centered
+
+Styleguide 2.5
+*/
 
 blockquote{
     quotes: "“" "”";

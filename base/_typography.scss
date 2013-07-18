@@ -71,19 +71,12 @@ Styleguide 2.2
 */
 
 .bl-title{
-    border-bottom: .1em double;
 }
 
 .bl-title--primary{
-    padding: 1em;
-    background-color: darken($color-bg, 10%);
-    color: white;
 }
 
 .bl-title--secondary{
-    background-color: $theme-green;
-    color: $color-text;
-    padding: .5em 1em;
 }
 
 /*
@@ -99,14 +92,7 @@ Styleguide 2.3
 */
 
 .bl-subtitle{
-    color: $theme-green;
-    text-transform: uppercase;
-    border-bottom: .1em solid $theme-grey;
-    @include rem(font-size, 14px);
-    padding-bottom: .2em;
-    margin-bottom: 1em;
-    display: block;
-    width: 100%;
+
 }
 
 
@@ -256,8 +242,14 @@ pre {
     white-space: pre-wrap;
     word-wrap: break-word;
     padding: 1em;
+    max-height: 20em;
     overflow: auto;
     @include rem(margin-bottom, $verticalspace);
+    @include rem(font-size, 13px);
+    box-shadow: inset 0 0 20px rgba(0,0,0,.1);
+    border: 1px solid #ddd;
+    display: block;
+    clear: both;
 }
 
 code {

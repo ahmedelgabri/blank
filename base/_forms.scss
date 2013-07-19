@@ -169,12 +169,11 @@ input[type="reset"]{
     width: 100%;
 
     > .bl-form__holder {
-        display: inline-block;
-        width: 100%;
 
         @include mq($mq-small, true){
             padding-right: $grid-gutter;
-            width: auto;
+            display: inline-block;
+            // width: 100%;
             &:last-of-type{
                 padding-right: 0;
             }

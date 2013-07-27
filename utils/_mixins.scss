@@ -34,9 +34,9 @@
 // $TYPOGRAPHY
 //==============================
 
-@mixin font-face($fontname, $filename, $fontstack: $sans-serif){
+@mixin font-face($fontname, $filename, $stack: $font-stack){
     @font-face {
-        font-family: #{$fontname}, $fontstack;
+        font-family: #{$fontname}, $stack;
         src: url('#{filename}.eot');
         src: url('#{filename}.eot?#iefix') format('embedded-opentype'),
         url('#{filename}.woff') format('woff'),

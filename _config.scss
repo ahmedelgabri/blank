@@ -15,12 +15,17 @@ $IE: false !default;
 // $TYPOGRAPHY BASICS
 //==============================
 
-$basefont:                16px;
-$lineheight:              1.5;
-$verticalspace:           $basefont * $lineheight;
-$sans-serif:              "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,sans-serif;
-$serif:                   "Georgia", Times New Roman, Times, serif;
-$monospace:               Inconsolata, monaco, consolas, 'andale mono', 'lucida console', monospace;
+$helvetica-neue: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,sans-serif;
+$helvetica: Helvetica,Arial,sans-serif;
+$georgia: Georgia, Cambria, "Times New Roman", Times, serif;
+$lucidia-grande: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
+$verdana: Verdana, Geneva, sans-serif;
+$monospace: Inconsolata, monaco, consolas, 'andale mono', 'lucida console', monospace;
+
+$font-stack: $helvetica-neue;
+$basefont: 16px;
+$lineheight: 1.5;
+$verticalspace: $basefont * $lineheight;
 
 //==============================
 // $GRID SETTINGS

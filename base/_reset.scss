@@ -79,7 +79,7 @@ body {
     margin: 0;
     @include rem(font-size, $basefont);
     line-height:$lineheight;
-    font-family: $sans-serif;
+    font-family: $font-stack;
     background: $color-bg;
     color: $color-text;
     @include mq($mq-medium){

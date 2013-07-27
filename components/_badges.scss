@@ -21,7 +21,7 @@
 //==============================
 
 .bl-badge{
-    @include rem(font-size, 12px);
+    font-size: 75%;
     @include rem(padding, 2px 4px);
     @include rem(border-radius, 3px);
 

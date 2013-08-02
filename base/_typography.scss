@@ -188,9 +188,6 @@ blockquote{
     content:"—";
 }
 
-
-
-
 em,
 i,
 cite,
@@ -212,6 +209,10 @@ abbr[title],
 dfn[title] {
     border-bottom: 1px dotted;
     cursor: help;
+}
+
+address{
+    font-style: normal;
 }
 
 sub,

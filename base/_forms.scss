@@ -160,6 +160,22 @@ button{
 input[type="reset"]{
 }
 
+.bl-form__holder{
+    @include rem(margin-bottom, 10px);
+    &:last-of-type{
+        margin-bottom: 0;
+    }
+
+    .bl-btn{
+        display: inline-block;
+        width: auto;
+    }
+}
+
+.bl-form__field{
+    width: 100%;
+}
+
 .bl-form__list{
 }
 
@@ -167,18 +183,24 @@ input[type="reset"]{
     list-style:none;
     margin-left:0;
     width: 100%;
+    display: table;
 
     > .bl-form__holder {
-
-        @include mq($mq-small, true){
+        @include mq($mq-medium, true){
+            margin-bottom: 0;
             padding-right: $grid-gutter;
-            display: inline-block;
-            // width: 100%;
             &:last-of-type{
                 padding-right: 0;
             }
+            display: table-cell;
+            vertical-align: middle;
         }
+    }
 
+    .bl-btn-group{
+        @include mq($mq-medium, true){
+            margin-bottom: 0;
+        }
     }
 }
 
@@ -199,24 +221,8 @@ input[type="reset"]{
     }
 }
 
-.bl-form__holder{
-    @include rem(margin-bottom, 10px);
-    &:last-of-type{
-        margin-bottom: 0;
-    }
 
-    .bl-btn{
-        display: inline-block;
-        width: auto;
-    }
-}
-
-.bl-form__field{
-    width: 100%;
-}
-
-
-////==============================
+//==============================
 // $CUSTOM FORM ELEMENTS
 //==============================
 

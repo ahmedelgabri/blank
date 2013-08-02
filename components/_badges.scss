@@ -3,11 +3,14 @@
 // Badges
 //
 // Markup:
-//  <span class="bl-badge {$modifiers}"> 100 </span>
+// <span class="bl-badge {$modifiers}"> 100 </span>
+// <span class="bl-badge {$modifiers}"> DANGER! </span>
 //
-// .bl-badge
-//
-// Styleguide 14
+// .bl-badge--default - default
+// .bl-badge--info - info
+// .bl-badge--success - success
+// .bl-badge--error - error
+
 
 //==============================
 // $VARIABLES
@@ -18,7 +21,7 @@
 //==============================
 
 .bl-badge{
-    @include rem(font-size, 12px);
+    font-size: 75%;
     @include rem(padding, 2px 4px);
     @include rem(border-radius, 3px);
 

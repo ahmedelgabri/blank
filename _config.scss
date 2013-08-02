@@ -15,19 +15,24 @@ $IE: false !default;
 // $TYPOGRAPHY BASICS
 //==============================
 
-$basefont:                16px;
-$lineheight:              1.5;
-$verticalspace:           $basefont * $lineheight;
-$sans-serif:              "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,sans-serif;
-$serif:                   "Georgia", Times New Roman, Times, serif;
-$monospace:               Inconsolata, monaco, consolas, 'andale mono', 'lucida console', monospace;
+$helvetica-neue: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,sans-serif;
+$helvetica: Helvetica,Arial,sans-serif;
+$georgia: Georgia, Cambria, "Times New Roman", Times, serif;
+$lucidia-grande: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
+$verdana: Verdana, Geneva, sans-serif;
+$monospace: Inconsolata, monaco, consolas, 'andale mono', 'lucida console', monospace;
+
+$font-stack: $helvetica-neue;
+$basefont: 16px;
+$lineheight: 1.5;
+$verticalspace: $basefont * $lineheight;
 
 //==============================
 // $GRID SETTINGS
 //==============================
 
 $grid-columns: 12;
-$grid-gutter: 20px; // will be converted to rems
+$grid-gutter: 20px; // will be converted to %
 $grid-width: 1000px; // Used to calculate the grid & "if wanted" to be used as max-width
 
 //==============================
@@ -39,13 +44,6 @@ $grid-width: 1000px; // Used to calculate the grid & "if wanted" to be used as m
 $mq-large :  1200;
 $mq-medium:  760;
 $mq-small :  480;
-
-// For retina
-// http://www.brettjankord.com/2012/11/28/cross-browser-retinahigh-resolution-media-queries/
-$mq-retina-125: "(-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi)";
-$mq-retina-13 : "(-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 124.8dpi)";
-$mq-retina-15 : "(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)";
-$mq-retina-2   : "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
 
 
 //==============================

@@ -1,48 +1,49 @@
-// Tables
-//
-// Markup:
-// <table class="{$modifiers}">
-//      <thead>
-//          <tr>
-//              <th> Table header </th>
-//              <th> Table header </th>
-//              <th> Table header </th>
-//          </tr>
-//      </thead>
-//      <tfoot>
-//          <tr>
-//              <td> Table footer </td>
-//              <td> Table footer </td>
-//              <td> Table footer </td>
-//          </tr>
-//      </tfoot>
-//      <tbody>
-//          <tr>
-//              <td> Table cell </td>
-//              <td> Table cell </td>
-//              <td> Table cell </td>
-//          </tr>
-//          <tr>
-//              <td> Table cell </td>
-//              <td> Table cell </td>
-//              <td> Table cell </td>
-//          </tr>
-//          <tr>
-//              <td> Table cell </td>
-//              <td> Table cell </td>
-//              <td> Table cell </td>
-//          </tr>
-//      </tbody>
-// </table>
-//
-// .bl-table
-// .bl-table--border
-// .bl-table--zebra
-// .bl-table--condense
-// .bl-table--round
-//
-// Styleguide 4
+/*
+Tables
 
+Markup:
+<table class="{$modifiers}">
+  <thead>
+      <tr>
+          <th> Table header </th>
+          <th> Table header </th>
+          <th> Table header </th>
+      </tr>
+  </thead>
+  <tfoot>
+      <tr>
+          <td> Table footer </td>
+          <td> Table footer </td>
+          <td> Table footer </td>
+      </tr>
+  </tfoot>
+  <tbody>
+      <tr>
+          <td> Table cell </td>
+          <td> Table cell </td>
+          <td> Table cell </td>
+      </tr>
+      <tr>
+          <td> Table cell </td>
+          <td> Table cell </td>
+          <td> Table cell </td>
+      </tr>
+      <tr>
+          <td> Table cell </td>
+          <td> Table cell </td>
+          <td> Table cell </td>
+      </tr>
+  </tbody>
+</table>
+
+.bl-table - default
+.bl-table--border - border
+.bl-table--zebra - zebra
+.bl-table--condense - condense
+.bl-table--round - round
+
+Styleguide 4
+*/
 
 //==============================
 // $TABLE VARIABLES
@@ -149,51 +150,53 @@ td{
     }
 }
 
-// Column widths
-//
-// Control the width of the table columns "total must be = 100%" based on https://github.com/csswizardry/inuit.css/blob/master/inuit.css/partials/base/_tables.scss#L88
-//
-// Markup:
-// <table class="{$modifiers}">
-//      <colgroup>
-//          <col class="t5"/>
-//          <col class="t10"/>
-//          <col/>
-//      </colgroup>
-//      <thead>
-//          <tr>
-//              <th> Table header </th>
-//              <th> Table header </th>
-//              <th> Table header </th>
-//          </tr>
-//      </thead>
-//      <tfoot>
-//          <tr>
-//              <td> Table footer </td>
-//              <td> Table footer </td>
-//              <td> Table footer </td>
-//          </tr>
-//      </tfoot>
-//      <tbody>
-//          <tr>
-//              <td> Table cell </td>
-//              <td> Table cell </td>
-//              <td> Table cell </td>
-//          </tr>
-//          <tr>
-//              <td> Table cell </td>
-//              <td> Table cell </td>
-//              <td> Table cell </td>
-//          </tr>
-//          <tr>
-//              <td> Table cell </td>
-//              <td> Table cell </td>
-//              <td> Table cell </td>
-//          </tr>
-//      </tbody>
-// </table>
-//
-// Styleguide 4.1
+/*
+Column widths
+
+Control the width of the table columns "total must be = 100%" based on https//:github.com/csswizardry/inuit.css/blob/master/inuit.css/partials/base/_tables.scss#L88
+
+Markup:
+<table class="{$modifiers}">
+  <colgroup>
+      <col class="t5"/>
+      <col class="t10"/>
+      <col/>
+  </colgroup>
+  <thead>
+      <tr>
+          <th> Table header </th>
+          <th> Table header </th>
+          <th> Table header </th>
+      </tr>
+  </thead>
+  <tfoot>
+      <tr>
+          <td> Table footer </td>
+          <td> Table footer </td>
+          <td> Table footer </td>
+      </tr>
+  </tfoot>
+  <tbody>
+      <tr>
+          <td> Table cell </td>
+          <td> Table cell </td>
+          <td> Table cell </td>
+      </tr>
+      <tr>
+          <td> Table cell </td>
+          <td> Table cell </td>
+          <td> Table cell </td>
+      </tr>
+      <tr>
+          <td> Table cell </td>
+          <td> Table cell </td>
+          <td> Table cell </td>
+      </tr>
+  </tbody>
+</table>
+
+Styleguide 4.1
+*/
 
 .t5     { width: 5% }
 .t10    { width:10% }

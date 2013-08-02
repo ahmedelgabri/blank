@@ -9,8 +9,7 @@
 //
 // .bl-btn--primary - Primary button styling
 // .bl-btn--secondary - Secondary button styling
-//
-// Styleguide 6
+
 
 //==============================
 // $BUTTON VARIABLES
@@ -40,6 +39,7 @@ $btnRoundedRadius: .2em;
     padding: $btnPadding/2 $btnPadding;
     line-height: normal;
     text-decoration: none;
+    background-color: transparent;
     @include vendor(transition, "all 100ms linear");
 
     @include mq($mq-medium){
@@ -106,9 +106,7 @@ $btncolor-texts: $btn-primary-text, $btn-secondary-text;
 // <input type="submit" class="bl-btn bl-btn--icon {$modifiers}" value="input">
 //
 // .bl-btn__icon
-// .bl-btn--icon for input[submit] only
-//
-// styleguide 6.1
+// .bl-btn--icon               - for input[submit] only
 
 $icons: twitter, facebook, rss;
 
@@ -145,14 +143,12 @@ $icons: twitter, facebook, rss;
 //
 // Markup:
 // <div class="bl-btn-group">
-// <a href="#" class="bl-btn bl-btn--icon {$modifiers}"> link </a>
-// <button class="bl-btn bl-btn--icon {$modifiers}"> Button </button>
-// <input type="submit" class="bl-btn bl-btn--icon {$modifiers}" value="input">
+//    <a href="#" class="bl-btn bl-btn--icon {$modifiers}"> link </a>
+//    <button class="bl-btn bl-btn--icon {$modifiers}"> Button </button>
+//    <input type="submit" class="bl-btn bl-btn--icon {$modifiers}" value="input">
 // </div>
 //
 // .bl-btn-group
-//
-// styleguide 6.2
 
 //==============================
 // $Button group variables

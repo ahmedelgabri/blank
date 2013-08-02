@@ -3,11 +3,13 @@
 // Generic container
 //
 // Markup:
-// <div class="box {$modifiers}">
-//  Box
+// <div class="{$modifiers}">
+//    Box
 // </div>
 //
-// Styleguide 8.5
+// .bl-box - default
+// .bl-box--large - large
+// .bl-box--small - small
 
 //==============================
 // $VARIABLES

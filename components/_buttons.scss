@@ -96,6 +96,21 @@ $btncolor-texts: $btn-primary-text, $btn-secondary-text;
     }
 }
 
+// Disbaled buttons
+
+.bl-btn--disabled,
+[disabled],
+[disabled="disabled"]{
+    &,
+    &:hover,
+    &:active,{
+        background-color: lighten(#444, 20%);
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+}
+
 // Buttons with icons
 //
 // Buttons with Icons

@@ -86,8 +86,7 @@
         margin-bottom: 0;
     }
 
-    .js &,
-    :not(.foo) &{ // Filtering Old Browsers
+    .js &{ // Filtering Old Browsers
         position: absolute;
         left: 0;
         right: 0;
@@ -98,13 +97,6 @@
 
     .js &{
         &.is-active{
-            position: static;
-            visibility: visible;
-        }
-    }
-
-    :not(.foo) &{ // Make it work with CSS
-        &:target{
             position: static;
             visibility: visible;
         }

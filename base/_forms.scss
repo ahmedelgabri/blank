@@ -193,7 +193,7 @@ input[type="reset"]{
                 padding-right: 0;
             }
             display: table-cell;
-            vertical-align: middle;
+            vertical-align: top;
         }
     }
 
@@ -204,22 +204,22 @@ input[type="reset"]{
     }
 }
 
-.bl-form--full{
-    list-style:none;
-    margin-left:0;
-    display:table;
-    width: 100%;
+// .bl-form--full{
+//     list-style:none;
+//     margin-left:0;
+//     display:table;
+//     width: 100%;
 
-    > li {
-        display: table-cell;
-        width: 100%;
-        padding-right: $grid-gutter;
+//     > li {
+//         display: table-cell;
+//         width: 100%;
+//         padding-right: $grid-gutter;
 
-        &:last-of-type{
-            padding-right: 0;
-        }
-    }
-}
+//         &:last-of-type{
+//             padding-right: 0;
+//         }
+//     }
+// }
 
 
 //==============================
@@ -265,7 +265,7 @@ input[type="reset"]{
         &:before,
         &:after{
             line-height: 1;
-            height: 1.72222em;
+            height: 1.7em;
         }
 
         &:before{
@@ -305,5 +305,69 @@ input[type="reset"]{
                 background-color: $success;
             }
         }
+    }
+}
+
+
+//==============================
+// $ERROR MESSAGES
+//==============================
+.bl-form__message{
+    font-size: 75%;
+    padding: .5em;
+    display: block;
+}
+
+.bl-form__message--error{
+    > label,
+    > .bl-form__field,
+    > .bl-form__message{
+        color: $error;
+        border-color: $error;
+    }
+
+    > .bl-form__field{
+        &::-webkit-input-placeholder {
+            color: $error;
+        }
+
+        &:-moz-placeholder {
+            color: $error;
+        }
+
+        &:-ms-input-placeholder {
+            color: $error;
+        }
+    }
+
+    > .bl-form__message{
+        background-color: lighten($error, 50%);
+    }
+}
+
+.bl-form__message--success{
+    > label,
+    > .bl-form__field,
+    > .bl-form__message{
+        color: $success;
+        border-color: $success;
+    }
+
+    > .bl-form__field{
+        &::-webkit-input-placeholder {
+            color: $success;
+        }
+
+        &:-moz-placeholder {
+            color: $success;
+        }
+
+        &:-ms-input-placeholder {
+            color: $success;
+        }
+    }
+
+    > .bl-form__message{
+        background-color: lighten($success, 50%);
     }
 }

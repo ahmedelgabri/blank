@@ -115,3 +115,11 @@ dt{
 dd{
     @include rem(margin, 0 0 $verticalspace);
 }
+
+dt,
+dd{
+    > :last-child,
+    > :last-child > :last-child {
+        margin-bottom: 0;
+    }
+}

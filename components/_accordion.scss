@@ -30,6 +30,11 @@
     color: inherit;
     font-weight: bold;
 
+    > :last-child,
+    > :last-child > :last-child {
+        margin-bottom: 0;
+    }
+
     .js &{
         cursor: pointer;
     }
@@ -46,6 +51,11 @@
     background-color: white;
     > div{
         padding: 1em;
+    }
+
+    > :last-child,
+    > :last-child > :last-child {
+        margin-bottom: 0;
     }
 
     .js &{

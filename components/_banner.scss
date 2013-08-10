@@ -28,6 +28,11 @@
     display: table-cell;
     vertical-align: middle;
 
+    > :last-child,
+    > :last-child > :last-child {
+        margin-bottom: 0;
+    }
+
     .bl-banner--top &{
         vertical-align: top;
     }

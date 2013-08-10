@@ -16,6 +16,11 @@ $fieldBorderColor: #ccc;
     fieldset{
         @include rem(margin-bottom, ($lineheight * n($basefont)) * 1px);
     }
+
+    > :last-child,
+    > :last-child > :last-child {
+        margin-bottom: 0;
+    }
 }
 
 legend { //http://www.456bereastreet.com/archive/201210/how_to_line_wrap_text_in_legend_elements_even_in_ie/

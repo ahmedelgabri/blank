@@ -160,6 +160,11 @@ blockquote p:last-of-type:after{
 
 blockquote{
     @include rem(margin, 0 0 $verticalspace);
+
+    > :last-child,
+    > :last-child > :last-child {
+        margin-bottom: 0;
+    }
 }
 
 .bl-blockquote--left{

@@ -49,6 +49,11 @@
     display: table;
     width: 100%;
 
+    > :last-child,
+    > :last-child > :last-child {
+        margin-bottom: 0;
+    }
+
     li{
         display: table-cell;
     }
@@ -75,6 +80,11 @@
     padding: 1em;
     background-color: $theme-grey;
     color: $color-text;
+
+    > :last-child,
+    > :last-child > :last-child {
+        margin-bottom: 0;
+    }
 
     .js &{
         position: absolute;

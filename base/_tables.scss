@@ -78,6 +78,10 @@ th{
 th,
 td{
     text-align: left;
+    > :last-child,
+    > :last-child > :last-child {
+        margin-bottom: 0;
+    }
     @if $rtl {
         text-align: right;
     }
@@ -92,7 +96,7 @@ td{
     }
 }
 
-.bl-table--condense{
+.bl-table--condensed{
     th,
     td{
         padding: $cellPadding/4 $cellPadding/2;

@@ -27,11 +27,6 @@ $matrixMargin: 5%;
     text-rendering: optimizespeed;
     text-align: justify;
 
-    .opera:-o-prefocus,
-    & {
-        word-spacing: -0.43em;
-    }
-
 
     &:after{
         content: "";
@@ -54,7 +49,6 @@ $matrixMargin: 5%;
     display: inline-block;
     vertical-align: top;
     letter-spacing: normal;
-    word-spacing: normal;
     text-rendering: auto;
     text-align: left;
     @if $rtl {

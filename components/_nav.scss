@@ -24,18 +24,12 @@
     letter-spacing: -0.31em;
     text-rendering: optimizespeed;
 
-    .opera:-o-prefocus,
-    & {
-        word-spacing: -0.43em;
-    }
-
     > li{
         @include mq($mq-medium){
             display:inline-block;
         }
 
         letter-spacing: normal;
-        word-spacing: normal;
         text-rendering: auto;
     }
 

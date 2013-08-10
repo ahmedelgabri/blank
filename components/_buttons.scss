@@ -40,6 +40,8 @@ $btnRoundedRadius: .2em;
     line-height: normal;
     text-decoration: none;
     background-color: transparent;
+    text-overflow: ellipsis;
+    overflow: hidden;
     @include vendor(transition, "all 100ms linear");
 
     @include mq($mq-medium){
@@ -186,18 +188,12 @@ $btnGroupInnerRadius: 2px;
     letter-spacing: -0.31em;
     text-rendering: optimizespeed;
 
-    .opera:-o-prefocus,
-    & {
-        word-spacing: -0.43em;
-    }
-
     > .bl-btn{
         @include mq($mq-medium){
             display:inline-block;
         }
 
         letter-spacing: normal;
-        word-spacing: normal;
         text-rendering: auto;
     }
 }

@@ -23,11 +23,28 @@
 //==============================
 
 .bl-alert{
-    padding: .5em 1em;
+    padding: 1em;
     @include rem(margin-bottom, $verticalspace);
     border-style: solid;
     border-width: 1px;
     position: relative;
+
+    > :last-child,
+    > :last-child > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+.bl-alert__header{
+    @include rem(margin-bottom, $verticalspace);
+}
+
+.bl-alert__header,
+.bl-alert__body{
+    > :last-child,
+    > :last-child > :last-child {
+        margin-bottom: 0;
+    }
 }
 
 .bl-alert--default{

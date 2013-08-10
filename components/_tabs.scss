@@ -86,15 +86,25 @@
         margin-bottom: 0;
     }
 
-    .js &{
+    .js &,
+    :not(.foo) &{ // Filtering Old Browsers
         position: absolute;
         left: 0;
         right: 0;
         top: 0;
         visibility: hidden;
         @include vendor(transition, visibility .2s ease-in-out);
+    }
 
+    .js &{
         &.is-active{
+            position: static;
+            visibility: visible;
+        }
+    }
+
+    :not(.foo) &{ // Make it work with CSS
+        &:target{
             position: static;
             visibility: visible;
         }

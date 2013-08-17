@@ -102,15 +102,14 @@
 }
 
 .bl-menu__item{
+    border-bottom: 1px solid;
+    &:last-of-type{
+        border-bottom: none;
+    }
+
     > a {
         display: block;
         padding: .5em;
-        border-bottom: 1px solid;
     }
 
-    &:last-of-type{
-        > a {
-            border-bottom: none;
-        }
-    }
 }

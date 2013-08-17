@@ -12,13 +12,13 @@
 
 
 //==============================
-// $BUTTON VARIABLES
+// $Component variables
 //==============================
 $btnPadding: 1em;
 $btnRoundedRadius: .2em;
 
 //==============================
-// $BUTTON MODULE
+// $BUTTON COMPONENT
 //==============================
 
 
@@ -40,6 +40,8 @@ $btnRoundedRadius: .2em;
     line-height: normal;
     text-decoration: none;
     background-color: transparent;
+    text-overflow: ellipsis;
+    overflow: hidden;
     @include vendor(transition, "all 100ms linear");
 
     @include mq($mq-medium){
@@ -93,6 +95,21 @@ $btncolor-texts: $btn-primary-text, $btn-secondary-text;
             background-color: lighten(nth($btncolor-bgs, $i), 50%);
             color: lighten(nth($btncolor-texts, $i), 50%);
         }
+    }
+}
+
+// Disbaled buttons
+
+.bl-btn--disabled,
+[disabled],
+[disabled="disabled"]{
+    &,
+    &:hover,
+    &:active,{
+        background-color: lighten(#444, 20%);
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
     }
 }
 
@@ -171,18 +188,12 @@ $btnGroupInnerRadius: 2px;
     letter-spacing: -0.31em;
     text-rendering: optimizespeed;
 
-    .opera:-o-prefocus,
-    & {
-        word-spacing: -0.43em;
-    }
-
     > .bl-btn{
         @include mq($mq-medium){
             display:inline-block;
         }
 
         letter-spacing: normal;
-        word-spacing: normal;
         text-rendering: auto;
     }
 }

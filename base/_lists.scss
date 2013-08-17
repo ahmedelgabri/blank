@@ -2,8 +2,6 @@
 Lists
 
 List styling: ordered, unordered & defination lists.
-
-Styleguide 3
 */
 
 //==============================
@@ -11,42 +9,20 @@ Styleguide 3
 //===============================
 
 /*
-Ordered lists
+[Un]Ordered lists
 
 Markup:
-<ol class="{$modifiers}">
+<ol|ul class="{$modifiers}">
  <li>item1</li>
  <li>item2</li>
- <ol>
+ <ol|ul>
       <li>nested item1</li>
       <li>nested item2</li>
- </ol>
-</ol>
+ </ol|ul>
+</ol|ul>
 
 .bl-list--numbered      - Automatic numbering for multi-levels deep **Must be used with `.bl-list--reset`**
 .bl-list--reset         - can be added on ordered or unordered lists to reset it's styling.
-
-Styleguide 3.1
-*/
-
-
-/*
-Unorderd lists
-
-Markup:
-<ul class="{$modifiers}">
- <li>item1</li>
- <li>item2</li>
- <ul>
-      <li>nested item1</li>
-      <li>nested item2</li>
- </ul>
-</ul>
-
-.bl-list--numbered      - Automatic numbering for multi-levels deep **Must be used with `.bl-list--reset`**
-.bl-list--reset         - can be added on ordered or unordered lists to reset it's styling.
-
-Styleguide 3.2
 */
 ol{
     list-style: decimal;
@@ -96,13 +72,11 @@ li{
 Definition lists
 
 Markup:
-<dl class="${modifires}">
+<dl>
   <dt>Definition term<dt>
   <dd> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, saepe, ab quo obcaecati a rerum quis quod vel autem nam maxime temporibus magni unde et nulla molestias veniam libero explicabo. </dd>
 </dl>
 */
-
-Styleguide 3.3
 
 dl{
     @include rem(margin, 0 0 $verticalspace);
@@ -114,4 +88,12 @@ dt{
 
 dd{
     @include rem(margin, 0 0 $verticalspace);
+}
+
+dt,
+dd{
+    > :last-child,
+    > :last-child > :last-child {
+        margin-bottom: 0;
+    }
 }

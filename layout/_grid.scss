@@ -1,57 +1,66 @@
-/*
-Grid
-
-Fully fluid 12 columns Grid. `.bl-g__u--{size| s | m | l}--{n of columns}`
-fixed gutters on large screens & percentage gutters on medium/small screens
-
-Markup:
-<div class="bl-g">
-    <div class="bl-g__u bl-g__u--s--2 bl-g__u--m--2 bl-g__u--l--2">
-        <div> contnet </div>
-    </div>
-    <div class="bl-g__u bl-g__u--s--2 bl-g__u--m--2 bl-g__u--l--2">
-        <div> contnet </div>
-    </div>
-    <div class="bl-g__u bl-g__u--s--2 bl-g__u--m--2 bl-g__u--l--2">
-        <div> contnet </div>
-    </div>
-    <div class="bl-g__u bl-g__u--s--2 bl-g__u--m--2 bl-g__u--l--2">
-        <div> contnet </div>
-    </div>
-    <div class="bl-g__u bl-g__u--s--2 bl-g__u--m--2 bl-g__u--l--2">
-        <div> contnet </div>
-    </div>
-    <div class="bl-g__u bl-g__u--s--2 bl-g__u--m--2 bl-g__u--l--2">
-        <div> contnet </div>
-    </div>
-</div>
-
-Styleguide 1.0
-*/
+// Grid
+//
+// Fully fluid 12 columns Grid. `.bl-g__u--{size| s | m | l}--{n of columns}`
+// fixed gutters on large screens & percentage gutters on medium/small screens
+//
+// Markup:
+// <div class="bl-g">
+//     <div class="bl-g__u bl-g__u--s--2 bl-g__u--m--2 bl-g__u--l--2">
+//         <div> contnet </div>
+//     </div>
+//     <div class="bl-g__u bl-g__u--s--2 bl-g__u--m--2 bl-g__u--l--2">
+//         <div> contnet </div>
+//     </div>
+//     <div class="bl-g__u bl-g__u--s--2 bl-g__u--m--2 bl-g__u--l--2">
+//         <div> contnet </div>
+//     </div>
+//     <div class="bl-g__u bl-g__u--s--2 bl-g__u--m--2 bl-g__u--l--2">
+//         <div> contnet </div>
+//     </div>
+//     <div class="bl-g__u bl-g__u--s--2 bl-g__u--m--2 bl-g__u--l--2">
+//         <div> contnet </div>
+//     </div>
+//     <div class="bl-g__u bl-g__u--s--2 bl-g__u--m--2 bl-g__u--l--2">
+//         <div> contnet </div>
+//     </div>
+// </div>
 
 //==============================
-// $GRID
+// $GRID SETUP
 //==============================
-
 // Grid widths setup
 
-$gutter: percentage( n($grid-gutter) / n($grid-width) ); // Percentage gutter
+$gutter: percentage( n($grid-gutter) / n($grid-width) ); // Percentage gutter used on small devices
 
+// Grid widths mixin with IE desktop fallback.
 @mixin grid_widths($size-prefix: s, $cols: $grid-columns){
-    @if $IE{
-        @for $i from 1 through $cols {
+    @for $i from 1 through $cols {
+        @if $IE{
             .bl-g__u--l--#{$i}{
                 width: percentage($i/$cols);
             }
-        }
-    } @else {
-        @for $i from 1 through $cols {
+        } @else {
             .bl-g__u--#{$size-prefix}--#{$i}{
                 width: percentage($i/$cols);
             }
         }
     }
 }
+
+@mixin grid_options($option: null, $cols: $grid-columns){
+    @for $i from 1 through $cols {
+        .bl-g__u--#{$option}--#{$i}{
+            @if $option == push {
+                left: percentage($i/$cols);
+            } @else {
+                right: -1 * percentage($i/$cols);
+            }
+        }
+    }
+}
+//==============================
+// $GRID
+//==============================
 
 .bl-g{
     list-style: none;
@@ -69,11 +78,6 @@ $gutter: percentage( n($grid-gutter) / n($grid-width) ); // Percentage gutter
     text-align: right;
 }
 
-.opera:-o-prefocus,
-.bl-g{
-    word-spacing: -0.43em;
-}
-
 .bl-g__u{
     display: inline-block;
     width: 100%;
@@ -81,9 +85,11 @@ $gutter: percentage( n($grid-gutter) / n($grid-width) ); // Percentage gutter
     @if $rtl {
         text-align: right;
     }
+    @if $grid_option {
+        position: relative;
+    }
     vertical-align: top;
     letter-spacing: normal;
-    word-spacing: normal;
     text-rendering: auto;
     padding-left: $gutter;
 
@@ -106,4 +112,9 @@ $gutter: percentage( n($grid-gutter) / n($grid-width) ); // Percentage gutter
 
 @include mq($mq-large){
     @include grid_widths(l);
+}
+
+@if $grid_option {
+    @include grid_options(push);
+    @include grid_options(pull);
 }

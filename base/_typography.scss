@@ -1,7 +1,7 @@
 /*
 Typography
 
-Styleguide 2
+
 */
 
 //==============================
@@ -23,8 +23,6 @@ Markup:
 <h4>Header 4</h4>
 <h5>Header 5</h5>
 <h6>Header 6</h6>
-
-Styleguide 2.1
 */
 
 h1,h2,h3,h4,h5,h6,
@@ -67,7 +65,7 @@ Markup:
 .bl-title--primary - Primary title
 .bl-title--secondary - Secondary title
 
-Styleguide 2.2
+
 */
 
 .bl-title{
@@ -88,7 +86,7 @@ Markup:
 
 .bl-subtitle - Primary subtitle
 
-Styleguide 2.3
+
 */
 
 .bl-subtitle{
@@ -105,7 +103,7 @@ Markup:
 .bl-p--big - big paragraph, maybe for intros & stuff like this"
 .bl-p--small - small paragraph, don't use instead of the "small" element
 
-Styleguide 2.4
+
 */
 
 p {
@@ -136,7 +134,7 @@ This is a blockquote
 .bl-blockquote--right - aligned right
 .bl-blockquote--center - centered
 
-Styleguide 2.5
+
 */
 
 blockquote{
@@ -160,6 +158,11 @@ blockquote p:last-of-type:after{
 
 blockquote{
     @include rem(margin, 0 0 $verticalspace);
+
+    > :last-child,
+    > :last-child > :last-child {
+        margin-bottom: 0;
+    }
 }
 
 .bl-blockquote--left{
@@ -188,9 +191,6 @@ blockquote{
     content:"—";
 }
 
-
-
-
 em,
 i,
 cite,
@@ -212,6 +212,10 @@ abbr[title],
 dfn[title] {
     border-bottom: 1px dotted;
     cursor: help;
+}
+
+address{
+    font-style: normal;
 }
 
 sub,

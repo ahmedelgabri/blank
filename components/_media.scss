@@ -15,7 +15,11 @@
 // .bl-media--rev - filps the image to the right
 
 //==============================
-// $MEDIA MODULE
+// $Component variables
+//==============================
+
+//==============================
+// $MEDIA COMPONENT
 //==============================
 
 .bl-media{
@@ -25,6 +29,12 @@
 .bl-media__figure{
     float:left;
     @include rem(margin-right, $grid-gutter);
+
+    > :last-child,
+    > :last-child > :last-child {
+        margin-bottom: 0;
+    }
+
     .bl-media--rev &{
         float: right;
         margin-right:0;
@@ -41,4 +51,9 @@
 .bl-media__body{
     display:table-cell;
     width:10000px;
+
+    > :last-child,
+    > :last-child > :last-child {
+        margin-bottom: 0;
+    }
 }

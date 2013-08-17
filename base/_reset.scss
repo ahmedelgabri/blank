@@ -27,10 +27,14 @@ figure {
 
 ::-moz-selection {
     text-shadow: none;
+    background-color: #bada55;
+    color: black;
 }
 
 ::selection {
     text-shadow: none;
+    background-color: #bada55;
+    color: black;
 }
 
 ::selection:window-inactive {

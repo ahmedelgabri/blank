@@ -15,7 +15,11 @@
 // .bl-nav
 
 //==============================
-// $NAV MODULE
+// $Component variables
+//==============================
+
+//==============================
+// $NAV COMPONENT
 //==============================
 
 .bl-nav{
@@ -24,21 +28,93 @@
     letter-spacing: -0.31em;
     text-rendering: optimizespeed;
 
-    .opera:-o-prefocus,
-    & {
-        word-spacing: -0.43em;
-    }
-
     > li{
         @include mq($mq-medium){
             display:inline-block;
         }
 
         letter-spacing: normal;
-        word-spacing: normal;
         text-rendering: auto;
     }
 
     a{
     }
+}
+
+
+// Nav Bar
+//
+// Extends `.nav` to create a navigation bar
+//
+// Markup:
+// <ul class="bl-list--reset bl-navbar">
+//      <li>
+//          <a href="#"> link </a>
+//      </li>
+//      <li>
+//          <a href="#"> link </a>
+//      </li>
+// </ul>
+//
+// .bl-nav--bar
+
+.bl-navbar{
+    display: table;
+    width: 100%;
+}
+
+.bl-navbar__item{
+    display: table-cell;
+    position: relative;
+    > a {
+        text-align: center;
+        display: block;
+        padding: .5em 1em;
+    }
+
+    .bl-menu{
+        position: absolute;
+        left: -9999px;
+    }
+
+    &:hover{
+        .bl-menu{
+            left: 0;
+            right: 0;
+        }
+    }
+}
+
+
+// Menu
+//
+// Vertical list of items can be used inside a navbar a submenu
+//
+// Markup:
+// <ul class="bl-list--reset bl-menu">
+//      <li>
+//          something
+//      </li>
+//      <li>
+//          <a href="#"> link </a>
+//      </li>
+// </ul>
+//
+// .bl-menu
+
+.bl-menu{
+    border: 1px solid;
+}
+
+.bl-menu__item{
+    border-bottom: 1px solid;
+    &:last-of-type{
+        border-bottom: none;
+    }
+
+    > a {
+        display: block;
+        padding: .5em;
+    }
+
 }

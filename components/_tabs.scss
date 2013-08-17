@@ -31,12 +31,12 @@
 // .bl-tabs
 
 //==============================
-// $VARIABLES
+// $Component variables
 //==============================
 
 
 //==============================
-// $TABS MODULE
+// $TABS COMPONENT
 //==============================
 
 .bl-tabs{
@@ -48,6 +48,11 @@
 .bl-tabs__nav{
     display: table;
     width: 100%;
+
+    > :last-child,
+    > :last-child > :last-child {
+        margin-bottom: 0;
+    }
 
     li{
         display: table-cell;
@@ -76,14 +81,21 @@
     background-color: $theme-grey;
     color: $color-text;
 
-    .js &{
+    > :last-child,
+    > :last-child > :last-child {
+        margin-bottom: 0;
+    }
+
+    .js &{ // Filtering Old Browsers
         position: absolute;
         left: 0;
         right: 0;
         top: 0;
         visibility: hidden;
         @include vendor(transition, visibility .2s ease-in-out);
+    }
 
+    .js &{
         &.is-active{
             position: static;
             visibility: visible;

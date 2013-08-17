@@ -12,12 +12,12 @@
 // .bl-breadcrumbs
 
 //==============================
-// $VARIABLES
+// $Component variables
 //==============================
 
 
 //==============================
-// $BREADCRUMBS MODULE
+// $BREADCRUMBS COMPONENT
 //==============================
 
 .bl-breadcrumbs{
@@ -32,15 +32,9 @@
     background-color: darken($color-bg, 10%);
     color: $color-text;
 
-    .opera:-o-prefocus,
-    & {
-        word-spacing: -0.43em;
-    }
-
     > li {
         display:inline-block;
         letter-spacing: normal;
-        word-spacing: normal;
         text-rendering: auto;
         margin-right: .5em;
 

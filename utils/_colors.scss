@@ -8,15 +8,15 @@ $color-bg:                 #fff;
 
 
 // Theme
-$theme-green:              #bada55;
-$theme-blue:               skyblue;
+$theme-green:              lighten(#444, 50%);
+$theme-blue:               lighten(#444, 20%);
 $theme-grey:               #ddd;
 
 
 // Buttons
-$btn-primary-bg:          gold;
+$btn-primary-bg:          lighten(#444, 20%);
 $btn-primary-text:        darken($btn-primary-bg, 50%);
-$btn-secondary-bg:        skyblue;
+$btn-secondary-bg:        lighten(#444, 50%);
 $btn-secondary-text:      darken($btn-secondary-bg, 50%);
 
 

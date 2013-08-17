@@ -4,16 +4,6 @@
 // $LAYOUT
 //==============================
 
-// CSS3 Content Columns
-@mixin css-columns($columnCount, $columnGap: 20px) {
-    -webkit-column-count: $columnCount;
-    -moz-column-count: $columnCount;
-    column-count: $columnCount;
-    -webkit-column-gap: $columnGap;
-    -moz-column-gap: $columnGap;
-    column-gap: $columnGap;
-}
-
 @mixin clearfix{
     &:before,
     &:after{
@@ -166,7 +156,7 @@
 }
 
 // Vendor Prefixing
-@mixin vendor($property, $value, $prefixed: false ) {
+@mixin vendor($property, $value, $prefixed: null ) {
     $default-prefixes: webkit moz ms o;
 
     @each $prefix in $default-prefixes {
@@ -218,28 +208,29 @@
     visibility : hidden;
 }
 
-@mixin auto-numbers($numbered-element, $sep, $counter: item, $nested-parent: false ){
+@mixin auto-numbers($numbered-element, $sep, $counter: item, $nested-parent: null ){
     $sel: ();
     @if $nested-parent {
         $sel: append($sel, unquote($nested-parent));
+
+        #{$nested-parent}{
+            list-style: none;
+            margin-left: 0;
+        }
     }
     $sel: append($sel, unquote('&'), comma);
-
-    #{$nested-parent}{
-        list-style: none;
-        margin-left: 0;
-    }
 
     #{$sel}{
         counter-reset: #{$counter};
         > #{$numbered-element}{
             &:before{
                 counter-increment: #{$counter};
-                content: counters(#{$counter}, "#{$sep} ") "#{$sep} " ;
+                content: if($nested-parent, counters(#{$counter}, "#{$sep} ") "#{$sep} ", counter(#{$counter}) "#{$sep} ") ;
             }
         }
     }
 }
+
 
 @mixin offscreen($dir : ltr){
     @if $dir == ltr {
@@ -305,7 +296,7 @@
 // $MEDIA QUERIES http://alwaystwisted.com/post.php?s=2013-04-01-my-media-query-mixin
 //==============================
 
-@mixin mq($point, $fallback: nil, $query1: min, $query2: width) {
+@mixin mq($point, $fallback: null, $query1: min, $query2: width) {
     @if $fallback {
         @if $IE{
             @content;
@@ -353,7 +344,7 @@
 
 // $RETINA BGs
 
-@mixin hidpi($image: false, $extension: png, $width: false, $height: false, $retina-config: false) {
+@mixin hidpi($image: null, $extension: png, $width: null, $height: null, $retina-config: null) {
     @if $image {
         background-image: url(#{$img-path}#{$image}.#{$extension});
     }

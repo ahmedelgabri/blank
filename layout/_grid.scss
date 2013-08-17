@@ -66,12 +66,17 @@ $gutter: percentage( n($grid-gutter) / n($grid-width) ); // Percentage gutter us
     list-style: none;
     letter-spacing: -0.31em;
     text-rendering: optimizespeed;
-    text-align: justify; //@NOTE: to fix rounding on iPhone/iPad, needs more investigation
-    margin-left: -1 * $gutter;
+    text-align: left; //@NOTE: to fix rounding on iPhone/iPad, needs more investigation
+    margin-left: -1 * $grid-gutter;
 
-    @include mq($mq-medium){
-        margin-left: -1 * $grid-gutter;
-    }
+    // margin-left: -1 * $gutter;
+    // @if $IE {
+    //     margin-left: -1 * $grid-gutter;
+    // }
+
+    // @include mq($mq-medium){
+    //     margin-left: -1 * $grid-gutter;
+    // }
 }
 
 .bl-g--right{
@@ -91,11 +96,16 @@ $gutter: percentage( n($grid-gutter) / n($grid-width) ); // Percentage gutter us
     vertical-align: top;
     letter-spacing: normal;
     text-rendering: auto;
-    padding-left: $gutter;
+    padding-left: $grid-gutter;
 
-    @include mq($mq-medium){
-        padding-left: $grid-gutter;
-    }
+    // padding-left: $gutter;
+    // @if $IE {
+    //     padding-left: $grid-gutter;
+    // }
+
+    // @include mq($mq-medium){
+    //     padding-left: $grid-gutter;
+    // }
 }
 
 .bl-g__u--centered{

@@ -1,38 +1,33 @@
-/*
-Grid
-
-Fully fluid 12 columns Grid. `.bl-g__u--{size| s | m | l}--{n of columns}`
-fixed gutters on large screens & percentage gutters on medium/small screens
-
-Markup:
-<div class="bl-g">
-    <div class="bl-g__u bl-g__u--s--2 bl-g__u--m--2 bl-g__u--l--2">
-        <div> contnet </div>
-    </div>
-    <div class="bl-g__u bl-g__u--s--2 bl-g__u--m--2 bl-g__u--l--2">
-        <div> contnet </div>
-    </div>
-    <div class="bl-g__u bl-g__u--s--2 bl-g__u--m--2 bl-g__u--l--2">
-        <div> contnet </div>
-    </div>
-    <div class="bl-g__u bl-g__u--s--2 bl-g__u--m--2 bl-g__u--l--2">
-        <div> contnet </div>
-    </div>
-    <div class="bl-g__u bl-g__u--s--2 bl-g__u--m--2 bl-g__u--l--2">
-        <div> contnet </div>
-    </div>
-    <div class="bl-g__u bl-g__u--s--2 bl-g__u--m--2 bl-g__u--l--2">
-        <div> contnet </div>
-    </div>
-</div>
-
-Styleguide 1.0
-*/
+// Grid
+//
+// Fully fluid 12 columns Grid. `.bl-g__u--{size| s | m | l}--{n of columns}`
+// fixed gutters on large screens & percentage gutters on medium/small screens
+//
+// Markup:
+// <div class="bl-g">
+//     <div class="bl-g__u bl-g__u--s--2 bl-g__u--m--2 bl-g__u--l--2">
+//         <div> contnet </div>
+//     </div>
+//     <div class="bl-g__u bl-g__u--s--2 bl-g__u--m--2 bl-g__u--l--2">
+//         <div> contnet </div>
+//     </div>
+//     <div class="bl-g__u bl-g__u--s--2 bl-g__u--m--2 bl-g__u--l--2">
+//         <div> contnet </div>
+//     </div>
+//     <div class="bl-g__u bl-g__u--s--2 bl-g__u--m--2 bl-g__u--l--2">
+//         <div> contnet </div>
+//     </div>
+//     <div class="bl-g__u bl-g__u--s--2 bl-g__u--m--2 bl-g__u--l--2">
+//         <div> contnet </div>
+//     </div>
+//     <div class="bl-g__u bl-g__u--s--2 bl-g__u--m--2 bl-g__u--l--2">
+//         <div> contnet </div>
+//     </div>
+// </div>
 
 //==============================
-// $GRID
+// $GRID SETUP
 //==============================
-
 // Grid widths setup
 
 $gutter: percentage( n($grid-gutter) / n($grid-width) ); // Percentage gutter used on small devices
@@ -63,6 +58,9 @@ $gutter: percentage( n($grid-gutter) / n($grid-width) ); // Percentage gutter us
         }
     }
 }
+//==============================
+// $GRID
+//==============================
 
 .bl-g{
     list-style: none;

@@ -38,11 +38,18 @@ figcaption{
 //==============================
 // $Video
 //==============================
+/*
+Responsive Videos/Embeds
 
-//==============================
-// $Responsive Videos/Embeds
-// http://alistapart.com/article/creating-intrinsic-ratios-for-video
-//==============================
+Markup:
+<figure class="bl-embed-wrapper">
+    <video class="bl-embed--{ratio}"></video>
+    <iframe clas="bl-embed--{ratio}"></iframe>
+</figure>
+
+.bl-embed-wrapper   - on the parent element
+.bl-embed--{widescreen|fourbythree|other-ratio}  - on the element itself
+*/
 
 .bl-embed-wrapper{
     position: relative;

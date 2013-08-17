@@ -41,12 +41,10 @@ Markup:
 .bl-table--zebra - zebra
 .bl-table--condense - condense
 .bl-table--round - round
-
-Styleguide 4
 */
 
 //==============================
-// $TABLE VARIABLES
+// $Component variables
 //==============================
 $cellPadding: 1em;
 $tableBorderRadius: 5px;
@@ -199,7 +197,7 @@ Markup:
   </tbody>
 </table>
 
-Styleguide 4.1
+
 */
 
 .t5     { width: 5% }

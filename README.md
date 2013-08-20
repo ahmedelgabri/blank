@@ -10,3 +10,7 @@ The main principles behind this are:
 * [OOCSS](https://github.com/stubbornella/oocss)
 * [SMACSS](http://smacss.com/)
 * [BEM](http://bem.info/method/)
+
+
+---
+Copyright © [Ahmed El Gabri](http://gabri.me) | [@ahmedelgabri](http://twitter.comahmedelgabri)

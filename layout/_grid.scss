@@ -53,7 +53,7 @@ $gutter: percentage( n($grid-gutter) / n($grid-width) ); // Percentage gutter us
             @if $option == push {
                 left: percentage($i/$cols);
             } @else {
-                right: -1 * percentage($i/$cols);
+                left: -1 * percentage($i/$cols);
             }
         }
     }

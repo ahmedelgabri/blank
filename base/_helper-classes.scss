@@ -35,7 +35,8 @@
     text-overflow: ellipsis;
 }
 
-.h-ir {
+.h-ir,
+%h-ir {
     font: 0/0 a;
     text-shadow: none;
     color: transparent;
@@ -49,7 +50,8 @@
 // $PLACEHOLDERS
 //==============================
 
-.h-clearfix{
+.h-clearfix,
+%h-clearfix{
     &:after{
         content:"";
         display:table;

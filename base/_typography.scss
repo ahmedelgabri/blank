@@ -1,9 +1,3 @@
-/*
-Typography
-
-
-*/
-
 //==============================
 // $TYPOGRAPHY
 //===============================
@@ -11,19 +5,19 @@ Typography
 // If having local font-face fonts import them like so
 // @include font-face($fontname, $filename, $fontstack: $sans-serif);
 
-/*
-Headers
 
-You can get the same styling anywhere using classes .h1-.h6
+// Headers
+//
+// You can get the same styling anywhere using classes .h1-.h6
+//
+// Markup:
+// <h1>Header 1</h1>
+// <h2>Header 2</h2>
+// <h3>Header 3</h3>
+// <h4>Header 4</h4>
+// <h5>Header 5</h5>
+// <h6>Header 6</h6>
 
-Markup:
-<h1>Header 1</h1>
-<h2>Header 2</h2>
-<h3>Header 3</h3>
-<h4>Header 4</h4>
-<h5>Header 5</h5>
-<h6>Header 6</h6>
-*/
 
 h1,h2,h3,h4,h5,h6,
 .h1,.h2,.h3,.h4,.h5,.h6{
@@ -56,17 +50,15 @@ h6,
     @include headers(18px);
 }
 
-/*
-Section titles
 
-Markup:
-<h5 class="bl-title {$modifiers}"> Header 5 as a title</h5>
+// Section titles
+//
+// Markup:
+// <h5 class="bl-title {$modifiers}"> Header 5 as a title</h5>
+//
+// .bl-title--primary - Primary title
+// .bl-title--secondary - Secondary title
 
-.bl-title--primary - Primary title
-.bl-title--secondary - Secondary title
-
-
-*/
 
 .bl-title{
 }
@@ -77,37 +69,35 @@ Markup:
 .bl-title--secondary{
 }
 
-/*
-Section subtitles
+// Section subtitles
+//
+// Markup:
+// <h5 class="bl-subtitle {$modifiers}"> Header 5 as a subtitle</h5>
+// <p class="bl-subtitle {$modifiers}"> Paragraph 5 as a subtitle</p>
+//
+// .bl-subtitle - Primary subtitle
 
-Markup:
-<h5 class="bl-subtitle {$modifiers}"> Header 5 as a subtitle</h5>
-<p class="bl-subtitle {$modifiers}"> Paragraph 5 as a subtitle</p>
-
-.bl-subtitle - Primary subtitle
-
-
-*/
 
 .bl-subtitle{
 
 }
 
 
-/*
-Paragraphs
+// Paragraphs
+//
+// Markup:
+// <p class="{$modifiers}"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, deleniti adipisci cupiditate quibusdam labore saepe! Cumque, et, fuga assumenda tempora nisi similique quae dicta ab repellendus eum nam aperiam quas.</p>
+//
+// .bl-p--big - big paragraph, maybe for intros & stuff like this"
+// .bl-p--small - small paragraph, don't use instead of the "small" element
 
-Markup:
-<p class="{$modifiers}"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, deleniti adipisci cupiditate quibusdam labore saepe! Cumque, et, fuga assumenda tempora nisi similique quae dicta ab repellendus eum nam aperiam quas.</p>
-
-.bl-p--big - big paragraph, maybe for intros & stuff like this"
-.bl-p--small - small paragraph, don't use instead of the "small" element
-
-
-*/
 
 p {
     @include rem(margin, 0 0 $verticalspace);
+}
+
+p,
+.bl-normal-text{
     @include rem(font-size, $basefont);
 }
 
@@ -119,23 +109,21 @@ p {
     font-size: .9em;
 }
 
-/*
-Blockquotes
 
+// Blockquotes
+//
+//
+//
+// Markup:
+// <blockquote class="{$modifiers}">
+// This is a blockquote
+// <footer class="blockquote-source"> Someone </blockquote>
+// </blockquote>
+//
+// .bl-blockquote--left - aligned left
+// .bl-blockquote--right - aligned right
+// .bl-blockquote--center - centered
 
-
-Markup:
-<blockquote class="{$modifiers}">
-This is a blockquote
-<footer class="blockquote-source"> Someone </blockquote>
-</blockquote>
-
-.bl-blockquote--left - aligned left
-.bl-blockquote--right - aligned right
-.bl-blockquote--center - centered
-
-
-*/
 
 blockquote{
     quotes: "“" "”";
@@ -198,7 +186,8 @@ q {
     font-style: italic;
 }
 
-small {
+small,
+.bl-small-text {
     font-size: 75%;
 }
 

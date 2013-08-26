@@ -24,10 +24,6 @@
 @import 'base/_forms';
 @import 'base/_helper-classes';
 
-// Layout
-@import 'layout/_grid';
-@import 'layout/_layout';
-
 // Components
 @import 'components/_nav';
 @import 'components/_box';
@@ -42,6 +38,10 @@
 @import 'components/_tabs';
 @import 'components/_accordion';
 @import 'components/_images';
+
+// Layout
+@import 'layout/_grid';
+@import 'layout/_layout';
 
 // Vendor
 // @import 'vendor/';

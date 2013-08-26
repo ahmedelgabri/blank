@@ -121,8 +121,9 @@ input[type="password"],
 input[type="email"],
 input[type="url"],
 input[type="search"],
-.bl-select,
-textarea {
+textarea,
+.bl-form__field,
+.bl-select{
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -189,9 +190,6 @@ input[type="reset"]{
 
 .bl-form__holder{
     @include rem(margin-bottom, 10px);
-    &:last-of-type{
-        margin-bottom: 0;
-    }
 
     .bl-btn{
         display: inline-block;
@@ -211,7 +209,6 @@ input[type="reset"]{
 // .bl-form__field
 
 .bl-form__field{
-    width: 100%;
 }
 
 .bl-form__list{
@@ -310,8 +307,12 @@ input[type="reset"]{
     background-repeat: no-repeat;
     background-position: right 50%;
     background-image: url(../img/select-arrow.svg);
-    -webkit-background-size: 11px 100%;
-    background-size: 11px 100%;
+    -webkit-background-size: 11px 41%;
+    background-size: 11px 41%;
+
+    // https://gist.github.com//joaocunha/6273016
+    text-indent: 0.01px;
+    text-overflow: '';
 
     .no-svg &{
         background-image: url(../img/select-arrow.png);

@@ -72,13 +72,36 @@
         display: block;
         padding: .5em 1em;
     }
+}
 
+// Submenu class
+//
+// This class to be added on an element that you want it to have sub-menu
+//
+// Markup:
+// <ul class="bl-list--reset bl-navbar">
+//      <li>
+//          something
+//      </li>
+//      <li class="bl-submenu">
+//          <a href="#"> link </a>
+//          <ul class="bl-list--reset bl-menu">
+//              <li> <a href="#"> Submenu </a> </li>
+//              <li> <a href="#"> Submenu </a> </li>
+//          </ul>
+//      </li>
+// </ul>
+//
+// .bl-menu
+
+.bl-submenu{
     .bl-menu{
         position: absolute;
         left: -9999px;
     }
 
-    &:hover{
+    &:hover,
+    &:focus{
         .bl-menu{
             left: 0;
             right: 0;

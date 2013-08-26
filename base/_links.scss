@@ -41,4 +41,13 @@ a {
     &:focus{
         outline: thin dotted;
     }
+
+    &.bl-block-link{
+        display: block;
+        color: inherit;
+        &:hover{
+            text-decoration: none;
+            color: inherit;
+        }
+    }
 }

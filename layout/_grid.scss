@@ -30,30 +30,32 @@
 //==============================
 // Grid widths setup
 
-$gutter: percentage( n($grid-gutter) / n($grid-width) ); // Percentage gutter used on small devices
+$gutter: percentage( strip-units($grid-gutter) / strip-units($grid-width) ); // Percentage gutter used on small devices
 
 // Grid widths mixin with IE desktop fallback.
-@mixin grid_widths($size-prefix: s, $cols: $grid-columns){
-    @for $i from 1 through $cols {
-        @if $IE{
-            .bl-g__u--l--#{$i}{
-                width: percentage($i/$cols);
+@mixin grid_widths($size-prefix: s){
+    @for $i from 1 through $grid-columns {
+        @if $IE {
+            @if $size-prefix == l {
+                .bl-g__u--l--#{$i}{
+                    width: percentage($i/$grid-columns);
+                }
             }
         } @else {
             .bl-g__u--#{$size-prefix}--#{$i}{
-                width: percentage($i/$cols);
+                width: percentage($i/$grid-columns);
             }
         }
     }
 }
 
-@mixin grid_options($option: null, $cols: $grid-columns){
-    @for $i from 1 through $cols {
+@mixin grid_helpers($option: null, $dir: left){
+    @for $i from 1 through $grid-columns {
         .bl-g__u--#{$option}--#{$i}{
             @if $option == push {
-                left: percentage($i/$cols);
+                #{$dir}: percentage($i/$grid-columns);
             } @else {
-                left: -1 * percentage($i/$cols);
+                #{$dir}: -1 * percentage($i/$grid-columns);
             }
         }
     }
@@ -90,9 +92,7 @@ $gutter: percentage( n($grid-gutter) / n($grid-width) ); // Percentage gutter us
     @if $rtl {
         text-align: right;
     }
-    @if $grid_option {
-        position: relative;
-    }
+    position: relative;
     vertical-align: top;
     letter-spacing: normal;
     text-rendering: auto;
@@ -120,11 +120,11 @@ $gutter: percentage( n($grid-gutter) / n($grid-width) ); // Percentage gutter us
     @include grid_widths(m);
 }
 
-@include mq($mq-large){
+@include mq($mq-large, true){
     @include grid_widths(l);
 }
 
-@if $grid_option {
-    @include grid_options(push);
-    @include grid_options(pull);
-}
+
+@include grid_helpers(push);
+@include grid_helpers(pull);
+

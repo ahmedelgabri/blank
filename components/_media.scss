@@ -23,7 +23,7 @@
 //==============================
 
 .bl-media{
-    @include clearfix;
+    @extend %h-clearfix;
 }
 
 .bl-media__figure{

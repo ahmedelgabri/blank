@@ -3,10 +3,7 @@
     margin-right: auto;
     padding:0 5%;
     @include rem(max-width, $grid-width);
-    @if $IE{
-        width: $grid-width;
-    }
-    @include mq($mq-large){
+    @include mq($mq-large, true){
         padding: 0 2em;
     }
 }

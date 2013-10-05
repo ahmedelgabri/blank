@@ -7,7 +7,7 @@
 //return em value (target/context = em);
 // Used with multipe values Kudos to @alisalem
 
-@function em($target, $base: n($basefont)) {
+@function em($target, $base: strip-units($basefont)) {
     // only one number
     @if type-of($target) == "number" {
         @return ($target / $base) + em;
@@ -32,6 +32,6 @@
 //==============================
 
 // Strips units from numbers ex. n(13px); will return 13
-@function n($number) {
+@function strip-units($number) {
   @return $number / ($number * 0 + 1);
 }

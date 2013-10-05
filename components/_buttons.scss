@@ -45,10 +45,6 @@ $btnRoundedRadius: .2em;
     @include vendor(transition, "all 100ms linear");
 
     @include mq($mq-medium){
-        width: 100%;
-    }
-
-    @include mq($mq-large, true){
         width: auto;
     }
 }

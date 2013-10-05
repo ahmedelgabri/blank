@@ -4,22 +4,30 @@
 // $LAYOUT
 //==============================
 
-@mixin clearfix{
-    &:before,
-    &:after{
-        content:"";
-        display:table;
+@mixin _placholder(){
+    ::-webkit-input-placeholder {
+        @content;
     }
 
-    &:after{
-        clear:both;
+    input:-moz-placeholder {
+        @content;
     }
 
-    .oldie &{
-        zoom:1;
+    input:-ms-input-placeholder {
+        @content;
     }
 }
 
+
+@mixin _selection(){
+    ::-moz-selection{
+        @content;
+    }
+
+    ::selection{
+        @content;
+    }
+}
 //==============================
 // $TYPOGRAPHY
 //==============================
@@ -39,7 +47,7 @@
 
 @mixin headers($size){
     @include rem(font-size, $size);
-    @include rem(margin, 0 0 (n($basefont) * $lineheight) * 1px );
+    @include rem(margin, 0 0 (strip-units($basefont) * $lineheight) * 1px );
 }
 
 
@@ -210,20 +218,6 @@
     overflow: auto; // Safari fix
 }
 
-@mixin ir{ //image replacement
-    display : block;
-    text-indent : -9999em;
-    overflow : hidden;
-    background-repeat : no-repeat;
-    text-align : left;
-    direction : ltr;
-}
-
-@mixin hidden{
-    display : none;
-    visibility : hidden;
-}
-
 @mixin auto-numbers($numbered-element, $sep, $counter: item, $nested-parent: null ){
     $sel: ();
     @if $nested-parent {
@@ -322,7 +316,7 @@
 //==============================
 
 @mixin mq($point, $fallback: null, $query1: min, $query2: width) {
-    @if $fallback {
+    @if $fallback == true{
         @if $IE{
             @content;
         } @else {
@@ -331,8 +325,10 @@
             }
         }
     } @else {
-        @media screen and (#{$query1}-#{$query2}: $point / 16 +em) {
-            @content;
+        @if $IE != true{
+            @media screen and (#{$query1}-#{$query2}: $point / 16 +em) {
+                @content;
+            }
         }
     }
 }
@@ -390,4 +386,53 @@
             }
         }
     }
+}
+
+
+
+
+// http://codepen.io/thomasdobber/pen/DctbF
+// variable helper function: add a breakpoint to $breakpoints
+@function add-breakpoint($name, $range) {
+  $breakpoints: ()!default;
+  $breakpoints: append( $breakpoints, ($name, $range) );
+  @return $breakpoints;
+}
+
+// vaiable: define breakpoints
+$breakpoints: add-breakpoint('wrist', 0px 320px);
+$breakpoints: add-breakpoint('palm', 320px 480px);
+$breakpoints: add-breakpoint('lap', 480px 800px);
+$breakpoints: add-breakpoint('portable', 0px 800px);
+$breakpoints: add-breakpoint('desk', 800px 1280px);
+$breakpoints: add-breakpoint('desk-wide', 1280px 2060px);
+
+// the mixin
+@mixin breakpoint($name){
+
+  @each $breakpoint in $breakpoints {
+
+    $breakpoint-name:  nth($breakpoint, 1);
+    $breakpoint-range: nth($breakpoint, 2);
+    $breakpoint-start: nth($breakpoint-range, 1);
+    $breakpoint-end:   nth($breakpoint-range, 2);
+
+    @if "#{$name}" == "#{$breakpoint-name}" {
+      @if strip-units($breakpoint-start) == 0 {
+        @media only screen and ( max-width: em($breakpoint-end)) { @content; }
+      } @else {
+        @media only screen and ( min-width: em($breakpoint-start)) and ( max-width: em($breakpoint-end)) { @content; }
+      }
+
+    } @else if "#{$name}" == "#{$breakpoint-name}-and-up" {
+      @if strip-units($breakpoint-start) == 0 {
+        @content;
+      } @else {
+        @media only screen and ( min-width: em($breakpoint-start)) { @content; }
+      }
+
+    } @else if "#{$name}" == "#{$breakpoint-name}-and-down" {
+      @media only screen and ( max-width: em($breakpoint-end)) { @content; }
+    }
+  }
 }

@@ -1,111 +1,75 @@
 // Grid
 //
-// Fully fluid 12 columns Grid. `.bl-g__u--{size| s | m | l}--{n of columns}`
+// Fully fluid 12 columns Grid. `.bl-g`
 // fixed gutters on large screens & percentage gutters on medium/small screens
 //
 // Markup:
 // <div class="bl-g">
-//     <div class="bl-g__u bl-g__u--s--2 bl-g__u--m--2 bl-g__u--l--2">
+//     <div class="bl-g__u w-1-4--l w-1-2--m w-full--s">
 //         <div> contnet </div>
 //     </div>
-//     <div class="bl-g__u bl-g__u--s--2 bl-g__u--m--2 bl-g__u--l--2">
+//     <div class="bl-g__u w-1-4--l w-1-2--m w-full--s">
 //         <div> contnet </div>
 //     </div>
-//     <div class="bl-g__u bl-g__u--s--2 bl-g__u--m--2 bl-g__u--l--2">
+//     <div class="bl-g__u w-1-4--l w-1-2--m w-full--s">
 //         <div> contnet </div>
 //     </div>
-//     <div class="bl-g__u bl-g__u--s--2 bl-g__u--m--2 bl-g__u--l--2">
-//         <div> contnet </div>
-//     </div>
-//     <div class="bl-g__u bl-g__u--s--2 bl-g__u--m--2 bl-g__u--l--2">
-//         <div> contnet </div>
-//     </div>
-//     <div class="bl-g__u bl-g__u--s--2 bl-g__u--m--2 bl-g__u--l--2">
+//     <div class="bl-g__u w-1-4--l w-1-2--m w-full--s">
 //         <div> contnet </div>
 //     </div>
 // </div>
 
-//==============================
+//==============================================================================
 // $GRID SETUP
-//==============================
+//==============================================================================
 // Grid widths setup
 
 $gutter: percentage( strip-units($grid-gutter) / strip-units($grid-width) ); // Percentage gutter used on small devices
 
-// Grid widths mixin with IE desktop fallback.
-@mixin grid_widths($size-prefix: s){
-    @for $i from 1 through $grid-columns {
-        @if $IE {
-            @if $size-prefix == l {
-                .bl-g__u--l--#{$i}{
-                    width: percentage($i/$grid-columns);
-                }
-            }
-        } @else {
-            .bl-g__u--#{$size-prefix}--#{$i}{
-                width: percentage($i/$grid-columns);
-            }
-        }
-    }
-}
-
-@mixin grid_helpers($option: null, $dir: left){
-    @for $i from 1 through $grid-columns {
-        .bl-g__u--#{$option}--#{$i}{
-            @if $option == push {
-                #{$dir}: percentage($i/$grid-columns);
-            } @else {
-                #{$dir}: -1 * percentage($i/$grid-columns);
-            }
-        }
-    }
-}
-//==============================
+//==============================================================================
 // $GRID
-//==============================
+//==============================================================================
 
 .bl-g{
     list-style: none;
-    letter-spacing: -0.31em;
-    text-rendering: optimizespeed;
-    text-align: left; //@NOTE: to fix rounding on iPhone/iPad, needs more investigation
-    margin-left: -1 * $grid-gutter;
-
-    // margin-left: -1 * $gutter;
-    // @if $IE {
-    //     margin-left: -1 * $grid-gutter;
-    // }
-
-    // @include mq($mq-medium){
-    //     margin-left: -1 * $grid-gutter;
-    // }
+    font-size: 0;
+    text-align: bidi(left);
 }
 
-.bl-g--right{
-    text-align: right;
+.bl-g--rev{
+    text-align: bidi(right);
+}
+
+.bl-g--center{
+    text-align: center;
+}
+
+.bl-g--pad{
+    margin:0 -1 * $gutter/2;
+    > .bl-g__u{
+        padding: 0 $gutter/2;
+    }
+}
+
+.bl-g--middle{
+    > .bl-g__u{
+        vertical-align: middle;
+    }
+}
+
+.bl-g--bottom{
+    > .bl-g__u{
+        vertical-align: bottom;
+    }
 }
 
 .bl-g__u{
     display: inline-block;
+    @include rem(font-size, $basefont);
     width: 100%;
-    text-align: left;
-    @if $rtl {
-        text-align: right;
-    }
+    text-align: bidi(left);
     position: relative;
     vertical-align: top;
-    letter-spacing: normal;
-    text-rendering: auto;
-    padding-left: $grid-gutter;
-
-    // padding-left: $gutter;
-    // @if $IE {
-    //     padding-left: $grid-gutter;
-    // }
-
-    // @include mq($mq-medium){
-    //     padding-left: $grid-gutter;
-    // }
 }
 
 .bl-g__u--centered{
@@ -113,18 +77,27 @@ $gutter: percentage( strip-units($grid-gutter) / strip-units($grid-width) ); // 
     margin: 0 auto;
 }
 
-@include grid_widths();
+
+//==============================================================================
+// $Sizes
+//==============================================================================
 
 
-@include mq($mq-medium){
-    @include grid_widths(m);
+.s-full{
+    width: 100%;
 }
 
-@include mq($mq-large, true){
-    @include grid_widths(l);
+@if $IE{
+    @include sizes(l);
+} @else {
+    @include sizes(s);
+    @include mq($mq-medium){
+        @include sizes(m);
+    }
+    @include mq($mq-large){
+        @include sizes(l);
+    }
 }
 
-
-@include grid_helpers(push);
-@include grid_helpers(pull);
-
+@include offsets(push);
+@include offsets(pull);

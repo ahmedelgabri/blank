@@ -1,0 +1,27 @@
+//==============================================================================
+// $ Width helpers
+//==============================================================================
+
+//
+// To be used when a width is needed prefixed with .s-{n}of{total}-{prefix}
+//
+
+@mixin sizes($prefix: s, $cols: $grid-columns){
+    @for $i from 1 through $cols - 1{
+        .s-#{$i}of#{$cols}--#{$prefix}{
+            width: percentage($i/$cols);
+        }
+    }
+}
+
+//
+// Offsets for pull & push so it can be used in the grid or anywhere.
+//
+
+@mixin offsets($option: null, $dir: left){
+    @for $i from 1 through $grid-columns {
+        .s-#{$option}-#{$i}of#{$grid-columns}{
+            #{$dir}: if($option == push, percentage($i/$grid-columns) , -1 * percentage($i/$grid-columns));
+        }
+    }
+}

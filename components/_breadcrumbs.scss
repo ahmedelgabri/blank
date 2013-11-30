@@ -1,3 +1,7 @@
+//==============================================================================
+// BREADCRUMBS
+//==============================================================================
+
 // Breadcrumbs
 //
 //
@@ -11,18 +15,9 @@
 //
 // .bl-breadcrumbs
 
-//==============================================================================
-// $Component variables
-//==============================================================================
 
-
-//==============================================================================
-// $BREADCRUMBS COMPONENT
-//==============================================================================
 
 .bl-breadcrumbs{
-    @include rem(margin-bottom, $verticalspace);
-
     list-style:none;
     margin-left:0;
     letter-spacing: -0.31em;
@@ -31,6 +26,7 @@
     line-height: normal;
     background-color: darken($color-bg, 10%);
     color: $color-text;
+    @include rem(margin-bottom, $verticalspace);
 
     > li {
         display:inline-block;
@@ -49,3 +45,5 @@
         }
     }
 }
+
+

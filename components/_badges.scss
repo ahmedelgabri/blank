@@ -1,3 +1,20 @@
+//==============================================================================
+// BADGES
+//==============================================================================
+
+// HELPER MIXINS
+// -----------------------------------------------------------------------------
+
+@mixin badge( $color ){
+    color: $color;
+    background-color: lighten($color, 50%);
+    border-color: $color;
+}
+
+
+
+
+
 // Badges
 //
 // Badges
@@ -12,45 +29,39 @@
 // .bl-badge--error - error
 
 
-//==============================================================================
-// $Component variables
-//==============================================================================
-
-//==============================================================================
-// $BADGES COMPONENT
-//==============================================================================
 
 .bl-badge{
     font-size: 75%;
-    @include rem(padding, 2px 4px);
-    @include rem(border-radius, 3px);
-
     display: inline-block;
     vertical-align: middle;
     line-height: normal;
     font-weight: bold;
+    @include rem(padding, 2px 4px);
+    @include rem(border-radius, 3px);
 }
+
+
 
 .bl-badge--default{
-    color: $default;
-    background-color: lighten($default, 50%);
-    border-color: $default;
+    @include badge($default);
 }
+
+
 
 .bl-badge--info{
-    color: $info;
-    background-color: lighten($info, 50%);
-    border-color: $info;
+    @include badge($info);
 }
+
+
 
 .bl-badge--error{
-    color: $error;
-    background-color: lighten($error, 50%);
-    border-color: $error;
+    @include badge($error);
 }
 
+
+
 .bl-badge--success{
-    color: $success;
-    background-color: lighten($success, 50%);
-    border-color: $success;
+    @include badge($success);
 }
+
+

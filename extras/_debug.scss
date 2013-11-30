@@ -1,10 +1,11 @@
 //==============================================================================
-// $TEMP DEBUG
+// TEMP DEBUG
 //==============================================================================
 
 %debug{
     background-color: pink !important;
 }
+
 
 
 @if $debug-mode == true {
@@ -19,6 +20,8 @@ th:empty{
     border: 5px dotted yellow !important;
 }
 
+
+
 /* Empty Attributes */
 *[alt=""],
 *[title=""],
@@ -28,6 +31,8 @@ a[href=""],
 a[href="#"]{
     border: 5px solid yellow !important;
 }
+
+
 
 /* Deprecated Elements */
 applet,
@@ -42,6 +47,8 @@ strike,
 u{
     border: 5px dotted red !important;
 }
+
+
 
 /* Deprecated Attributes */
 *[background],
@@ -75,12 +82,16 @@ li[type]{
     border: 5px solid red !important;
 }
 
+
+
 /* Proposed Deprecated Elements */
 input[type="button"],
 big,
 tt{
     border: 5px dotted #33FF00 !important;
 }
+
+
 
 /* Proposed Deprecated Attributes */
 *[border],
@@ -90,4 +101,7 @@ table[cellspacing],
 *[name]{
     border: 5px solid #33FF00 !important;
 }
+
+
+
 } // end Debug if condition.

@@ -1,54 +1,65 @@
 //==============================================================================
-// $BLANK CONFIGURATIONS
+// BLANK CONFIGURATIONS
 //==============================================================================
 
 
-//==============================================================================
-// $PROJECT OPTIONS
-//==============================================================================
+// PROJECT OPTIONS
+// -----------------------------------------------------------------------------
 
-$rtl: false !default;
-$print: true !default;
-$IE: false !default;
-$MQ: true !default;
+$rtl            : false !default;
+$print          : true  !default;
+$IE             : false !default;
+$MQ             : true  !default;
 
-//==============================================================================
-// $TYPOGRAPHY BASICS
-//==============================================================================
 
-$helvetica: Helvetica, Arial, sans-serif;
-$helvetica-neue: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", $helvetica;
-$georgia: Georgia, Cambria, "Times New Roman", Times, serif;
-$lucidia-grande: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
-$verdana: Verdana, Geneva, sans-serif;
-$monospace: Inconsolata, monaco, consolas, 'andale mono', 'lucida console', monospace;
 
-$font-stack: $helvetica;
-$basefont: 16px;
-$lineheight: 1.5;
-$verticalspace: $basefont * $lineheight;
 
-//==============================================================================
-// $GRID SETTINGS
-//==============================================================================
 
-$grid-columns: 12;
-$grid-gutter: 20px; // Might be converted to %
-$grid-width: 1000px; // Used to calculate the grid & "if wanted" to be used as max-width
+// TYPOGRAPHY BASICS
+// -----------------------------------------------------------------------------
 
-//==============================================================================
-// $MQ SETTINGS
-//==============================================================================
+$helvetica      : Helvetica, Arial, sans-serif;
+$helvetica-neue : "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", $helvetica;
+$georgia        : Georgia, Cambria, "Times New Roman", Times, serif;
+$lucidia-grande : "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
+$verdana        : Verdana, Geneva, sans-serif;
+$monospace      : Inconsolata, monaco, consolas, 'andale mono', 'lucida console', monospace, monospace;
+
+$font-stack     : $helvetica;
+$basefont       : 16px;
+$lineheight     : 1.5;
+$verticalspace  : $basefont * $lineheight;
+
+
+
+
+
+// GRID SETTINGS
+// -----------------------------------------------------------------------------
+
+$grid-columns   : 12;
+$grid-gutter    : 20px; // Might be converted to %
+$grid-width     : 1000px; // Used to calculate the grid & "if wanted" to be used as max-width
+
+
+
+
+
+// MQ SETTINGS
+// -----------------------------------------------------------------------------
 
 // These are in Pixels, wil be converted to ems by SASS
-// $mq-xlarge : ;
-$mq-large :  1200;
-$mq-medium:  760;
-$mq-small :  480;
+$mq-large       : 1200;
+$mq-medium      : 760;
+$mq-small       : 480;
 
 
-//==============================================================================
-// $DEBUG
-//==============================================================================
 
-$debug-mode: false !default;
+
+
+// DEBUG
+// -----------------------------------------------------------------------------
+
+$debug-mode     : false !default;
+
+

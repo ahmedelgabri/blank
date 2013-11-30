@@ -1,3 +1,7 @@
+//==============================================================================
+// NAV
+//==============================================================================
+
 // Nav Object
 //
 // Abstruction for the Nav http://csswizardry.com/2011/09/the-nav-abstraction/
@@ -14,13 +18,6 @@
 //
 // .bl-nav
 
-//==============================================================================
-// $Component variables
-//==============================================================================
-
-//==============================================================================
-// $NAV COMPONENT
-//==============================================================================
 
 .bl-nav{
     list-style:none;
@@ -43,6 +40,9 @@
 }
 
 
+
+
+
 // Nav Bar
 //
 // Extends `.nav` to create a navigation bar
@@ -59,10 +59,14 @@
 //
 // .bl-nav--bar
 
+
+
 .bl-navbar{
     display: table;
     width: 100%;
 }
+
+
 
 .bl-navbar__item{
     display: table-cell;
@@ -73,6 +77,10 @@
         padding: .5em 1em;
     }
 }
+
+
+
+
 
 // Submenu class
 //
@@ -94,6 +102,8 @@
 //
 // .bl-menu
 
+
+
 .bl-submenu{
     .bl-menu{
         position: absolute;
@@ -108,6 +118,9 @@
         }
     }
 }
+
+
+
 
 
 // Menu
@@ -126,9 +139,13 @@
 //
 // .bl-menu
 
+
+
 .bl-menu{
     border: 1px solid;
 }
+
+
 
 .bl-menu__item{
     border-bottom: 1px solid;
@@ -142,3 +159,5 @@
     }
 
 }
+
+

@@ -62,7 +62,7 @@
         padding: .5em 1em;
         color: $color-text;
         text-decoration: none;
-        @include vendor(transition, all .2s ease-in-out);
+        transition: all .2s ease-in-out;
 
         &.is-active,
         &:hover{
@@ -95,7 +95,7 @@
         right: 0;
         top: 0;
         visibility: hidden;
-        @include vendor(transition, visibility .2s ease-in-out);
+        transition: visibility .2s ease-in-out;
     }
 
     .js &{

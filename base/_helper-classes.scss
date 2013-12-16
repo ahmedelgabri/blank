@@ -57,26 +57,26 @@
 
 
 .h-inline-end {
-    text-align: bidi(right);
+    text-align: right;
 }
 
 
 
 .h-inline-start {
-    text-align: bidi(left);
+    text-align: left;
 }
 
 
 
 
 .h-f-start {
-    float: bidi(left);
+    float: left;
 }
 
 
 
 .h-f-end {
-    float: bidi(right);
+    float: right;
 }
 
 
@@ -118,11 +118,6 @@
         display:table;
         clear: both;
     }
-
-    // IE 6/7
-    // @if $IE{
-    //     *zoom: 1;
-    // }
 }
 
 

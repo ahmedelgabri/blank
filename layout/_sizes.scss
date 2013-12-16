@@ -9,7 +9,7 @@
 @mixin sizes($prefix: s, $cols: $grid-columns){
     @for $i from 1 through $cols{
         @for $k from 1 through $i - 1{
-            .s-#{$k}of#{$i}--#{$prefix}{
+            .s-#{$k}-#{$i}--#{$prefix}{
                 width: percentage($k/$i);
             }
         }
@@ -24,7 +24,7 @@
 
 @mixin ordering($option: null, $dir: left){
     @for $i from 1 through $grid-columns {
-        .s-#{$option}-#{$i}of#{$grid-columns}{
+        .s-#{$option}-#{$i}-#{$grid-columns}{
             #{$dir}: if($option == push, percentage($i/$grid-columns) , -1 * percentage($i/$grid-columns));
         }
     }
@@ -37,7 +37,7 @@
 
 @mixin offsets($dir: left){
     @for $i from 1 through $grid-columns {
-        .s-offset-#{$i}of#{$grid-columns}{
+        .s-offset-#{$i}-#{$grid-columns}{
             margin-#{$dir}: percentage($i/$grid-columns) ;
         }
     }

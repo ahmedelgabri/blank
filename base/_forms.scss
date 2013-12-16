@@ -78,20 +78,8 @@ input[type="search"] {
 
 
 
-::-webkit-input-placeholder {
-}
-
-
-
-input{
-
-
-    &:-moz-placeholder {
-    }
-
-    &:-ms-input-placeholder {
-    }
-}
+@include _placeholder{
+};
 
 
 
@@ -240,12 +228,7 @@ input[type="reset"]{
 // .bl-form__holder
 
 .bl-form__holder{
-    @include rem(margin-bottom, 10px);
-
-    .bl-btn{
-        display: inline-block;
-        width: auto;
-    }
+    @include rem(margin-bottom, $verticalspace);
 }
 
 
@@ -439,7 +422,7 @@ input[type="reset"]{
             background-color: $error;
             top:0;
             left:0;
-            @include vendor(transition, "left 75ms ease-in-out, background 75ms ease-in-out");
+            transition: left 75ms ease-in-out, background 75ms ease-in-out;
         }
     }
 

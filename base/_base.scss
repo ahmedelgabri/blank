@@ -110,13 +110,13 @@ html {
 
 
 body {
+    @include rem(font-size, $basefont);
     margin: 0;
     line-height:$lineheight;
     font-family: $font-stack;
     background: $color-bg;
     color: $color-text;
 
-    @include rem(font-size, $basefont);
     @include mq($mq-medium){
         text-rendering: optimizeLegibility;
     }

@@ -1,10 +1,19 @@
-//==============================
-// $TYPOGRAPHY
-//===============================
+//==============================================================================
+// TYPOGRAPHY
+//==============================================================================
+
+// CUSTOM FONTS
+// -----------------------------------------------------------------------------
 
 // If having local font-face fonts import them like so
-// @include font-face($fontname, $filename, $fontstack: $sans-serif);
+// @include font-face($fontname, $filename, $path, $fontstack: $sans-serif);
 
+
+
+
+
+//  HEADERS
+// -----------------------------------------------------------------------------
 
 // Headers
 //
@@ -19,29 +28,40 @@
 // <h6>Header 6</h6>
 
 
+
 h1,h2,h3,h4,h5,h6,
-.h1,.h2,.h3,.h4,.h5,.h6{
+.h1,.h2,.h3,.h4,.h5,.h6 {
 }
+
+
 
 h1,
 .h1 {
     @include headers(48px);
 }
 
+
+
 h2,
-.h2{
+.h2 {
     @include headers(36px);
 }
+
+
 
 h3,
 .h3 {
     @include headers(24px);
 }
 
+
+
 h4,
 .h4 {
     @include headers(21px);
 }
+
+
 
 h5,
 .h5,
@@ -49,6 +69,7 @@ h6,
 .h6 {
     @include headers(18px);
 }
+
 
 
 // Section titles
@@ -60,14 +81,21 @@ h6,
 // .bl-title--secondary - Secondary title
 
 
-.bl-title{
+
+.bl-title {
 }
 
-.bl-title--primary{
+
+
+.bl-title--primary {
 }
 
-.bl-title--secondary{
+
+
+.bl-title--secondary {
 }
+
+
 
 // Section subtitles
 //
@@ -78,10 +106,17 @@ h6,
 // .bl-subtitle - Primary subtitle
 
 
-.bl-subtitle{
+
+.bl-subtitle {
 
 }
 
+
+
+
+
+// Text
+// -----------------------------------------------------------------------------
 
 // Paragraphs
 //
@@ -92,22 +127,30 @@ h6,
 // .bl-p--small - small paragraph, don't use instead of the "small" element
 
 
+
 p {
     @include rem(margin, 0 0 $verticalspace);
 }
 
+
+
 p,
-.bl-normal-text{
+.bl-normal-text {
     @include rem(font-size, $basefont);
 }
 
-.bl-p--big{
+
+
+.bl-text--big {
     font-size: 1.4em;
 }
 
-.bl-p--small{
+
+
+.bl-text--small {
     font-size: .9em;
 }
+
 
 
 // Blockquotes
@@ -117,7 +160,7 @@ p,
 // Markup:
 // <blockquote class="{$modifiers}">
 // This is a blockquote
-// <footer class="blockquote-source"> Someone </blockquote>
+// <cite class="blockquote-source"> Someone </cite>
 // </blockquote>
 //
 // .bl-blockquote--left - aligned left
@@ -125,26 +168,35 @@ p,
 // .bl-blockquote--center - centered
 
 
-blockquote{
+
+blockquote {
     quotes: "“" "”";
 }
 
-blockquote p:before{
+
+
+blockquote p:before {
     content: "“";
     content: open-quote;
 }
 
-blockquote p:after{
+
+
+blockquote p:after {
     content: "";
     content: no-close-quote;
 }
 
-blockquote p:last-of-type:after{
+
+
+blockquote p:last-of-type:after {
     content: "”";
     content: close-quote;
 }
 
-blockquote{
+
+
+blockquote {
     @include rem(margin, 0 0 $verticalspace);
 
     > :last-child,
@@ -153,16 +205,22 @@ blockquote{
     }
 }
 
+
+
 .bl-blockquote--left{
     border-left: .3em solid #222;
     padding-left: 1em;
 }
+
+
 
 .bl-blockquote--right{
     border-right: .3em solid #222;
     padding-right: 1em;
     text-align: right;
 }
+
+
 
 .bl-blockquote--center{
     border-top: .3em solid #222;
@@ -171,13 +229,19 @@ blockquote{
     text-align: center;
 }
 
+
+
 .bl-blockquote__source{
     @include rem(font-size, 12px);
 }
 
+
+
 .bl-blockquote-source:before{
     content:"—";
 }
+
+
 
 em,
 i,
@@ -186,16 +250,21 @@ q {
     font-style: italic;
 }
 
+
+
 small,
 .bl-small-text {
     font-size: 75%;
 }
 
+
+
 strong,
-th,
 b {
     font-weight: bold;
 }
+
+
 
 abbr[title],
 dfn[title] {
@@ -203,9 +272,13 @@ dfn[title] {
     cursor: help;
 }
 
+
+
 address{
     font-style: normal;
 }
+
+
 
 sub,
 sup {
@@ -214,13 +287,19 @@ sup {
     position: relative;
 }
 
+
+
 sup {
     top: -0.5em;
 }
 
+
+
 sub {
     bottom: -0.25em;
 }
+
+
 
 pre,
 code,
@@ -229,6 +308,8 @@ samp {
     font-family: $monospace;
     -webkit-font-smoothing: subpixel-antialiased;
 }
+
+
 
 pre {
     white-space: pre;
@@ -245,15 +326,21 @@ pre {
     clear: both;
 }
 
+
+
 code {
     line-height: 1;
 }
+
+
 
 ins{
     background-color: #ff9;
     color: #000;
     text-decoration: none;
 }
+
+
 
 mark{
     background-color: #ff9;
@@ -262,36 +349,24 @@ mark{
     font-weight: bold;
 }
 
+
+
 del,
 s {
     text-decoration: line-through;
 }
 
+
+
 q {
-    quotes:"‘" "’" "“" "”";
+    quotes: "\201C" "\201D" "\2018" "\2019";
 }
 
-q:before{
-    content:"‘";
-    content:open-quote;
-}
 
-q:after{
-    content:"’";
-    content:close-quote;
-}
-
-q q:before{
-    content: "“";
-    content: open-quote;
-}
-
-q q:after{
-    content: "”";
-    content: close-quote;
-}
 
 hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
     display: block;
     height: 1px;
     border: 0;
@@ -299,3 +374,5 @@ hr {
     margin:1em 0;
     padding: 0;
 }
+
+

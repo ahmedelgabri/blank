@@ -1,18 +1,27 @@
-//==============================
-// $Component variables
-//==============================
+//==============================================================================
+// FORMS
+//==============================================================================
+
+
+// COMPONENT VARIABLES
+// -----------------------------------------------------------------------------
 
 $fieldPadding: .5em;
 $fieldBorderColor: #ccc;
 
-//==============================
-// $FORMS
-//==============================
+
+
+
+
+// BASIC FORM STYLING
+// -----------------------------------------------------------------------------
 
 legend {
     display:table; // Enable line-wrapping in IE8+
     white-space:normal; // Enable line-wrapping in old versions of some other browsers
 }
+
+
 
 input,
 textarea,
@@ -25,6 +34,8 @@ select {
     vertical-align: baseline;
 }
 
+
+
 label,
 input[type="button"],
 input[type="submit"],
@@ -34,6 +45,8 @@ button {
     cursor: pointer;
 }
 
+
+
 input,
 button{
     &::-moz-focus-inner{
@@ -42,35 +55,58 @@ button{
     }
 }
 
+
+
 [disbaled]{
     cursor: default;
 }
 
+
+
 input[type="search"] {
     -webkit-appearance : textfield;
+
+    &::-webkit-search-decoration {
+        display : none;
+    }
+
+    &::-webkit-search-cancel-button {
+        cursor: pointer;
+    }
 }
 
-input[type="search"]::-webkit-search-decoration {
-    display : none;
-}
 
-input[type="search"]::-webkit-search-cancel-button {
-    cursor: pointer;
-}
+
 
 ::-webkit-input-placeholder {
 }
 
-input:-moz-placeholder {
+
+
+input{
+
+
+    &:-moz-placeholder {
+    }
+
+    &:-ms-input-placeholder {
+    }
 }
 
-input:-ms-input-placeholder {
+
+
+select{
+    cursor: pointer;
 }
+
+
 
 textarea {
     @include resizable(vertical);
     min-height: 6em;
 }
+
+
 
 input[type="checkbox"],
 input[type="radio"]{
@@ -81,25 +117,31 @@ input[type="radio"]{
     }
 }
 
-input[type="color"]{
 
+
+input[type="color"]{
 }
+
+
 
 input[type="range"]{
-
 }
+
+
 
 input[type="image"]{
-
 }
+
+
 
 input[type="date"],
 input[type="month"],
 input[type="week"],
 input[type="datetime"],
 input[type="datetime-local"]{
-
 }
+
+
 
 input[type="tel"],
 input[type="number"],
@@ -114,6 +156,7 @@ textarea{
 }
 
 
+
 input[type="tel"],
 input[type="number"],
 input[type="text"],
@@ -121,8 +164,9 @@ input[type="password"],
 input[type="email"],
 input[type="url"],
 input[type="search"],
-.bl-select,
-textarea {
+textarea,
+.bl-form__field,
+.bl-select{
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -140,17 +184,24 @@ textarea {
     }
 }
 
-select{
-    cursor: pointer;
-}
+
 
 input[type="submit"],
 button{
 }
 
+
+
+
 input[type="reset"]{
 }
 
+
+
+
+
+// BLANK FORM COMPONENTS
+// -----------------------------------------------------------------------------
 
 // Forms
 //
@@ -176,6 +227,7 @@ input[type="reset"]{
 }
 
 
+
 // Form Holder
 //
 // The wrapper that holds form input & labels, can be whatever element.
@@ -189,9 +241,6 @@ input[type="reset"]{
 
 .bl-form__holder{
     @include rem(margin-bottom, 10px);
-    &:last-of-type{
-        margin-bottom: 0;
-    }
 
     .bl-btn{
         display: inline-block;
@@ -211,7 +260,6 @@ input[type="reset"]{
 // .bl-form__field
 
 .bl-form__field{
-    width: 100%;
 }
 
 .bl-form__list{
@@ -230,7 +278,6 @@ input[type="reset"]{
 //
 // .bl-form--inline
 
-
 .bl-form--inline{
     list-style:none;
     margin-left:0;
@@ -240,7 +287,8 @@ input[type="reset"]{
     > .bl-form__holder {
         letter-spacing: normal;
         text-rendering: auto;
-        @include mq($mq-medium, true){
+
+        @include mq($mq-medium){
             margin-bottom: 0;
             padding-right: $grid-gutter;
             &:last-of-type{
@@ -249,10 +297,11 @@ input[type="reset"]{
             display: inline-block;
             vertical-align: top;
         }
+
     }
 
     .bl-btn-group{
-        @include mq($mq-medium, true){
+        @include mq($mq-medium){
             margin-bottom: 0;
         }
     }
@@ -277,7 +326,8 @@ input[type="reset"]{
     display: table;
 
     > .bl-form__holder {
-        @include mq($mq-medium, true){
+
+        @include mq($mq-medium){
             margin-bottom: 0;
             padding-right: $grid-gutter;
             &:last-of-type{
@@ -290,9 +340,11 @@ input[type="reset"]{
 }
 
 
-//==============================
-// $CUSTOM FORM ELEMENTS
-//==============================
+
+
+
+// CUSTOM FORM ELEMENTS
+// -----------------------------------------------------------------------------
 
 // Custom select
 //
@@ -304,14 +356,18 @@ input[type="reset"]{
 //
 // .bl-select
 
+
+
 .bl-select{
     padding: $fieldPadding/2 $fieldPadding;
     box-shadow: 0 .15em .15em rgba($fieldBorderColor, .5);
     background-repeat: no-repeat;
     background-position: right 50%;
     background-image: url(../img/select-arrow.svg);
-    -webkit-background-size: 11px 100%;
-    background-size: 11px 100%;
+    -webkit-background-size: 11px 41%;
+    background-size: 11px 41%;
+    text-indent: 0.01px;
+    text-overflow: '';
 
     .no-svg &{
         background-image: url(../img/select-arrow.png);
@@ -322,6 +378,7 @@ input[type="reset"]{
 
     }
 }
+
 
 
 // Custom toggles
@@ -337,11 +394,15 @@ input[type="reset"]{
 // .bl-toggle            - on the wrapping label
 // .bl-toggle__switch    - on the input itself {radio|checkbox}
 
+
+
 .bl-toggle{
     display: inline-block;
     vertical-align: top;
     @include rem(font-size, 14px);
 }
+
+
 
 .bl-toggle__switch{
     &:checked,
@@ -400,10 +461,11 @@ input[type="reset"]{
 }
 
 
-//==============================
-// $ERROR MESSAGES
-//==============================
 
+
+
+// FORM MESSAGES
+// -----------------------------------------------------------------------------
 
 // Form Messages
 //
@@ -423,13 +485,13 @@ input[type="reset"]{
 // .bl-form__message--error|success   - remove the class for an info message
 // .bl-form__message
 
-
-
 .bl-form__message{
     font-size: 75%;
     padding: .5em;
     display: block;
 }
+
+
 
 .bl-form__message--error{
     > label,
@@ -458,6 +520,8 @@ input[type="reset"]{
     }
 }
 
+
+
 .bl-form__message--success{
     > label,
     > .bl-form__field,
@@ -484,3 +548,5 @@ input[type="reset"]{
         background-color: lighten($success, 50%);
     }
 }
+
+

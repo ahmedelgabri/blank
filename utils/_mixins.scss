@@ -1,46 +1,70 @@
 // @TODO: Clean this file
 
-//==============================
-// $LAYOUT
-//==============================
+//==============================================================================
+// LAYOUT
+//==============================================================================
 
-@mixin clearfix{
-    &:before,
-    &:after{
-        content:"";
-        display:table;
+@mixin _placholder(){
+    ::-webkit-input-placeholder {
+        @content;
     }
 
-    &:after{
-        clear:both;
+    input:-moz-placeholder {
+        @content;
     }
 
-    .oldie &{
-        zoom:1;
+    input:-ms-input-placeholder {
+        @content;
     }
 }
 
-//==============================
-// $TYPOGRAPHY
-//==============================
 
-@mixin font-face($fontname, $filename, $stack: $font-stack){
+
+@mixin _selection(){
+    ::-moz-selection{
+        @content;
+    }
+
+    ::selection{
+        @content;
+    }
+}
+
+
+
+
+
+//==============================================================================
+// TYPOGRAPHY
+//==============================================================================
+
+@mixin font-face($fontname, $filename, $path, $stack: $font-stack){
     @font-face {
         font-family: #{$fontname}, $stack;
-        src: url('#{filename}.eot');
-        src: url('#{filename}.eot?#iefix') format('embedded-opentype'),
-        url('#{filename}.woff') format('woff'),
-        url('#{filename}.ttf') format('truetype'),
-        url('#{filename}.svg#svgFontName') format('svg');
+        src: url('#{$path}/#{filename}.eot');
+        src: url('#{$path}/#{filename}.eot?#iefix') format('embedded-opentype'),
+        url('#{$path}/#{filename}.woff') format('woff'),
+        url('#{$path}/#{filename}.ttf') format('truetype'),
+        url('#{$path}/#{filename}.svg#svgFontName') format('svg');
+    }
+
+    // For Chrome on Windows http://www.fontspring.com/blog/smoother-rendering-in-chrome-update
+    @media screen and (-webkit-min-device-pixel-ratio:0) {
+      @font-face {
+          font-family: #{$fontname}, $stack;
+          src: url(‘#{$path}/#{$filename}.svg#svgFontName’) format(‘svg’);
+      }
     }
 }
 
-// Headers & vertical rhythm
 
+
+// Headers & vertical rhythm
 @mixin headers($size){
     @include rem(font-size, $size);
-    @include rem(margin, 0 0 (n($basefont) * $lineheight) * 1px );
+    @include rem(margin, 0 0 (strip-units($basefont) * $lineheight) * 1px );
 }
+
 
 
 // ellipsis
@@ -50,6 +74,8 @@
     -o-text-overflow:ellipsis;
     text-overflow:ellipsis;
 }
+
+
 
 // Word Wrapping
 @mixin word-wrap{
@@ -61,9 +87,11 @@
     hyphens: auto;
 }
 
-//==============================
-// $UI
-//==============================
+
+
+//==============================================================================
+// UI
+//==============================================================================
 
 @mixin linear-g($color1, $color2){
     @if $IE{
@@ -79,6 +107,7 @@
         background: linear-gradient(to bottom, $color1 0%,$color2 100%);
     }
 }
+
 
 
 @mixin arrow($width: 20px, $height: 20px, $direction: up, $color: red) {
@@ -116,6 +145,7 @@
 }
 
 
+
 // Border Radius
 @mixin border-radius($radius: 5px) {
     -webkit-border-radius: #{$radius};
@@ -125,19 +155,27 @@
     background-clip: padding-box;
 }
 
+
+
 // Add an alphatransparency value to any background or border color (via Elyse Holladay)
 @mixin background($color: $white, $alpha: 1) {
     background-color: hsla(hue($color), saturation($color), lightness($color), $alpha);
 }
+
+
 
 @mixin border($color: $white, $alpha: 1) {
     border-color: hsla(hue($color), saturation($color), lightness($color), $alpha);
     background-clip: padding-box;
 }
 
-//==============================
-// $HELPERS
-//==============================
+
+
+
+
+//==============================================================================
+// HELPERS
+//==============================================================================
 
 // Baseline, measured in pixels
 // The value should be the same as the font-size value for the html element
@@ -171,6 +209,8 @@
     }
 }
 
+
+
 // Vendor Prefixing
 @mixin vendor($property, $value, $prefixed: null ) {
     $default-prefixes: webkit moz ms o;
@@ -185,6 +225,8 @@
 
     #{$property}: #{$value};
 }
+
+
 
 // Animation
 @mixin keyframes($name) {
@@ -205,24 +247,14 @@
     }
 }
 
+
+
 @mixin resizable($direction: both) {
     resize: $direction; // Options are horizontal, vertical, both
     overflow: auto; // Safari fix
 }
 
-@mixin ir{ //image replacement
-    display : block;
-    text-indent : -9999em;
-    overflow : hidden;
-    background-repeat : no-repeat;
-    text-align : left;
-    direction : ltr;
-}
 
-@mixin hidden{
-    display : none;
-    visibility : hidden;
-}
 
 @mixin auto-numbers($numbered-element, $sep, $counter: item, $nested-parent: null ){
     $sel: ();
@@ -248,6 +280,7 @@
 }
 
 
+
 @mixin offscreen($dir : ltr){
     @if $dir == ltr {
         position: absolute;
@@ -258,9 +291,13 @@
     }
 }
 
-//==============================
-// $RTL MIXINS
-//==============================
+
+
+
+
+//==============================================================================
+// RTL MIXINS
+//==============================================================================
 @mixin rtl{
     @if $rtl {
         html[dir="rtl"] &{
@@ -268,6 +305,8 @@
         }
     }
 }
+
+
 
 // @TODO: Needs cleaning
 @mixin flip($property, $right, $left){
@@ -288,9 +327,13 @@
     }
 }
 
-//==============================
-// $DEBUG
-//==============================
+
+
+
+
+//==============================================================================
+// DEBUG
+//==============================================================================
 
 @mixin debug-display{
     @if $debug {
@@ -317,31 +360,33 @@
 //     background-position:0 0;
 // }
 
-//==============================
-// $MEDIA QUERIES http://alwaystwisted.com/post.php?s=2013-04-01-my-media-query-mixin
-//==============================
 
-@mixin mq($point, $fallback: null, $query1: min, $query2: width) {
-    @if $fallback {
-        @if $IE{
-            @content;
-        } @else {
-            @media screen and (#{$query1}-#{$query2}: $point / 16 +em) {
-                @content;
-            }
-        }
-    } @else {
+
+
+
+//==============================================================================
+// MEDIA QUERIES http://alwaystwisted.com/post.php?s=2013-04-01-my-media-query-mixin
+//==============================================================================
+
+@mixin mq($point, $query1: min, $query2: width) {
+    @if $MQ {
         @media screen and (#{$query1}-#{$query2}: $point / 16 +em) {
             @content;
         }
+    } @else {
+        @content;
     }
 }
+
+
 
 @mixin orient($orientation: landscape) {
     @media (orientation : $orientation) {
         @content;
     }
 }
+
+
 
 // Retina
 // https://gist.github.com/madrobby/2997187
@@ -355,6 +400,8 @@
 //     }
 // }
 
+
+
 @mixin mq-retina{
     @media
     (-webkit-min-device-pixel-ratio: 1.5),
@@ -363,7 +410,9 @@
     }
 }
 
-// $RETINA BGs
+
+
+// RETINA BGs
 
 @mixin hidpi($image: null, $extension: png, $width: null, $height: null, $retina-config: null) {
     @if $image {
@@ -375,6 +424,8 @@
         background-size: $width $height;
     }
 }
+
+
 
 // Element Query
 // https://github.com/filamentgroup/scoped-media-query
@@ -391,3 +442,53 @@
         }
     }
 }
+
+
+
+// http://codepen.io/thomasdobber/pen/DctbF
+// variable helper function: add a breakpoint to $breakpoints
+@function add-breakpoint($name, $range) {
+  $breakpoints: () !global !default;
+  $breakpoints: append( $breakpoints, ($name, $range) ) !global;
+  @return $breakpoints;
+}
+
+// vaiable: define breakpoints
+$breakpoints: add-breakpoint('wrist', 0px 320px);
+$breakpoints: add-breakpoint('palm', 320px 480px);
+$breakpoints: add-breakpoint('lap', 480px 800px);
+$breakpoints: add-breakpoint('portable', 0px 800px);
+$breakpoints: add-breakpoint('desk', 800px 1280px);
+$breakpoints: add-breakpoint('desk-wide', 1280px 2060px);
+
+// the mixin
+@mixin breakpoint($name){
+
+  @each $breakpoint in $breakpoints {
+
+    $breakpoint-name:  nth($breakpoint, 1);
+    $breakpoint-range: nth($breakpoint, 2);
+    $breakpoint-start: nth($breakpoint-range, 1);
+    $breakpoint-end:   nth($breakpoint-range, 2);
+
+    @if "#{$name}" == "#{$breakpoint-name}" {
+      @if strip-units($breakpoint-start) == 0 {
+        @media only screen and ( max-width: em($breakpoint-end)) { @content; }
+      } @else {
+        @media only screen and ( min-width: em($breakpoint-start)) and ( max-width: em($breakpoint-end)) { @content; }
+      }
+
+    } @else if "#{$name}" == "#{$breakpoint-name}-and-up" {
+      @if strip-units($breakpoint-start) == 0 {
+        @content;
+      } @else {
+        @media only screen and ( min-width: em($breakpoint-start)) { @content; }
+      }
+
+    } @else if "#{$name}" == "#{$breakpoint-name}-and-down" {
+      @media only screen and ( max-width: em($breakpoint-end)) { @content; }
+    }
+  }
+}
+
+

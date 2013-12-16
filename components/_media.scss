@@ -1,3 +1,7 @@
+//==============================================================================
+// MEDIA
+//==============================================================================
+
 // Media Object
 //
 // The media object based on http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
@@ -14,17 +18,13 @@
 //
 // .bl-media--rev - filps the image to the right
 
-//==============================
-// $Component variables
-//==============================
 
-//==============================
-// $MEDIA COMPONENT
-//==============================
 
 .bl-media{
-    @include clearfix;
+    @extend %h-clearfix;
 }
+
+
 
 .bl-media__figure{
     float:left;
@@ -42,11 +42,15 @@
     }
 }
 
+
+
 .bl-media__figure{
     > img{
         display:block;
     }
 }
+
+
 
 .bl-media__body{
     display:table-cell;
@@ -57,3 +61,5 @@
         margin-bottom: 0;
     }
 }
+
+

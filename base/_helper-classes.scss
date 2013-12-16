@@ -1,11 +1,11 @@
-//========================================
-// $ GENERIC HELPER CLASSES & PLACEHOLDERS
-//========================================
+//==============================================================================
+//  GENERIC HELPER CLASSES & PLACEHOLDERS
+//==============================================================================
 
-//==============================
-// $CLASSES
-//==============================
-.h-visuallyhidden{
+// HELPER CLASSES
+// -----------------------------------------------------------------------------
+
+.h-visuallyhidden {
     border: 0;
     clip: rect(0 0 0 0);
     height: 1px;
@@ -15,6 +15,8 @@
     position: absolute;
     width: 1px;
 }
+
+
 
 .h-break {
     -ms-word-break: break-all;
@@ -26,8 +28,9 @@
 }
 
 
+
 .h-ellipsis {
-    // width:;
+    max-width: 100%;
     white-space: nowrap;
     overflow: hidden;
     -ms-text-overflow: ellipsis; // Required for IE8
@@ -35,20 +38,78 @@
     text-overflow: ellipsis;
 }
 
+
+
 .h-ir,
 %h-ir {
     font: 0/0 a;
     text-shadow: none;
     color: transparent;
+    border: 0;
 }
 
-.h-center-inline{
+
+
+.h-inline-center {
     text-align: center;
 }
 
-//==============================
-// $PLACEHOLDERS
-//==============================
+
+
+.h-inline-end {
+    text-align: bidi(right);
+}
+
+
+
+.h-inline-start {
+    text-align: bidi(left);
+}
+
+
+
+
+.h-f-start {
+    float: bidi(left);
+}
+
+
+
+.h-f-end {
+    float: bidi(right);
+}
+
+
+
+.h-f-none {
+    float: none;
+}
+
+
+
+.h-dir-left {
+    direction: ltr;
+}
+
+
+
+.h-dir-right {
+    direction: rtl;
+}
+
+
+
+// @TODO: extract this into spacing?
+.h-flat-bottom {
+    margin-bottom: 0;
+}
+
+
+
+
+
+// PLACEHOLDERS
+// -----------------------------------------------------------------------------
 
 .h-clearfix,
 %h-clearfix{
@@ -57,36 +118,12 @@
         display:table;
         clear: both;
     }
+
+    // IE 6/7
+    // @if $IE{
+    //     *zoom: 1;
+    // }
 }
 
-//==============================
-// $RTL HELPERS
-//==============================
 
-%fl{
-    float:left;
-}
 
-%fr{
-    float:right;
-}
-
-%fn{
-    float:none;
-}
-
-%tr{
-    text-align:right;
-}
-
-%tl{
-    text-align:left;
-}
-
-%dr{
-    direction:rtl;
-}
-
-%dl{
-    direction:ltr;
-}

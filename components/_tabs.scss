@@ -1,3 +1,7 @@
+//==============================================================================
+// TABS
+//==============================================================================
+
 // Tabs
 //
 // Tabs
@@ -30,20 +34,15 @@
 
 // .bl-tabs
 
-//==============================
-// $Component variables
-//==============================
 
-
-//==============================
-// $TABS COMPONENT
-//==============================
 
 .bl-tabs{
     position: relative;
     overflow: hidden;
     @include rem(margin-bottom, $verticalspace);
 }
+
+
 
 .bl-tabs__nav{
     display: table;
@@ -72,9 +71,13 @@
     }
 }
 
+
+
 .bl-tabs__panels{
     position: relative;
 }
+
+
 
 .bl-tabs__panel{
     padding: 1em;
@@ -102,3 +105,5 @@
         }
     }
 }
+
+

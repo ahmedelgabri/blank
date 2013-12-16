@@ -1,3 +1,7 @@
+//==============================================================================
+// ACCORDION
+//==============================================================================
+
 // Accrodions
 //
 // Accrodion, can be used with ul/ol too
@@ -10,17 +14,13 @@
 //
 // .bl-accrodion
 
-//==============================
-// $Component variables
-//==============================
 
-//==============================
-// $ACCORDION COMPONENT
-//==============================
 
 .bl-accordion{
     @include rem(margin-bottom, $verticalspace);
 }
+
+
 
 .bl-accordion__title{
     padding: 1em;
@@ -46,6 +46,8 @@
     }
 }
 
+
+
 .bl-accordion__content{
     margin-bottom: 0;
     background-color: white;
@@ -62,7 +64,7 @@
         overflow: hidden;
         max-height: 0;
         opacity: 0;
-        @include vendor( transition, 'opacity .5s ease-in-out, max-height .5s ease-in-out' );
+        @include vendor( transition, 'all .3s cubic-bezier(0, 1, 0.5, 1)' );
     }
 
     &.is-active{
@@ -70,3 +72,5 @@
         max-height: 9999em; //Hack to make it look like 100%
     }
 }
+
+

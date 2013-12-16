@@ -1,12 +1,12 @@
+//==============================================================================
+// LISTS
+//==============================================================================
+
 /*
 Lists
 
 List styling: ordered, unordered & defination lists.
 */
-
-//==============================
-// $LISTS
-//===============================
 
 /*
 [Un]Ordered lists
@@ -24,6 +24,9 @@ Markup:
 .bl-list--numbered      - Automatic numbering for multi-levels deep **Must be used with `.bl-list--reset`**
 .bl-list--reset         - can be added on ordered or unordered lists to reset it's styling.
 */
+
+
+
 ol{
     list-style: decimal;
     @include rem(margin-bottom, $verticalspace);
@@ -32,10 +35,14 @@ ol{
 // }
 }
 
+
+
 ul{
     list-style: square;
     @include rem(margin-bottom, $verticalspace);
 }
+
+
 
 ul,
 ol{
@@ -47,6 +54,8 @@ ol{
     }
 }
 
+
+
 li{
     line-height:$lineheight;
 
@@ -55,18 +64,26 @@ li{
 }
 
 
-//==============================
-// $Modifires classes
-//==============================
+
+
+
+//==============================================================================
+// Modifires classes
+//==============================================================================
+
 .bl-list--reset{
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
+
+
 .bl-list--numbered{
     @include auto-numbers(li,".", item, ul);
 }
+
+
 
 /*
 Definition lists
@@ -78,17 +95,25 @@ Markup:
 </dl>
 */
 
+
+
 dl{
     @include rem(margin, 0 0 $verticalspace);
 }
+
+
 
 dt{
     font-weight: bold;
 }
 
+
+
 dd{
     @include rem(margin, 0 0 $verticalspace);
 }
+
+
 
 dt,
 dd{
@@ -97,3 +122,5 @@ dd{
         margin-bottom: 0;
     }
 }
+
+

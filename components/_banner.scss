@@ -1,3 +1,7 @@
+//==============================================================================
+// BANNER
+//==============================================================================
+
 // banner object
 //
 // Same as the media object but with vertical aligmnent
@@ -17,20 +21,15 @@
 // .bl-banner--bottom - aligns text to bottom
 //
 
-//==============================
-// $Component variables
-//==============================
 
-
-//==============================
-// $BANNER COMPONENT
-//==============================
 
 // Needs a better name?
 .bl-banner{
     display: table;
     width: 100%;
 }
+
+
 
 .bl-banner__figure,
 .bl-banner__body{
@@ -51,6 +50,8 @@
     }
 }
 
+
+
 .bl-banner__figure{
     @include rem(padding-right, $grid-gutter);
 
@@ -65,6 +66,10 @@
     }
 }
 
+
+
 .bl-banner__body{
     width: 100%;
 }
+
+

@@ -1,3 +1,11 @@
+//==============================================================================
+// MATRIX
+//==============================================================================
+
+// COMPONENT VARIABLES
+// -----------------------------------------------------------------------------
+$matrixMargin: 5%;
+
 // Matrix
 //
 // Fully fluid 12 columns Matrix based on 960 but can be anything.
@@ -9,15 +17,7 @@
 //    </div>
 // </div>
 
-//==============================
-// $Component variables
-//==============================
-$matrixMargin: 5%;
 
-
-//==============================
-// $MATRIX COMPONENT
-//==============================
 
 .bl-matrix{
     @include rem(margin-bottom, $verticalspace);
@@ -35,6 +35,8 @@ $matrixMargin: 5%;
     }
 }
 
+
+
 @for $i from 1 through $grid-columns {
     .bl-matrix--#{$i}{
         .bl-matrix__unit{
@@ -44,6 +46,8 @@ $matrixMargin: 5%;
         }
     }
 }
+
+
 
 .bl-matrix__unit{
     display: inline-block;

@@ -1,6 +1,6 @@
-//==============================
-// $BASE
-//===============================
+//==============================================================================
+// BASE
+//==============================================================================
 
 article,
 aside,
@@ -18,12 +18,15 @@ summary {
     display: block;
 }
 
+
+
 audio,
 canvas,
-video,
-figure {
+video{
     display: inline-block;
 }
+
+
 
 ::-moz-selection {
     text-shadow: none;
@@ -31,25 +34,46 @@ figure {
     color: black;
 }
 
+
+
 ::selection {
     text-shadow: none;
     background-color: #bada55;
     color: black;
 }
 
+
+
 ::selection:window-inactive {
     text-shadow: none;
 }
+
+
 
 image::-moz-selection {
     background: transparent;
 }
 
+
+
 image::selection {
     background: transparent;
 }
 
-svg:not(:root) { overflow: hidden; }
+
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+
+
+[hidden],
+template {
+    display: none;
+}
+
+
 
 *,
 *:before,
@@ -59,10 +83,14 @@ svg:not(:root) { overflow: hidden; }
     box-sizing: border-box;
 }
 
+
+
 html,
 body{
     min-height:100%;
 }
+
+
 
 html {
     -webkit-overflow-scrolling: touch;
@@ -79,17 +107,23 @@ html {
     }
 }
 
+
+
 body {
     margin: 0;
-    @include rem(font-size, $basefont);
     line-height:$lineheight;
     font-family: $font-stack;
     background: $color-bg;
     color: $color-text;
+
+    @include rem(font-size, $basefont);
     @include mq($mq-medium){
         text-rendering: optimizeLegibility;
     }
+
 }
+
+
 
 @if $IE != true {
     @-webkit-viewport{
@@ -108,4 +142,6 @@ body {
         width:device-width
     }
 }
+
+
 

@@ -1,3 +1,20 @@
+//==============================================================================
+// ALERTS
+//==============================================================================
+
+// HELPER MIXINS
+// -----------------------------------------------------------------------------
+
+@mixin alert( $color ){
+    color: $color;
+    background-color: lighten($color, 50%);
+    border-color: $color;
+}
+
+
+
+
+
 // Alerts
 //
 //
@@ -11,21 +28,14 @@
 // .bl-alert--error - error
 
 
-//==============================
-// $Component variables
-//==============================
-
-
-//==============================
-// $ALERT COMPONENT
-//==============================
 
 .bl-alert{
+    display: block;
     padding: 1em;
-    @include rem(margin-bottom, $verticalspace);
     border-style: solid;
     border-width: 1px;
     position: relative;
+    @include rem(margin-bottom, $verticalspace);
 
     > :last-child,
     > :last-child > :last-child {
@@ -33,9 +43,13 @@
     }
 }
 
+
+
 .bl-alert__header{
     @include rem(margin-bottom, $verticalspace);
 }
+
+
 
 .bl-alert__header,
 .bl-alert__body{
@@ -45,26 +59,28 @@
     }
 }
 
+
+
 .bl-alert--default{
-    color: $default;
-    background-color: lighten($default, 50%);
-    border-color: $default;
+    @include alert($default);
 }
+
+
 
 .bl-alert--success{
-    color: $success;
-    background-color: lighten($success, 50%);
-    border-color: $success;
+    @include alert($success);
 }
+
+
 
 .bl-alert--error{
-    color: $error;
-    background-color: lighten($error, 50%);
-    border-color: $error;
+    @include alert($error);
 }
 
+
+
 .bl-alert--info{
-    color: $info;
-    background-color: lighten($info, 50%);
-    border-color: $info;
+    @include alert($info);
 }
+
+

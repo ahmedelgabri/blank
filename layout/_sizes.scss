@@ -42,3 +42,30 @@
         }
     }
 }
+
+
+
+
+
+// SIZES
+// -----------------------------------------------------------------------------
+
+@if $IE{
+    @include sizes(l);
+} @else {
+    @include sizes(s);
+    @include mq($mq-medium){
+        @include sizes(m);
+    }
+    @include mq($mq-large){
+        @include sizes(l);
+    }
+}
+
+
+
+@include ordering(push);
+@include ordering(pull);
+
+
+@include offsets();

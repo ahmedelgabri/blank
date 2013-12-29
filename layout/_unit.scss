@@ -1,0 +1,28 @@
+//==============================================================================
+// UNIT
+//==============================================================================
+
+// UNIT
+//
+// A generic component can be used with grid or separately
+//
+// Markup:
+// <div class="bl-unit">
+//      [content...]
+// </div>
+
+.bl-unit{
+    display: inline-block;
+    @include rem(font-size, $basefont);
+    width: 100%;
+    text-align: left;
+    position: relative;
+    vertical-align: top;
+}
+
+
+
+.bl-unit--centered{
+    display: block;
+    margin: 0 auto;
+}

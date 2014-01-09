@@ -50,6 +50,7 @@ $gutter: percentage( strip-units($grid-gutter) / strip-units($grid-width) ); // 
     margin:0 -1 * $gutter/2;
     > .bl-unit{
         padding: 0 $gutter/2;
+        margin-bottom: $verticalspace;
     }
 }
 

@@ -349,8 +349,15 @@ input[type="reset"]{
     background-image: url(../img/select-arrow.svg);
     -webkit-background-size: 11px 41%;
     background-size: 11px 41%;
-    text-indent: 0.01px;
-    text-overflow: '';
+
+    // https://gist.github.com/joaocunha/6273016
+    @-moz-document url-prefix() {
+      select {
+        -moz-appearance: none;
+        text-indent: 0.01px;
+        text-overflow: "";
+      }
+    }
 
     .no-svg &{
         background-image: url(../img/select-arrow.png);

@@ -62,20 +62,28 @@
 
 
 .bl-navbar{
-    display: table;
-    width: 100%;
+    @include mq($mq-medium){
+        display: table;
+        width: 100%;
+    };
 }
 
 
 
 .bl-navbar__item{
-    display: table-cell;
+    display: block;
     position: relative;
+    width: 100%;
     > a {
         text-align: center;
         display: block;
         padding: .5em 1em;
     }
+
+    @include mq($mq-small){
+        display: table-cell;
+        width: auto;
+    };
 }
 
 

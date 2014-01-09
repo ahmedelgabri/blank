@@ -62,7 +62,7 @@
 // Headers & vertical rhythm
 @mixin headers($size){
     @include rem(font-size, $size);
-    @include rem(margin-bottom, (strip-units($basefont) * $lineheight) * 1px );
+    @include rem(margin, 0 0 (strip-units($basefont) * $lineheight) * 1px );
 }
 
 

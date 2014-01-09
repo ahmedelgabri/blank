@@ -4,7 +4,7 @@
 // LAYOUT
 //==============================================================================
 
-@mixin _placholder(){
+@mixin _placeholder(){
     ::-webkit-input-placeholder {
         @content;
     }
@@ -93,23 +93,6 @@
 // UI
 //==============================================================================
 
-@mixin linear-g($color1, $color2){
-    @if $IE{
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{ie_hex_str($color1)}', endColorstr='#{ie_hex_str($color2)}',GradientType=0 );
-
-    } @else {
-        background: $color1;
-        background: -moz-linear-gradient(top, $color1 0%, $color2 100%);
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$color1), color-stop(100%,$color2));
-        background: -webkit-linear-gradient(top, $color1 0%,$color2 100%);
-        background: -o-linear-gradient(top, $color1 0%,$color2 100%);
-        background: -ms-linear-gradient(top, $color1 0%,$color2 100%);
-        background: linear-gradient(to bottom, $color1 0%,$color2 100%);
-    }
-}
-
-
-
 @mixin arrow($width: 20px, $height: 20px, $direction: up, $color: red) {
 
     width: 0;
@@ -143,32 +126,6 @@
         border-top: $height solid $color;
     }
 }
-
-
-
-// Border Radius
-@mixin border-radius($radius: 5px) {
-    -webkit-border-radius: #{$radius};
-    border-radius: #{$radius};
-    -webkit-background-clip: padding-box;
-    -moz-background-clip: padding;
-    background-clip: padding-box;
-}
-
-
-
-// Add an alphatransparency value to any background or border color (via Elyse Holladay)
-@mixin background($color: $white, $alpha: 1) {
-    background-color: hsla(hue($color), saturation($color), lightness($color), $alpha);
-}
-
-
-
-@mixin border($color: $white, $alpha: 1) {
-    border-color: hsla(hue($color), saturation($color), lightness($color), $alpha);
-    background-clip: padding-box;
-}
-
 
 
 
@@ -211,23 +168,6 @@
 
 
 
-// Vendor Prefixing
-@mixin vendor($property, $value, $prefixed: null ) {
-    $default-prefixes: webkit moz ms o;
-
-    @each $prefix in $default-prefixes {
-        @if $prefixed {
-            -#{$prefix}-#{$property}: -#{$prefix}-#{$value};
-        } @else {
-            -#{$prefix}-#{$property}: #{$value};
-        }
-    }
-
-    #{$property}: #{$value};
-}
-
-
-
 // Animation
 @mixin keyframes($name) {
     @-webkit-keyframes #{$name} {
@@ -256,6 +196,7 @@
 
 
 
+// http://codepen.io/ahmedelgabri/pen/bsIhF
 @mixin auto-numbers($numbered-element, $sep, $counter: item, $nested-parent: null ){
     $sel: ();
     @if $nested-parent {
@@ -276,18 +217,6 @@
                 content: if($nested-parent, counters(#{$counter}, "#{$sep} ") "#{$sep} ", counter(#{$counter}) "#{$sep} ") ;
             }
         }
-    }
-}
-
-
-
-@mixin offscreen($dir : ltr){
-    @if $dir == ltr {
-        position: absolute;
-        left: -9999px;
-    } @else {
-        left: auto;
-        right: -9999px;
     }
 }
 

@@ -38,7 +38,7 @@ $verticalspace  : $basefont * $lineheight;
 // -----------------------------------------------------------------------------
 
 $grid-columns   : 12;
-$grid-gutter    : 20px; // Might be converted to %
+$grid-gutter    : 20px; // Will be converted to %
 $grid-width     : 1000px; // Used to calculate the grid & "if wanted" to be used as max-width
 
 
@@ -48,7 +48,7 @@ $grid-width     : 1000px; // Used to calculate the grid & "if wanted" to be used
 // MQ SETTINGS
 // -----------------------------------------------------------------------------
 
-// These are in Pixels, wil be converted to ems by SASS
+// These are in Pixels, wil be converted to ems by Sass
 $mq-large       : 1200;
 $mq-medium      : 760;
 $mq-small       : 480;

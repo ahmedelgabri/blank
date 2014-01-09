@@ -78,20 +78,8 @@ input[type="search"] {
 
 
 
-::-webkit-input-placeholder {
-}
-
-
-
-input{
-
-
-    &:-moz-placeholder {
-    }
-
-    &:-ms-input-placeholder {
-    }
-}
+@include _placeholder{
+};
 
 
 
@@ -240,12 +228,7 @@ input[type="reset"]{
 // .bl-form__holder
 
 .bl-form__holder{
-    @include rem(margin-bottom, 10px);
-
-    .bl-btn{
-        display: inline-block;
-        width: auto;
-    }
+    @include rem(margin-bottom, $verticalspace);
 }
 
 
@@ -366,8 +349,15 @@ input[type="reset"]{
     background-image: url(../img/select-arrow.svg);
     -webkit-background-size: 11px 41%;
     background-size: 11px 41%;
-    text-indent: 0.01px;
-    text-overflow: '';
+
+    // https://gist.github.com/joaocunha/6273016
+    @-moz-document url-prefix() {
+      select {
+        -moz-appearance: none;
+        text-indent: 0.01px;
+        text-overflow: "";
+      }
+    }
 
     .no-svg &{
         background-image: url(../img/select-arrow.png);
@@ -439,7 +429,7 @@ input[type="reset"]{
             background-color: $error;
             top:0;
             left:0;
-            @include vendor(transition, "left 75ms ease-in-out, background 75ms ease-in-out");
+            transition: left 75ms ease-in-out, background 75ms ease-in-out;
         }
     }
 

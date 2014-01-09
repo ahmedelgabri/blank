@@ -64,7 +64,7 @@
         overflow: hidden;
         max-height: 0;
         opacity: 0;
-        @include vendor( transition, 'all .3s cubic-bezier(0, 1, 0.5, 1)' );
+        transition: all .3s cubic-bezier(0, 1, 0.5, 1);
     }
 
     &.is-active{

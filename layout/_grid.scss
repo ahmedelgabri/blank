@@ -4,20 +4,20 @@
 
 // Grid
 //
-// Fully fluid 12 columns Grid. `.bl-g`
+// Fully fluid 12 columns Grid. `.bl-grid` for padded grid add `.bl-grid--pad`
 //
 // Markup:
-// <div class="bl-g">
-//     <div class="bl-g__u w-1of12--l w-1of12--m w-full--s">
+// <div class="bl-grid">
+//     <div class="bl-unit s-1-12--s s-1-12--m s-12-12--l">
 //         <div> contnet </div>
 //     </div>
-//     <div class="bl-g__u w-1of12--l w-1of12--m w-full--s">
+//     <div class="bl-unit s-1-12--s s-1-12--m s-12-12--l">
 //         <div> contnet </div>
 //     </div>
-//     <div class="bl-g__u w-1of12--l w-1of12--m w-full--s">
+//     <div class="bl-unit s-1-12--s s-1-12--m s-12-12--l">
 //         <div> contnet </div>
 //     </div>
-//     <div class="bl-g__u w-1of12--l w-1of12--m w-full--s">
+//     <div class="bl-unit s-1-12--s s-1-12--m s-12-12--l">
 //         <div> contnet </div>
 //     </div>
 // </div>
@@ -26,96 +26,50 @@
 
 $gutter: percentage( strip-units($grid-gutter) / strip-units($grid-width) ); // Percentage gutter
 
-.bl-g{
+.bl-grid{
     list-style: none;
     font-size: 0;
-    text-align: bidi(left);
+    text-align: left;
 }
 
 
 
-.bl-g--rev{
-    text-align: bidi(right);
+.bl-grid--rev{
+    text-align: right;
 }
 
 
 
-.bl-g--center{
+.bl-grid--center{
     text-align: center;
 }
 
 
 
-.bl-g--pad{
+.bl-grid--pad{
     margin:0 -1 * $gutter/2;
-    > .bl-g__u{
+    > .bl-unit{
         padding: 0 $gutter/2;
+        margin-bottom: $verticalspace;
     }
 }
 
 
 
-.bl-g--middle{
-    > .bl-g__u{
+.bl-grid--middle{
+    > .bl-unit{
         vertical-align: middle;
     }
 }
 
 
 
-.bl-g--bottom{
-    > .bl-g__u{
+.bl-grid--bottom{
+    > .bl-unit{
         vertical-align: bottom;
     }
 }
 
 
 
-.bl-g__u{
-    display: inline-block;
-    @include rem(font-size, $basefont);
-    width: 100%;
-    text-align: bidi(left);
-    position: relative;
-    vertical-align: top;
-}
 
-
-
-.bl-g__u--centered{
-    display: block;
-    margin: 0 auto;
-}
-
-
-
-
-
-// SIZES
-// -----------------------------------------------------------------------------
-
-.s-full{
-    width: 100%;
-}
-
-
-
-@if $IE{
-    @include sizes(l);
-} @else {
-    @include sizes(s);
-    @include mq($mq-medium){
-        @include sizes(m);
-    }
-    @include mq($mq-large){
-        @include sizes(l);
-    }
-}
-
-
-
-@include ordering(push);
-@include ordering(pull);
-
-
-@include offsets();

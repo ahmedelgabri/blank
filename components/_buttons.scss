@@ -47,7 +47,7 @@ $btnGroupInnerRadius: 2px;
     background-color: transparent;
     text-overflow: ellipsis;
     overflow: hidden;
-    @include vendor(transition, "all 100ms linear");
+    transition: all 100ms linear;
 
     @include mq($mq-medium){
         width: auto;

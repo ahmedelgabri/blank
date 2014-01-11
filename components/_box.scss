@@ -20,9 +20,9 @@ $boxPadding: 1em;
 //    Box
 // </div>
 //
-// .bl-box - default
-// .bl-box--large - large
-// .bl-box--small - small
+// .b-box - default
+// .b-box--large - large
+// .b-box--small - small
 
 
 
@@ -33,21 +33,21 @@ $boxPadding: 1em;
 
 
 
-.bl-box{
+.b-box{
     @extend %box;
     padding: $boxPadding;
 }
 
 
 
-.bl-box--large{
+.b-box--large{
     @extend %box;
     padding: $boxPadding*2;
 }
 
 
 
-.bl-box--small{
+.b-box--small{
     @extend %box;
     padding: $boxPadding/2;
 }

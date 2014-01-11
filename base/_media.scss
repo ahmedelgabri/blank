@@ -55,28 +55,28 @@ figcaption{
 Responsive Videos/Embeds
 
 Markup:
-<figure class="bl-embed-wrapper">
-    <video class="bl-embed--{ratio}"></video>
+<figure class="b-embed-wrapper">
+    <video class="b-embed--{ratio}"></video>
     <iframe clas="bl-embed--{ratio}"></iframe>
 </figure>
 
-.bl-embed-wrapper   - on the parent element
-.bl-embed--{widescreen|fourbythree|other-ratio}  - on the element itself
+.b-embed-wrapper   - on the parent element
+.b-embed--{widescreen|fourbythree|other-ratio}  - on the element itself
 */
 
 
 
-.bl-embed-wrapper{
+.b-embed-wrapper{
     position: relative;
     display: block;
     height: 0;
     @include rem(margin-bottom, $verticalspace);
 
-    &.bl-embed--widescreen{
+    &.b-embed--widescreen{
         padding-top: 56.25%;
     }
 
-    &.bl-embed--fourbythree{
+    &.b-embed--fourbythree{
         padding-top: 75%;
     }
 

@@ -20,16 +20,16 @@
 //
 //
 // Markup:
-// <div class="bl-alert {$modifiers}"> Alert </div>
+// <div class="b-alert {$modifiers}"> Alert </div>
 //
-// .bl-alert--default - default
-// .bl-alert--info - info
-// .bl-alert--success - success
-// .bl-alert--error - error
+// .b-alert--default - default
+// .b-alert--info - info
+// .b-alert--success - success
+// .b-alert--error - error
 
 
 
-.bl-alert{
+.b-alert{
     display: block;
     padding: 1em;
     border-style: solid;
@@ -45,14 +45,14 @@
 
 
 
-.bl-alert__header{
+.b-alert__header{
     @include rem(margin-bottom, $verticalspace);
 }
 
 
 
-.bl-alert__header,
-.bl-alert__body{
+.b-alert__header,
+.b-alert__body{
     > :last-child,
     > :last-child > :last-child {
         margin-bottom: 0;
@@ -61,25 +61,25 @@
 
 
 
-.bl-alert--default{
+.b-alert--default{
     @include alert($default);
 }
 
 
 
-.bl-alert--success{
+.b-alert--success{
     @include alert($success);
 }
 
 
 
-.bl-alert--error{
+.b-alert--error{
     @include alert($error);
 }
 
 
 
-.bl-alert--info{
+.b-alert--info{
     @include alert($info);
 }
 

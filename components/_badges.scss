@@ -20,17 +20,17 @@
 // Badges
 //
 // Markup:
-// <span class="bl-badge {$modifiers}"> 100 </span>
-// <span class="bl-badge {$modifiers}"> DANGER! </span>
+// <span class="b-badge {$modifiers}"> 100 </span>
+// <span class="b-badge {$modifiers}"> DANGER! </span>
 //
-// .bl-badge--default - default
-// .bl-badge--info - info
-// .bl-badge--success - success
-// .bl-badge--error - error
+// .b-badge--default - default
+// .b-badge--info - info
+// .b-badge--success - success
+// .b-badge--error - error
 
 
 
-.bl-badge{
+.b-badge{
     font-size: 75%;
     display: inline-block;
     vertical-align: middle;
@@ -42,25 +42,25 @@
 
 
 
-.bl-badge--default{
+.b-badge--default{
     @include badge($default);
 }
 
 
 
-.bl-badge--info{
+.b-badge--info{
     @include badge($info);
 }
 
 
 
-.bl-badge--error{
+.b-badge--error{
     @include badge($error);
 }
 
 
 
-.bl-badge--success{
+.b-badge--success{
     @include badge($success);
 }
 

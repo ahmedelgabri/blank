@@ -21,8 +21,8 @@ Markup:
  </ol|ul>
 </ol|ul>
 
-.bl-list--numbered      - Automatic numbering for multi-levels deep **Must be used with `.bl-list--reset`**
-.bl-list--reset         - can be added on ordered or unordered lists to reset it's styling.
+.b-list--numbered      - Automatic numbering for multi-levels deep **Must be used with `.b-list--reset`**
+.b-list--reset         - can be added on ordered or unordered lists to reset it's styling.
 */
 
 
@@ -71,7 +71,7 @@ li{
 // Modifires classes
 //==============================================================================
 
-.bl-list--reset{
+.b-list--reset{
     list-style: none;
     padding: 0;
     margin: 0;
@@ -79,7 +79,7 @@ li{
 
 
 
-.bl-list--numbered{
+.b-list--numbered{
     @include auto-numbers(li,".", item, ul);
 }
 

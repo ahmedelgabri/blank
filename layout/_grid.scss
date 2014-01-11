@@ -4,20 +4,20 @@
 
 // Grid
 //
-// Fully fluid 12 columns Grid. `.bl-grid` for padded grid add `.bl-grid--pad`
+// Fully fluid 12 columns Grid. `.b-grid` for padded grid add `.b-grid--pad`
 //
 // Markup:
-// <div class="bl-grid">
-//     <div class="bl-unit s-1-12--s s-1-12--m s-12-12--l">
+// <div class="b-grid">
+//     <div class="b-unit s-1-12--s s-1-12--m s-12-12--l">
 //         <div> contnet </div>
 //     </div>
-//     <div class="bl-unit s-1-12--s s-1-12--m s-12-12--l">
+//     <div class="b-unit s-1-12--s s-1-12--m s-12-12--l">
 //         <div> contnet </div>
 //     </div>
-//     <div class="bl-unit s-1-12--s s-1-12--m s-12-12--l">
+//     <div class="b-unit s-1-12--s s-1-12--m s-12-12--l">
 //         <div> contnet </div>
 //     </div>
-//     <div class="bl-unit s-1-12--s s-1-12--m s-12-12--l">
+//     <div class="b-unit s-1-12--s s-1-12--m s-12-12--l">
 //         <div> contnet </div>
 //     </div>
 // </div>
@@ -26,7 +26,7 @@
 
 $gutter: percentage( strip-units($grid-gutter) / strip-units($grid-width) ); // Percentage gutter
 
-.bl-grid{
+.b-grid{
     list-style: none;
     font-size: 0;
     text-align: left;
@@ -34,21 +34,21 @@ $gutter: percentage( strip-units($grid-gutter) / strip-units($grid-width) ); // 
 
 
 
-.bl-grid--rev{
+.b-grid--rev{
     text-align: right;
 }
 
 
 
-.bl-grid--center{
+.b-grid--center{
     text-align: center;
 }
 
 
 
-.bl-grid--pad{
+.b-grid--pad{
     margin:0 -1 * $gutter/2;
-    > .bl-unit{
+    > .b-unit{
         padding: 0 $gutter/2;
         margin-bottom: $verticalspace;
     }
@@ -56,16 +56,16 @@ $gutter: percentage( strip-units($grid-gutter) / strip-units($grid-width) ); // 
 
 
 
-.bl-grid--middle{
-    > .bl-unit{
+.b-grid--middle{
+    > .b-unit{
         vertical-align: middle;
     }
 }
 
 
 
-.bl-grid--bottom{
-    > .bl-unit{
+.b-grid--bottom{
+    > .b-unit{
         vertical-align: bottom;
     }
 }

@@ -75,24 +75,24 @@ h6,
 // Section titles
 //
 // Markup:
-// <h5 class="bl-title {$modifiers}"> Header 5 as a title</h5>
+// <h5 class="b-title {$modifiers}"> Header 5 as a title</h5>
 //
-// .bl-title--primary - Primary title
-// .bl-title--secondary - Secondary title
+// .b-title--primary - Primary title
+// .b-title--secondary - Secondary title
 
 
 
-.bl-title {
+.b-title {
 }
 
 
 
-.bl-title--primary {
+.b-title--primary {
 }
 
 
 
-.bl-title--secondary {
+.b-title--secondary {
 }
 
 
@@ -100,14 +100,14 @@ h6,
 // Section subtitles
 //
 // Markup:
-// <h5 class="bl-subtitle {$modifiers}"> Header 5 as a subtitle</h5>
-// <p class="bl-subtitle {$modifiers}"> Paragraph 5 as a subtitle</p>
+// <h5 class="b-subtitle {$modifiers}"> Header 5 as a subtitle</h5>
+// <p class="b-subtitle {$modifiers}"> Paragraph 5 as a subtitle</p>
 //
-// .bl-subtitle - Primary subtitle
+// .b-subtitle - Primary subtitle
 
 
 
-.bl-subtitle {
+.b-subtitle {
 
 }
 
@@ -123,8 +123,8 @@ h6,
 // Markup:
 // <p class="{$modifiers}"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, deleniti adipisci cupiditate quibusdam labore saepe! Cumque, et, fuga assumenda tempora nisi similique quae dicta ab repellendus eum nam aperiam quas.</p>
 //
-// .bl-p--big - big paragraph, maybe for intros & stuff like this"
-// .bl-p--small - small paragraph, don't use instead of the "small" element
+// .b-p--big - big paragraph, maybe for intros & stuff like this"
+// .b-p--small - small paragraph, don't use instead of the "small" element
 
 
 
@@ -135,19 +135,19 @@ p {
 
 
 p,
-.bl-normal-text {
+.b-normal-text {
     @include rem(font-size, $basefont);
 }
 
 
 
-.bl-text--big {
+.b-text--big {
     font-size: 1.4em;
 }
 
 
 
-.bl-text--small {
+.b-text--small {
     font-size: .9em;
 }
 
@@ -163,9 +163,9 @@ p,
 // <cite class="blockquote-source"> Someone </cite>
 // </blockquote>
 //
-// .bl-blockquote--left - aligned left
-// .bl-blockquote--right - aligned right
-// .bl-blockquote--center - centered
+// .b-blockquote--left - aligned left
+// .b-blockquote--right - aligned right
+// .b-blockquote--center - centered
 
 
 
@@ -207,14 +207,14 @@ blockquote {
 
 
 
-.bl-blockquote--left{
+.b-blockquote--left{
     border-left: .3em solid #222;
     padding-left: 1em;
 }
 
 
 
-.bl-blockquote--right{
+.b-blockquote--right{
     border-right: .3em solid #222;
     padding-right: 1em;
     text-align: right;
@@ -222,7 +222,7 @@ blockquote {
 
 
 
-.bl-blockquote--center{
+.b-blockquote--center{
     border-top: .3em solid #222;
     border-bottom: .3em solid #222;
     padding: 1em;
@@ -231,13 +231,13 @@ blockquote {
 
 
 
-.bl-blockquote__source{
+.b-blockquote__source{
     @include rem(font-size, 12px);
 }
 
 
 
-.bl-blockquote-source:before{
+.b-blockquote-source:before{
     content:"—";
 }
 
@@ -253,7 +253,7 @@ q {
 
 
 small,
-.bl-small-text {
+.b-small-text {
     font-size: 75%;
 }
 

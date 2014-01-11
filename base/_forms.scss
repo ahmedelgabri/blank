@@ -153,8 +153,8 @@ input[type="email"],
 input[type="url"],
 input[type="search"],
 textarea,
-.bl-form__field,
-.bl-select{
+.b-form__field,
+.b-select{
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -196,13 +196,13 @@ input[type="reset"]{
 // Styling for forms & form related elements like, <legend>, <fieldset>.
 //
 // Markup:
-// <form class="bl-form">
+// <form class="b-form">
 //
 // </form>
 //
-// .bl-form    - Generic class for forms
+// .b-form    - Generic class for forms
 
-.bl-form{
+.b-form{
     &,
     fieldset{
         @include rem(margin-bottom, $verticalspace);
@@ -221,13 +221,13 @@ input[type="reset"]{
 // The wrapper that holds form input & labels, can be whatever element.
 //
 // Markup:
-// <div class="bl-form__holder">
+// <div class="b-form__holder">
 //    Form elements here
 // </div>
 //
-// .bl-form__holder
+// .b-form__holder
 
-.bl-form__holder{
+.b-form__holder{
     @include rem(margin-bottom, $verticalspace);
 }
 
@@ -238,14 +238,14 @@ input[type="reset"]{
 // The form field itself, textfields, select, textarea
 //
 // Markup:
-// <input class="bl-form__field">
+// <input class="b-form__field">
 //
-// .bl-form__field
+// .b-form__field
 
-.bl-form__field{
+.b-form__field{
 }
 
-.bl-form__list{
+.b-form__list{
 }
 
 
@@ -253,21 +253,21 @@ input[type="reset"]{
 // Inline Form
 //
 // Markup:
-// <form class="bl-form">
-//     <ul class="bl-form--inline">
+// <form class="b-form">
+//     <ul class="b-form--inline">
 //
 //      </ul>
 // </form>
 //
-// .bl-form--inline
+// .b-form--inline
 
-.bl-form--inline{
+.b-form--inline{
     list-style:none;
     margin-left:0;
     letter-spacing: -0.31em;
     text-rendering: optimizespeed;
 
-    > .bl-form__holder {
+    > .b-form__holder {
         letter-spacing: normal;
         text-rendering: auto;
 
@@ -283,7 +283,7 @@ input[type="reset"]{
 
     }
 
-    .bl-btn-group{
+    .b-btn-group{
         @include mq($mq-medium){
             margin-bottom: 0;
         }
@@ -294,21 +294,21 @@ input[type="reset"]{
 // Full width form
 //
 // Markup:
-// <form class="bl-form">
-//     <ul class="bl-form--full">
+// <form class="b-form">
+//     <ul class="b-form--full">
 //
 //     </ul>
 // </form>
 //
-// .bl-form--full
+// .b-form--full
 
-.bl-form--full{
+.b-form--full{
     list-style:none;
     margin-left:0;
     width: 100%;
     display: table;
 
-    > .bl-form__holder {
+    > .b-form__holder {
 
         @include mq($mq-medium){
             margin-bottom: 0;
@@ -334,14 +334,14 @@ input[type="reset"]{
 // Select element with custom styling
 //
 // Markup:
-// <select class="bl-select">
+// <select class="b-select">
 // </select>
 //
-// .bl-select
+// .b-select
 
 
 
-.bl-select{
+.b-select{
     padding: $fieldPadding/2 $fieldPadding;
     box-shadow: 0 .15em .15em rgba($fieldBorderColor, .5);
     background-repeat: no-repeat;
@@ -376,17 +376,17 @@ input[type="reset"]{
 // Custom checkboxes & radio buttons in a toggle like shape
 //
 // Markup:
-// <label class="bl-toggle">
-//     <input class="bl-toggle__switch" type="radio|checkbox">
+// <label class="b-toggle">
+//     <input class="b-toggle__switch" type="radio|checkbox">
 //     <span> Label Text </span>
 // </label>
 //
-// .bl-toggle            - on the wrapping label
-// .bl-toggle__switch    - on the input itself {radio|checkbox}
+// .b-toggle            - on the wrapping label
+// .b-toggle__switch    - on the input itself {radio|checkbox}
 
 
 
-.bl-toggle{
+%toggle {
     display: inline-block;
     vertical-align: top;
     @include rem(font-size, 14px);
@@ -394,7 +394,7 @@ input[type="reset"]{
 
 
 
-.bl-toggle__switch{
+%toggle__switch {
     &:checked,
     &:not(:checked){
         @extend .h-visuallyhidden;
@@ -452,6 +452,71 @@ input[type="reset"]{
 
 
 
+%custom-checkbox{
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+
+%custom-checkbox__input{
+    @extend .h-visuallyhidden;
+
+    + span{
+        position: relative;
+        display: inline-block;
+
+        &:before{
+            @include rem(width, 25px);
+            @include rem(height, 25px);
+
+            content: "";
+            display: inline-block;
+            vertical-align: top;
+            border: 2px solid #eee;
+            border-radius: 4px;
+            margin-right: .5em;
+        }
+    }
+
+
+    &:checked{
+        + span{
+            &:before {
+                border-color: #35bcaf;
+            }
+            &:after{
+                @include rem(width, 25px);
+                @include rem(height, 25px);
+                @include rem(left, 1px);
+                @include rem(top, -2px);
+
+                position: absolute;
+                content: "";
+                background-image: url('/static/assets/images/checkbox-tick.png');
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                -webkit-background-size: 25px;
+                background-size: 25px;
+            }
+        }
+    }
+}
+
+
+
+.b-toggle {
+    @extend %toggle;
+}
+
+
+
+.b-toggle__switch {
+    @extend %toggle__switch;
+}
+
+
+
 
 
 // FORM MESSAGES
@@ -462,20 +527,20 @@ input[type="reset"]{
 // Error, Succes or info messages in forms
 //
 // Markup:
-// <form class="bl-form">
+// <form class="b-form">
 //     <ul>
-//         <li class="bl-form__holder bl-form__message--error|success">
+//         <li class="b-form__holder bl-form__message--error|success">
 //             <label>Label</label>
 //             <input>
-//             <span class="bl-form-message">Message</span>
+//             <span class="b-form-message">Message</span>
 //         </li>
 //     </ul>
 // </form>
 //
-// .bl-form__message--error|success   - remove the class for an info message
-// .bl-form__message
+// .b-form__message--error|success   - remove the class for an info message
+// .b-form__message
 
-.bl-form__message{
+.b-form__message{
     font-size: 75%;
     padding: .5em;
     display: block;
@@ -483,15 +548,15 @@ input[type="reset"]{
 
 
 
-.bl-form__message--error{
+.b-form__message--error{
     > label,
-    > .bl-form__field,
-    > .bl-form__message{
+    > .b-form__field,
+    > .b-form__message{
         color: $error;
         border-color: $error;
     }
 
-    > .bl-form__field{
+    > .b-form__field{
         &::-webkit-input-placeholder {
             color: $error;
         }
@@ -505,22 +570,22 @@ input[type="reset"]{
         }
     }
 
-    > .bl-form__message{
+    > .b-form__message{
         background-color: lighten($error, 50%);
     }
 }
 
 
 
-.bl-form__message--success{
+.b-form__message--success{
     > label,
-    > .bl-form__field,
-    > .bl-form__message{
+    > .b-form__field,
+    > .b-form__message{
         color: $success;
         border-color: $success;
     }
 
-    > .bl-form__field{
+    > .b-form__field{
         &::-webkit-input-placeholder {
             color: $success;
         }
@@ -534,7 +599,7 @@ input[type="reset"]{
         }
     }
 
-    > .bl-form__message{
+    > .b-form__message{
         background-color: lighten($success, 50%);
     }
 }

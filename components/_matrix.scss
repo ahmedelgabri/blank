@@ -11,15 +11,15 @@ $matrixMargin: 5%;
 // Fully fluid 12 columns Matrix based on 960 but can be anything.
 //
 // Markup:
-// <div class="bl-matrix bl-matrix--{n}">
-//    <div class="bl-matrix__unit">
+// <div class="b-matrix bl-matrix--{n}">
+//    <div class="b-matrix__unit">
 //       <div> contnet </div>
 //    </div>
 // </div>
 
 
 
-.bl-matrix{
+.b-matrix{
     @include rem(margin-bottom, $verticalspace);
     list-style:none;
     margin-left:0;
@@ -38,8 +38,8 @@ $matrixMargin: 5%;
 
 
 @for $i from 1 through $grid-columns {
-    .bl-matrix--#{$i}{
-        .bl-matrix__unit{
+    .b-matrix--#{$i}{
+        .b-matrix__unit{
             width: percentage($i/$grid-columns) - $matrixMargin/2;
             // padding-top: percentage($i/$grid-columns-large) - $grid-gutter;
             margin-bottom: $matrixMargin;
@@ -49,7 +49,7 @@ $matrixMargin: 5%;
 
 
 
-.bl-matrix__unit{
+.b-matrix__unit{
     display: inline-block;
     vertical-align: top;
     letter-spacing: normal;

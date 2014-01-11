@@ -46,11 +46,11 @@ Markup:
   </tbody>
 </table>
 
-.bl-table - default
-.bl-table--border - border
-.bl-table--zebra - zebra
-.bl-table--condense - condense
-.bl-table--round - round
+.b-table - default
+.b-table--border - border
+.b-table--zebra - zebra
+.b-table--condense - condense
+.b-table--round - round
 */
 
 
@@ -95,7 +95,7 @@ td{
 
 
 
-.bl-table{
+.b-table{
     border: 1px solid $theme-blue;
     th,
     td{
@@ -105,7 +105,7 @@ td{
 
 
 
-.bl-table--condensed{
+.b-table--condensed{
     th,
     td{
         padding: $cellPadding/4 $cellPadding/2;
@@ -114,7 +114,7 @@ td{
 
 
 
-.bl-table--border{
+.b-table--border{
     th{
         border: 1px solid $theme-blue;
     }
@@ -126,7 +126,7 @@ td{
 
 
 
-.bl-table--zebra{
+.b-table--zebra{
     tr:nth-child(even){
         background-color: darken($color-bg, 5%);
     }
@@ -135,7 +135,7 @@ td{
 
 
 // @TODO: fix double borders;
-.bl-table--round{
+.b-table--round{
     border-collapse: separate;
     border:none;
     thead {

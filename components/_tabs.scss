@@ -7,8 +7,8 @@
 // Tabs
 //
 // Markup:
-// <div class="bl-tabs">
-//     <ul class="bl-tabs__nav bl-list--reset">
+// <div class="b-tabs">
+//     <ul class="b-tabs__nav bl-list--reset">
 //         <li>
 //           <a href="#tab1"> Tab1 </a>
 //         </li>
@@ -19,24 +19,24 @@
 //           <a href="#tab3"> Tab3 </a>
 //         </li>
 //     </ul>
-//    <div class="bl-tabs__panels">
-//         <div class="bl-tabs__panel" id="tab1">
+//    <div class="b-tabs__panels">
+//         <div class="b-tabs__panel" id="tab1">
 //           Panel 1
 //         </div>
-//         <div class="bl-tabs__panel" id="tab2">
+//         <div class="b-tabs__panel" id="tab2">
 //           Panel 2
 //         </div>
-//         <div class="bl-tabs__panel" id="tab3">
+//         <div class="b-tabs__panel" id="tab3">
 //           Panel 3
 //         </div>
 //    </div>
 // </div>
 
-// .bl-tabs
+// .b-tabs
 
 
 
-.bl-tabs{
+.b-tabs{
     position: relative;
     overflow: hidden;
     @include rem(margin-bottom, $verticalspace);
@@ -44,7 +44,7 @@
 
 
 
-.bl-tabs__nav{
+.b-tabs__nav{
     display: table;
     width: 100%;
 
@@ -73,13 +73,13 @@
 
 
 
-.bl-tabs__panels{
+.b-tabs__panels{
     position: relative;
 }
 
 
 
-.bl-tabs__panel{
+.b-tabs__panel{
     padding: 1em;
     background-color: $theme-grey;
     color: $color-text;

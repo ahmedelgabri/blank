@@ -7,11 +7,11 @@
 // A generic component can be used with grid or separately
 //
 // Markup:
-// <div class="bl-unit">
+// <div class="b-unit">
 //      [content...]
 // </div>
 
-.bl-unit{
+.b-unit{
     display: inline-block;
     @include rem(font-size, $basefont);
     width: 100%;
@@ -22,7 +22,7 @@
 
 
 
-.bl-unit--centered{
+.b-unit--centered{
     display: block;
     margin: 0 auto;
 }

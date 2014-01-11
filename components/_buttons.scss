@@ -18,16 +18,16 @@ $btnGroupInnerRadius: 2px;
 // Styling for buttons
 //
 // Markup:
-// <a href="#" class="bl-btn {$modifiers}"> link </a>
-// <button class="bl-btn {$modifiers}"> Button </button>
-// <input type="submit" class="bl-btn {$modifiers}" value="input">
+// <a href="#" class="b-btn {$modifiers}"> link </a>
+// <button class="b-btn {$modifiers}"> Button </button>
+// <input type="submit" class="b-btn {$modifiers}" value="input">
 //
-// .bl-btn--primary - Primary button styling
-// .bl-btn--secondary - Secondary button styling
+// .b-btn--primary - Primary button styling
+// .b-btn--secondary - Secondary button styling
 
 
 
-.bl-btn {
+.b-btn {
     -webkit-user-select:none;
     -moz-user-select:none;
     -ms-user-select:none;
@@ -56,31 +56,31 @@ $btnGroupInnerRadius: 2px;
 
 
 
-.bl-btn--full{
+.b-btn--full{
     width: 100%;
 }
 
 
 
-.bl-btn--large{
+.b-btn--large{
     font-size: 150%;
 }
 
 
 
-.bl-btn--small{
+.b-btn--small{
     font-size: 50%;
 }
 
 
 
-.bl-btn--pill{
+.b-btn--pill{
     border-radius: 100px;
 }
 
 
 
-.bl-btn--rounded{
+.b-btn--rounded{
     border-radius: $btnRoundedRadius;
 }
 
@@ -99,7 +99,7 @@ $btncolor-texts: $btn-primary-text, $btn-secondary-text;
 @each $btn in $btns{
     $i: index($btns, $btn);
 
-    .bl-btn--#{$btn}{
+    .b-btn--#{$btn}{
         background-color: nth($btncolor-bgs, $i);
         color: nth($btncolor-texts, $i);
 
@@ -114,7 +114,7 @@ $btncolor-texts: $btn-primary-text, $btn-secondary-text;
 
 
 // Disbaled buttons
-.bl-btn--disabled,
+.b-btn--disabled,
 [disabled],
 [disabled="disabled"]{
     &,
@@ -134,34 +134,34 @@ $btncolor-texts: $btn-primary-text, $btn-secondary-text;
 // Buttons with Icons
 //
 // Markup:
-// <a href="#" class="bl-btn {$modifiers}"> <i class="bl-btn__icon"></i>link </a>
-// <button class="bl-btn {$modifiers}"> <i class="bl-btn__icon"></i> Button </button>
-// <input type="submit" class="bl-btn bl-btn--icon {$modifiers}" value="input">
+// <a href="#" class="b-btn {$modifiers}"> <i class="b-btn__icon"></i>link </a>
+// <button class="b-btn {$modifiers}"> <i class="b-btn__icon"></i> Button </button>
+// <input type="submit" class="b-btn bl-btn--icon {$modifiers}" value="input">
 //
-// .bl-btn__icon
-// .bl-btn--icon               - for input[submit] only
+// .b-btn__icon
+// .b-btn--icon               - for input[submit] only
 
 
 
 $icons: twitter, facebook, rss;
 
 @each $icon in $icons{
-    .bl-btn--icon--#{$icon},
-    .bl-btn__icon--#{$icon}{
+    .b-btn--icon--#{$icon},
+    .b-btn__icon--#{$icon}{
         background-image: url(../img/#{$icon}.png);
     }
 }
 
 
 
-.bl-btn--icon,
-.bl-btn__icon{
+.b-btn--icon,
+.b-btn__icon{
     background-image: url(http://placehold.it/16x16);
 }
 
 
 
-.bl-btn--icon{
+.b-btn--icon{
     padding-left: $btnPadding*2.5;
     background-repeat: no-repeat;
     background-position: $btnPadding 50%;
@@ -169,7 +169,7 @@ $icons: twitter, facebook, rss;
 
 
 
-.bl-btn__icon{
+.b-btn__icon{
     width: 1em;
     height: 1em;
     display: inline-block;
@@ -184,19 +184,19 @@ $icons: twitter, facebook, rss;
 // Buttons Group
 //
 // Markup:
-// <div class="bl-btn-group">
-//    <a href="#" class="bl-btn bl-btn--icon {$modifiers}"> link </a>
-//    <button class="bl-btn bl-btn--icon {$modifiers}"> Button </button>
-//    <input type="submit" class="bl-btn bl-btn--icon {$modifiers}" value="input">
+// <div class="b-btn-group">
+//    <a href="#" class="b-btn bl-btn--icon {$modifiers}"> link </a>
+//    <button class="b-btn bl-btn--icon {$modifiers}"> Button </button>
+//    <input type="submit" class="b-btn bl-btn--icon {$modifiers}" value="input">
 // </div>
 //
-// .bl-btn-group
+// .b-btn-group
 
 
 
 
 
-.bl-btn-group{
+.b-btn-group{
     @include rem(margin-bottom, $verticalspace);
     @include mq($mq-large){
         margin-right: $btnPadding;
@@ -210,7 +210,7 @@ $icons: twitter, facebook, rss;
     letter-spacing: -0.31em;
     text-rendering: optimizespeed;
 
-    > .bl-btn{
+    > .b-btn{
         @include mq($mq-medium){
             display:inline-block;
         }
@@ -222,8 +222,8 @@ $icons: twitter, facebook, rss;
 
 
 
-.bl-btn-group--spaced{
-    > .bl-btn{
+.b-btn-group--spaced{
+    > .b-btn{
         margin-bottom: $btnPadding;
 
         &:last-child{
@@ -232,7 +232,7 @@ $icons: twitter, facebook, rss;
     }
 
     @include mq($mq-large){
-        > .bl-btn{
+        > .b-btn{
             margin-right: $btnPadding;
             margin-bottom: 0;
 
@@ -245,10 +245,10 @@ $icons: twitter, facebook, rss;
 
 
 
-.bl-btn-group--round{
+.b-btn-group--round{
     border-radius: $btnGroupOuterRadius;
 
-    > .bl-btn{
+    > .b-btn{
         &:first-child{
             border-radius: $btnGroupInnerRadius 0 0 $btnGroupInnerRadius;
         }

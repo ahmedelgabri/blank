@@ -7,32 +7,32 @@
 // Same as the media object but with vertical aligmnent
 //
 // Markup:
-// <div class="bl-banner {$modifiers}">
-//    <div class="bl-banner__figure">
+// <div class="b-banner {$modifiers}">
+//    <div class="b-banner__figure">
 //         <img src="http://placehold.it/150x150/bada55/000">
 //    </div>
-//    <div class="bl-banner__body">
+//    <div class="b-banner__body">
 //         <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, quae, quidem, nam, suscipit assumenda voluptates laudantium nobis totam blanditiis iste laboriosam voluptas sapiente amet laborum debitis dolore consectetur enim ducimus.</p>
 //    </div>
 // </div>
 //
-// .bl-banner--rev - filps the image to the right
-// .bl-banner--top - aligns text to top
-// .bl-banner--bottom - aligns text to bottom
+// .b-banner--rev - filps the image to the right
+// .b-banner--top - aligns text to top
+// .b-banner--bottom - aligns text to bottom
 //
 
 
 
 // Needs a better name?
-.bl-banner{
+.b-banner{
     display: table;
     width: 100%;
 }
 
 
 
-.bl-banner__figure,
-.bl-banner__body{
+.b-banner__figure,
+.b-banner__body{
     display: table-cell;
     vertical-align: middle;
 
@@ -41,18 +41,18 @@
         margin-bottom: 0;
     }
 
-    .bl-banner--top &{
+    .b-banner--top &{
         vertical-align: top;
     }
 
-    .bl-banner--bottom &{
+    .b-banner--bottom &{
         vertical-align: bottom;
     }
 }
 
 
 
-.bl-banner__figure{
+.b-banner__figure{
     @include rem(padding-right, $grid-gutter);
 
     > img{
@@ -60,7 +60,7 @@
         max-width: none;
     }
 
-    .bl-banner--rev &{
+    .b-banner--rev &{
         padding-right: 0;
         @include rem(padding-left, $grid-gutter);
     }
@@ -68,7 +68,7 @@
 
 
 
-.bl-banner__body{
+.b-banner__body{
     width: 100%;
 }
 

@@ -1,4 +1,4 @@
-.bl-wrapper{
+.b-wrapper{
     margin-left: auto;
     margin-right: auto;
     padding:0 5%;
@@ -14,7 +14,7 @@
 // LAYOUTS
 //==============================================================================
 
-/*body*/.bl-layout-a{
+/*body*/.b-layout-a{
     main{
         width:100%;
         padding: $grid-gutter;
@@ -23,7 +23,7 @@
 
 
 
-/*body*/.bl-layout-b{
+/*body*/.b-layout-b{
     main{
         float: none;
         width: 100%;
@@ -55,13 +55,13 @@
 // MAIN HEADER & FOOTER
 //==============================================================================
 
-.bl-header{
+.b-header{
 
 }
 
 
 
-.bl-footer{
+.b-footer{
 
 }
 

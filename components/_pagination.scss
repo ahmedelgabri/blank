@@ -7,7 +7,7 @@
 // Turns any list element into pagination
 //
 // Markup:
-// <ul class="bl-pagination">
+// <ul class="b-pagination">
 //     <li><a href="#">1</a></li>
 //     <li><a href="#">2</a></li>
 //     <li><a href="#">3</a></li>
@@ -21,11 +21,11 @@
 //     <li><a href="#">14</a></li>
 // </ul>
 //
-// .bl-pagination
+// .b-pagination
 
 
 
-.bl-pagination{
+.b-pagination{
     @include rem(margin-bottom, $verticalspace);
     text-align:center;
     letter-spacing: -0.31em;

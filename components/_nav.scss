@@ -7,7 +7,7 @@
 // Abstruction for the Nav http://csswizardry.com/2011/09/the-nav-abstraction/
 //
 // Markup:
-// <ul class="bl-nav">
+// <ul class="b-nav">
 //      <li>
 //          something
 //      </li>
@@ -16,10 +16,10 @@
 //      </li>
 // </ul>
 //
-// .bl-nav
+// .b-nav
 
 
-.bl-nav{
+.b-nav{
     list-style:none;
     margin-left:0;
     letter-spacing: -0.31em;
@@ -48,7 +48,7 @@
 // Extends `.nav` to create a navigation bar
 //
 // Markup:
-// <ul class="bl-list--reset bl-navbar">
+// <ul class="b-list--reset bl-navbar">
 //      <li>
 //          <a href="#"> link </a>
 //      </li>
@@ -57,11 +57,11 @@
 //      </li>
 // </ul>
 //
-// .bl-nav--bar
+// .b-nav--bar
 
 
 
-.bl-navbar{
+.b-navbar{
     @include mq($mq-medium){
         display: table;
         width: 100%;
@@ -70,7 +70,7 @@
 
 
 
-.bl-navbar__item{
+.b-navbar__item{
     display: block;
     position: relative;
     width: 100%;
@@ -95,32 +95,32 @@
 // This class to be added on an element that you want it to have sub-menu
 //
 // Markup:
-// <ul class="bl-list--reset bl-navbar">
+// <ul class="b-list--reset bl-navbar">
 //      <li>
 //          something
 //      </li>
-//      <li class="bl-submenu">
+//      <li class="b-submenu">
 //          <a href="#"> link </a>
-//          <ul class="bl-list--reset bl-menu">
+//          <ul class="b-list--reset bl-menu">
 //              <li> <a href="#"> Submenu </a> </li>
 //              <li> <a href="#"> Submenu </a> </li>
 //          </ul>
 //      </li>
 // </ul>
 //
-// .bl-menu
+// .b-menu
 
 
 
-.bl-submenu{
-    .bl-menu{
+.b-submenu{
+    .b-menu{
         position: absolute;
         left: -9999px;
     }
 
     &:hover,
     &:focus{
-        .bl-menu{
+        .b-menu{
             left: 0;
             right: 0;
         }
@@ -136,7 +136,7 @@
 // Vertical list of items can be used inside a navbar a submenu
 //
 // Markup:
-// <ul class="bl-list--reset bl-menu">
+// <ul class="b-list--reset bl-menu">
 //      <li>
 //          something
 //      </li>
@@ -145,17 +145,17 @@
 //      </li>
 // </ul>
 //
-// .bl-menu
+// .b-menu
 
 
 
-.bl-menu{
+.b-menu{
     border: 1px solid;
 }
 
 
 
-.bl-menu__item{
+.b-menu__item{
     border-bottom: 1px solid;
     &:last-of-type{
         border-bottom: none;

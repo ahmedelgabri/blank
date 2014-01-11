@@ -7,22 +7,22 @@
 // Accrodion, can be used with ul/ol too
 //
 // Markup:
-// <dl class="bl-accordion">
-//     <dt class="bl-accordion__title"> Title </dt>
-//     <dd class="bl-accordion__contnet"> Content </dd>
+// <dl class="b-accordion">
+//     <dt class="b-accordion__title"> Title </dt>
+//     <dd class="b-accordion__contnet"> Content </dd>
 // </dl>
 //
-// .bl-accrodion
+// .b-accrodion
 
 
 
-.bl-accordion{
+.b-accordion{
     @include rem(margin-bottom, $verticalspace);
 }
 
 
 
-.bl-accordion__title{
+.b-accordion__title{
     padding: 1em;
     background-color: $theme-grey;
     display: block;
@@ -48,7 +48,7 @@
 
 
 
-.bl-accordion__content{
+.b-accordion__content{
     margin-bottom: 0;
     background-color: white;
     > div{

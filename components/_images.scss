@@ -14,23 +14,23 @@ $roundedRadius: 50%;
 // Markup:
 // <img class="{$modifiers}" src="http://placehold.it/300/300">
 //
-// .bl-img--rounded - rounded
-// .bl-img--polaroid - polaroid
+// .b-img--rounded - rounded
+// .b-img--polaroid - polaroid
 
 
 
-.bl-img{
+.b-img{
 }
 
 
 
-.bl-img--rounded{
+.b-img--rounded{
     border-radius: $roundedRadius;
 }
 
 
 
-.bl-img--polaroid{
+.b-img--polaroid{
     padding: 1em;
     background-color: #fff;
     border: 1px solid $color-text;

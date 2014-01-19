@@ -342,25 +342,37 @@ input[type="reset"]{
 
 
 .b-select{
-    padding: $fieldPadding/2 $fieldPadding;
-    box-shadow: 0 .15em .15em rgba($fieldBorderColor, .5);
-    background-repeat: no-repeat;
-    background-position: right 50%;
-    background-image: url(../img/select-arrow.svg);
-    -webkit-background-size: 11px 41%;
-    background-size: 11px 41%;
+        // IE
+    @if $IE {
+        background-image: none;
+    } @else {
+        // Not-IE
+        padding: $fieldPadding/2 $fieldPadding;
+        box-shadow: 0 .15em .15em rgba($fieldBorderColor, .5);
+        background-repeat: no-repeat;
+        background-position: right 50%;
+        background-image: url(../img/select-arrow.svg);
+        -webkit-background-size: 11px 41%;
+        background-size: 11px 41%;
 
-    // https://gist.github.com/joaocunha/6273016
-    @-moz-document url-prefix() {
-      select {
-        -moz-appearance: none;
-        text-indent: 0.01px;
-        text-overflow: "";
-      }
-    }
+        // IE 10+
+        &::-ms-expand {
+            display: none;
+        }
 
-    .no-svg &{
-        background-image: url(../img/select-arrow.png);
+        // FF https://gist.github.com/joaocunha/6273016
+        @-moz-document url-prefix() {
+            & {
+                -moz-appearance: none;
+                text-indent: 0.01px;
+                text-overflow: "";
+            }
+        }
+
+        // Others who doesn't support SVG
+        .no-svg &{
+            background-image: url(../img/select-arrow.png);
+        }
     }
 
     &:hover,

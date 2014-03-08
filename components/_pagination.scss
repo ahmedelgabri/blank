@@ -1,54 +1,44 @@
-//==============================================================================
-// PAGINATION
-//==============================================================================
+/*==============================================================================
+ PAGINATION
 
-// Pagination object
-//
-// Turns any list element into pagination
-//
-// Markup:
-// <ul class="b-pagination">
-//     <li><a href="#">1</a></li>
-//     <li><a href="#">2</a></li>
-//     <li><a href="#">3</a></li>
-//     <li><a href="#" class="current">4</a></li>
-//     <li><a href="#">5</a></li>
-//     <li><a href="#">6</a></li>
-//     <li><a href="#">7</a></li>
-//     <li>...</li>
-//     <li><a href="#">12</a></li>
-//     <li><a href="#">13</a></li>
-//     <li><a href="#">14</a></li>
-// </ul>
-//
-// .b-pagination
+ Turns any list element into pagination
 
+ Markup:
+ <ol class="b-pagination">
+     <li><a href="#">1</a></li>
+     <li><a href="#">2</a></li>
+     <li><a href="#">3</a></li>
+     <li><a href="#" class="current">4</a></li>
+     <li><a href="#">5</a></li>
+     <li><a href="#">6</a></li>
+     <li><a href="#">7</a></li>
+     <li>...</li>
+     <li><a href="#">12</a></li>
+     <li><a href="#">13</a></li>
+     <li><a href="#">14</a></li>
+ </ol>
 
+ #{$namespace}pagination
+ ==============================================================================*/
 
-.b-pagination{
+#{$namespace}pagination {
     @include rem(margin-bottom, $verticalspace);
-    text-align:center;
-    letter-spacing: -0.31em;
-    text-rendering: optimizespeed;
+    overflow: hidden;
 
     li{
+        float: left;
+
         &:first-child a,
         &:last-child a{
             border:none;
         }
     }
 
-    li,
-    a {
-        display:inline-block;
-        letter-spacing: normal;
-        text-rendering: auto;
-        line-height: normal;
-    }
-
     a{
+        display:inline-block;
         padding:.2em .5em;
-        margin:0 .2em;
+        margin:0 .1em;
+        line-height: normal;
         text-decoration: none;
         color: $color-text;
         background-color: darken($color-bg, 30%);

@@ -1,33 +1,29 @@
-//==============================================================================
-// MEDIA
-//==============================================================================
+/*==============================================================================
+MEDIA OBJECT
 
-// Media Object
-//
-// The media object based on http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
-//
-// Markup:
-// <div class="b-media {$modifiers}">
-//    <div class="b-media__figure">
-//        <img src="http://placehold.it/150x150/bada55/000">
-//    </div>
-//    <div class="b-media__body">
-//      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, quae, quidem, nam, suscipit assumenda voluptates laudantium nobis totam blanditiis iste laboriosam voluptas sapiente amet laborum debitis dolore consectetur enim ducimus.</p>
-//    </div>
-// </div>
-//
-// .b-media--rev - filps the image to the right
+The media object based on http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
 
+Markup:
+<div class="b-media {$modifiers}">
+   <div class="b-media__figure">
+       <img src="http://placehold.it/150x150/bada55/000">
+   </div>
+   <div class="b-media__body">
+     <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, quae, quidem, nam, suscipit assumenda voluptates laudantium nobis totam blanditiis iste laboriosam voluptas sapiente amet laborum debitis dolore consectetur enim ducimus.</p>
+   </div>
+</div>
 
+#{$namespace}media--rev - filps the image to the right
+==============================================================================*/
 
-.b-media{
+#{$namespace}media {
     @extend %h-clearfix;
 }
 
 
 
-.b-media__figure{
-    float:left;
+#{$namespace}media__figure {
+    float: left;
     @include rem(margin-right, $grid-gutter);
 
     > :last-child,
@@ -35,26 +31,26 @@
         margin-bottom: 0;
     }
 
-    .b-media--rev &{
-        float: right;
-        margin-right:0;
+    #{$namespace}media--rev & {
         @include rem(margin-left, $grid-gutter);
+        float: right;
+        margin-right: 0;
     }
 }
 
 
 
-.b-media__figure{
+#{$namespace}media__figure {
     > img{
-        display:block;
+        display: block;
     }
 }
 
 
 
-.b-media__body{
-    display:table-cell;
-    width:10000px;
+#{$namespace}media__body {
+    display: table-cell;
+    width: 10000px;
 
     > :last-child,
     > :last-child > :last-child {

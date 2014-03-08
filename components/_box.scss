@@ -1,55 +1,41 @@
-//==============================================================================
-// BOX
-//==============================================================================
+/*==============================================================================
+ Box
 
-// COMPONENT VARIABLES
-// -----------------------------------------------------------------------------
+ Generic container
 
-$boxPadding: 1em;
+ Markup:
+ <div class="{$modifiers}">
+    Box
+ </div>
 
+ #{$namespace}box - default
+ #{$namespace}box--large - large
+ #{$namespace}box--small - small
+ ==============================================================================*/
 
-
-
-
-// Box
-//
-// Generic container
-//
-// Markup:
-// <div class="{$modifiers}">
-//    Box
-// </div>
-//
-// .b-box - default
-// .b-box--large - large
-// .b-box--small - small
-
-
-
-%box{
+%box {
     @include rem(margin-bottom, $verticalspace);
-    border: 1px solid $color-text;
 }
 
 
 
-.b-box{
+#{$namespace}box {
     @extend %box;
-    padding: $boxPadding;
+    padding: 1em;
 }
 
 
 
-.b-box--large{
+#{$namespace}box--large {
     @extend %box;
-    padding: $boxPadding*2;
+    padding: 2em;
 }
 
 
 
-.b-box--small{
+#{$namespace}box--small {
     @extend %box;
-    padding: $boxPadding/2;
+    padding: .5em;
 }
 
 

@@ -1,41 +1,24 @@
-//==============================================================================
-// ALERTS
-//==============================================================================
-
-// HELPER MIXINS
-// -----------------------------------------------------------------------------
-
-@mixin alert( $color ){
-    color: $color;
-    background-color: lighten($color, 50%);
-    border-color: $color;
-}
+/*==============================================================================
+ Alerts
 
 
 
+ Markup:
+ <div class="b-alert {$modifiers}"> Alert </div>
 
+ #{$namespace}alert--default - default
+ #{$namespace}alert--info - info
+ #{$namespace}alert--success - success
+ #{$namespace}alert--error - error
+ ==============================================================================*/
 
-// Alerts
-//
-//
-//
-// Markup:
-// <div class="b-alert {$modifiers}"> Alert </div>
-//
-// .b-alert--default - default
-// .b-alert--info - info
-// .b-alert--success - success
-// .b-alert--error - error
-
-
-
-.b-alert{
+#{$namespace}alert {
+    @include rem(margin-bottom, $verticalspace);
     display: block;
     padding: 1em;
     border-style: solid;
     border-width: 1px;
     position: relative;
-    @include rem(margin-bottom, $verticalspace);
 
     > :last-child,
     > :last-child > :last-child {
@@ -45,14 +28,14 @@
 
 
 
-.b-alert__header{
+#{$namespace}alert__header {
     @include rem(margin-bottom, $verticalspace);
 }
 
 
 
-.b-alert__header,
-.b-alert__body{
+#{$namespace}alert__header,
+#{$namespace}alert__body {
     > :last-child,
     > :last-child > :last-child {
         margin-bottom: 0;
@@ -61,26 +44,34 @@
 
 
 
-.b-alert--default{
-    @include alert($default);
+#{$namespace}alert--default {
+    color: $default;
+    background-color: lighten($default, 50%);
+    border-color: $default;
 }
 
 
 
-.b-alert--success{
-    @include alert($success);
+#{$namespace}alert--success {
+    color: $success;
+    background-color: lighten($success, 50%);
+    border-color: $success;
 }
 
 
 
-.b-alert--error{
-    @include alert($error);
+#{$namespace}alert--error {
+    color: $error;
+    background-color: lighten($error, 50%);
+    border-color: $error;
 }
 
 
 
-.b-alert--info{
-    @include alert($info);
+#{$namespace}alert--info {
+    color: $info;
+    background-color: lighten($info, 50%);
+    border-color: $info;
 }
 
 

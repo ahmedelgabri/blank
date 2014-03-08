@@ -1,42 +1,40 @@
-//==============================================================================
-// TABS
-//==============================================================================
+/*==============================================================================
+ Tabs
 
-// Tabs
-//
-// Tabs
-//
-// Markup:
-// <div class="b-tabs">
-//     <ul class="b-tabs__nav bl-list--reset">
-//         <li>
-//           <a href="#tab1"> Tab1 </a>
-//         </li>
-//         <li>
-//           <a href="#tab2"> Tab2 </a>
-//         </li>
-//         <li>
-//           <a href="#tab3"> Tab3 </a>
-//         </li>
-//     </ul>
-//    <div class="b-tabs__panels">
-//         <div class="b-tabs__panel" id="tab1">
-//           Panel 1
-//         </div>
-//         <div class="b-tabs__panel" id="tab2">
-//           Panel 2
-//         </div>
-//         <div class="b-tabs__panel" id="tab3">
-//           Panel 3
-//         </div>
-//    </div>
-// </div>
+ Tabs
 
-// .b-tabs
+ Markup:
+ <div class="b-tabs">
+     <ul class="b-tabs__nav b-list--reset">
+         <li>
+           <a href="#tab1"> Tab1 </a>
+         </li>
+         <li>
+           <a href="#tab2"> Tab2 </a>
+         </li>
+         <li>
+           <a href="#tab3"> Tab3 </a>
+         </li>
+     </ul>
+    <div class="b-tabs__panels">
+         <div class="b-tabs__panel" id="tab1">
+           Panel 1
+         </div>
+         <div class="b-tabs__panel" id="tab2">
+           Panel 2
+         </div>
+         <div class="b-tabs__panel" id="tab3">
+           Panel 3
+         </div>
+    </div>
+ </div>
+
+ #{$namespace}tabs
+ ==============================================================================*/
 
 
 
-.b-tabs{
+#{$namespace}tabs {
     position: relative;
     overflow: hidden;
     @include rem(margin-bottom, $verticalspace);
@@ -44,7 +42,7 @@
 
 
 
-.b-tabs__nav{
+#{$namespace}tabs__nav {
     display: table;
     width: 100%;
 
@@ -65,21 +63,21 @@
         transition: all .2s ease-in-out;
 
         &.is-active,
-        &:hover{
-            background-color: $theme-blue;
+        &:hover {
+            background-color: $theme-grey--medium;
         }
     }
 }
 
 
 
-.b-tabs__panels{
+#{$namespace}tabs__panels {
     position: relative;
 }
 
 
 
-.b-tabs__panel{
+#{$namespace}tabs__panel {
     padding: 1em;
     background-color: $theme-grey;
     color: $color-text;
@@ -89,17 +87,15 @@
         margin-bottom: 0;
     }
 
-    .js &{ // Filtering Old Browsers
+    .js & { // Filtering Old Browsers
         position: absolute;
         left: 0;
         right: 0;
         top: 0;
         visibility: hidden;
         transition: visibility .2s ease-in-out;
-    }
 
-    .js &{
-        &.is-active{
+        &.is-active {
             position: static;
             visibility: visible;
         }

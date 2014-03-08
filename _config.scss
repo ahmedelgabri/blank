@@ -2,6 +2,9 @@
 // BLANK CONFIGURATIONS
 //==============================================================================
 
+// Global scope, Namespacing & CSS https://medium.com/front-end-development/681bda44c43e
+// if you don't want a namespace just add "."
+$namespace      : ".b-" !default;
 
 // PROJECT OPTIONS
 // -----------------------------------------------------------------------------
@@ -15,7 +18,7 @@ $MQ             : true  !default;
 
 
 
-// TYPOGRAPHY BASICS
+// TYPOGRAPHY
 // -----------------------------------------------------------------------------
 
 $helvetica      : Helvetica, Arial, sans-serif;
@@ -39,7 +42,7 @@ $verticalspace  : $basefont * $lineheight;
 
 $grid-columns   : 12;
 $grid-gutter    : 20px; // Will be converted to %
-$grid-width     : 1000px; // Used to calculate the grid & "if wanted" to be used as max-width
+$grid-width     : 1400px; // Used as max-width for #{namesapce}wrapper in _layouts.scss
 
 
 

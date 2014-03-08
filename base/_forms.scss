@@ -2,8 +2,7 @@
 // FORMS
 //==============================================================================
 
-
-// COMPONENT VARIABLES
+// FORM VARIABLES
 // -----------------------------------------------------------------------------
 
 $fieldPadding: .5em;
@@ -17,8 +16,8 @@ $fieldBorderColor: #ccc;
 // -----------------------------------------------------------------------------
 
 legend {
-    display:table; // Enable line-wrapping in IE8+
-    white-space:normal; // Enable line-wrapping in old versions of some other browsers
+    display: table; // Enable line-wrapping in IE8+
+    white-space: normal; // Enable line-wrapping in old versions of some other browsers
 }
 
 
@@ -48,8 +47,8 @@ button {
 
 
 input,
-button{
-    &::-moz-focus-inner{
+button {
+    &::-moz-focus-inner {
         padding: 0;
         border: 0;
     }
@@ -57,19 +56,13 @@ button{
 
 
 
-[disbaled]{
+[disbaled] {
     cursor: default;
 }
 
 
 
 input[type="search"] {
-    -webkit-appearance : textfield;
-
-    &::-webkit-search-decoration {
-        display : none;
-    }
-
     &::-webkit-search-cancel-button {
         cursor: pointer;
     }
@@ -78,28 +71,30 @@ input[type="search"] {
 
 
 
-@include _placeholder{
+@include _placeholder {
+    font-style: italic;
 };
 
 
 
-select{
+select {
     cursor: pointer;
 }
 
 
 
 textarea {
-    @include resizable(vertical);
+    resize: vertical;
+    overflow: auto; // Safari 6 fix
     min-height: 6em;
 }
 
 
 
 input[type="checkbox"],
-input[type="radio"]{
+input[type="radio"] {
     @include rem(margin-right, 5px);
-    @include rtl{
+    @if $rtl {
         margin-right: 0;
         @include rem(margin-left, 5px);
     }
@@ -139,49 +134,20 @@ input[type="email"],
 input[type="url"],
 input[type="search"],
 select,
-textarea{
+textarea {
     width: 100%;
 }
 
 
 
-input[type="tel"],
-input[type="number"],
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-textarea,
-.b-form__field,
-.b-select{
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    -webkit-border-radius:0;
-    border: 1px solid $fieldBorderColor;
-    padding: $fieldPadding;
-    box-shadow: inset 0 .15em .15em rgba($fieldBorderColor, .5);
-
-    &:hover{
-
-    }
-
-    &:focus{
-
-    }
-}
-
-
-
 input[type="submit"],
-button{
+button {
 }
 
 
 
 
-input[type="reset"]{
+input[type="reset"] {
 }
 
 
@@ -191,20 +157,22 @@ input[type="reset"]{
 // BLANK FORM COMPONENTS
 // -----------------------------------------------------------------------------
 
-// Forms
-//
-// Styling for forms & form related elements like, <legend>, <fieldset>.
-//
-// Markup:
-// <form class="b-form">
-//
-// </form>
-//
-// .b-form    - Generic class for forms
+/*==============================================================================
+Forms
 
-.b-form{
+ Styling for forms & form related elements like, <legend>, <fieldset>.
+
+ Markup:
+ <form class="b-form">
+
+ </form>
+
+ #{$namespace}form    - Generic class for forms
+ ==============================================================================*/
+
+#{$namespace}form {
     &,
-    fieldset{
+    fieldset {
         @include rem(margin-bottom, $verticalspace);
     }
 
@@ -216,109 +184,53 @@ input[type="reset"]{
 
 
 
-// Form Holder
-//
-// The wrapper that holds form input & labels, can be whatever element.
-//
-// Markup:
-// <div class="b-form__holder">
-//    Form elements here
-// </div>
-//
-// .b-form__holder
+/*==============================================================================
+ Form Holder
 
-.b-form__holder{
+ The wrapper that holds form input & labels, can be whatever element.
+
+ Markup:
+ <div class="b-form__holder">
+    Form elements here
+ </div>
+
+ #{$namespace}form__holder
+ ==============================================================================*/
+
+#{$namespace}form__holder {
     @include rem(margin-bottom, $verticalspace);
 }
 
 
 
-// Form field
-//
-// The form field itself, textfields, select, textarea
-//
-// Markup:
-// <input class="b-form__field">
-//
-// .b-form__field
-
-.b-form__field{
-}
-
-.b-form__list{
-}
 
 
+/*==============================================================================
+ Form field
 
-// Inline Form
-//
-// Markup:
-// <form class="b-form">
-//     <ul class="b-form--inline">
-//
-//      </ul>
-// </form>
-//
-// .b-form--inline
+ The form field itself, textfields, select, textarea
 
-.b-form--inline{
-    list-style:none;
-    margin-left:0;
-    letter-spacing: -0.31em;
-    text-rendering: optimizespeed;
+ Markup:
+ <input class="b-form__field">
 
-    > .b-form__holder {
-        letter-spacing: normal;
-        text-rendering: auto;
+ #{$namespace}form__field
+ ==============================================================================*/
 
-        @include mq($mq-medium){
-            margin-bottom: 0;
-            padding-right: $grid-gutter;
-            &:last-of-type{
-                padding-right: 0;
-            }
-            display: inline-block;
-            vertical-align: top;
-        }
+#{$namespace}form__field {
+    border: 1px solid $fieldBorderColor;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-border-radius: 0;
+    padding: $fieldPadding;
+    box-shadow: inset 0 .15em .15em rgba($fieldBorderColor, .5);
+
+    &:hover {
 
     }
 
-    .b-btn-group{
-        @include mq($mq-medium){
-            margin-bottom: 0;
-        }
-    }
-}
+    &:focus {
 
-
-// Full width form
-//
-// Markup:
-// <form class="b-form">
-//     <ul class="b-form--full">
-//
-//     </ul>
-// </form>
-//
-// .b-form--full
-
-.b-form--full{
-    list-style:none;
-    margin-left:0;
-    width: 100%;
-    display: table;
-
-    > .b-form__holder {
-
-        @include mq($mq-medium){
-            margin-bottom: 0;
-            padding-right: $grid-gutter;
-            &:last-of-type{
-                padding-right: 0;
-            }
-            display: table-cell;
-            vertical-align: top;
-        }
     }
 }
 
@@ -326,22 +238,20 @@ input[type="reset"]{
 
 
 
-// CUSTOM FORM ELEMENTS
-// -----------------------------------------------------------------------------
 
-// Custom select
-//
-// Select element with custom styling
-//
-// Markup:
-// <select class="b-select">
-// </select>
-//
-// .b-select
+/*==============================================================================
+ Custom select
 
+ Select element with custom styling
 
+ Markup:
+ <select class="b-select">
+ </select>
 
-.b-select{
+ #{$namespace}select
+ ==============================================================================*/
+
+#{$namespace}select {
         // IE
     @if $IE {
         background-image: none;
@@ -352,7 +262,6 @@ input[type="reset"]{
         background-repeat: no-repeat;
         background-position: right 50%;
         background-image: url(../img/select-arrow.svg);
-        -webkit-background-size: 11px 41%;
         background-size: 11px 41%;
 
         // IE 10+
@@ -376,155 +285,9 @@ input[type="reset"]{
     }
 
     &:hover,
-    &:focus{
+    &:focus {
 
     }
-}
-
-
-
-// Custom toggles
-//
-// Custom checkboxes & radio buttons in a toggle like shape
-//
-// Markup:
-// <label class="b-toggle">
-//     <input class="b-toggle__switch" type="radio|checkbox">
-//     <span> Label Text </span>
-// </label>
-//
-// .b-toggle            - on the wrapping label
-// .b-toggle__switch    - on the input itself {radio|checkbox}
-
-
-
-%toggle {
-    display: inline-block;
-    vertical-align: top;
-    @include rem(font-size, 14px);
-}
-
-
-
-%toggle__switch {
-    &:checked,
-    &:not(:checked){
-        @extend .h-visuallyhidden;
-    }
-
-    + span{
-        position: relative;
-        display: inline-block;
-
-        &:before,
-        &:after{
-            line-height: 1;
-            height: 1.7em;
-        }
-
-        &:before{
-            content: "Off";
-            display: inline-block;
-            margin-right: .5em;
-            background-color: lighten($color-text, 30%);
-            width: 5em;
-            text-align: right;
-            padding: .3em .6em;
-            color: $color-bg;
-        }
-
-        &:after{
-            content: "";
-            position: absolute;
-            display: block;
-            width: 2.5em;
-            background-color: $error;
-            top:0;
-            left:0;
-            transition: left 75ms ease-in-out, background 75ms ease-in-out;
-        }
-    }
-
-
-    &:checked{
-        + span{
-            color: $success;
-            &:before{
-                content: "On";
-                text-align: left;
-            }
-
-            &:after{
-                left: 2.5em;
-                background-color: $success;
-            }
-        }
-    }
-}
-
-
-
-%custom-checkbox{
-    display: inline-block;
-    vertical-align: top;
-}
-
-
-
-%custom-checkbox__input{
-    @extend .h-visuallyhidden;
-
-    + span{
-        position: relative;
-        display: inline-block;
-
-        &:before{
-            @include rem(width, 25px);
-            @include rem(height, 25px);
-
-            content: "";
-            display: inline-block;
-            vertical-align: top;
-            border: 2px solid #eee;
-            border-radius: 4px;
-            margin-right: .5em;
-        }
-    }
-
-
-    &:checked{
-        + span{
-            &:before {
-                border-color: #35bcaf;
-            }
-            &:after{
-                @include rem(width, 25px);
-                @include rem(height, 25px);
-                @include rem(left, 1px);
-                @include rem(top, -2px);
-
-                position: absolute;
-                content: "";
-                background-image: url('/static/assets/images/checkbox-tick.png');
-                background-repeat: no-repeat;
-                background-position: 50% 50%;
-                -webkit-background-size: 25px;
-                background-size: 25px;
-            }
-        }
-    }
-}
-
-
-
-.b-toggle {
-    @extend %toggle;
-}
-
-
-
-.b-toggle__switch {
-    @extend %toggle__switch;
 }
 
 
@@ -534,25 +297,27 @@ input[type="reset"]{
 // FORM MESSAGES
 // -----------------------------------------------------------------------------
 
-// Form Messages
-//
-// Error, Succes or info messages in forms
-//
-// Markup:
-// <form class="b-form">
-//     <ul>
-//         <li class="b-form__holder bl-form__message--error|success">
-//             <label>Label</label>
-//             <input>
-//             <span class="b-form-message">Message</span>
-//         </li>
-//     </ul>
-// </form>
-//
-// .b-form__message--error|success   - remove the class for an info message
-// .b-form__message
+/*==============================================================================
+ Form Messages
 
-.b-form__message{
+ Error, Succes or info messages in forms
+
+ Markup:
+ <form class="b-form">
+     <ul>
+         <li class="b-form__holder bl-form__message--error|success">
+             <label>Label</label>
+             <input>
+             <span class="b-form-message">Message</span>
+         </li>
+     </ul>
+ </form>
+
+ #{$namespace}form__message--error|success   - remove the class for an info message
+ #{$namespace}form__message
+ ==============================================================================*/
+
+#{$namespace}form__message {
     font-size: 75%;
     padding: .5em;
     display: block;
@@ -560,15 +325,15 @@ input[type="reset"]{
 
 
 
-.b-form__message--error{
+#{$namespace}form__message--error {
     > label,
-    > .b-form__field,
-    > .b-form__message{
+    > #{$namespace}form__field,
+    > #{$namespace}form__message {
         color: $error;
         border-color: $error;
     }
 
-    > .b-form__field{
+    > #{$namespace}form__field {
         &::-webkit-input-placeholder {
             color: $error;
         }
@@ -582,22 +347,22 @@ input[type="reset"]{
         }
     }
 
-    > .b-form__message{
+    > #{$namespace}form__message {
         background-color: lighten($error, 50%);
     }
 }
 
 
 
-.b-form__message--success{
+#{$namespace}form__message--success {
     > label,
-    > .b-form__field,
-    > .b-form__message{
+    > #{$namespace}form__field,
+    > #{$namespace}form__message {
         color: $success;
         border-color: $success;
     }
 
-    > .b-form__field{
+    > #{$namespace}form__field{
         &::-webkit-input-placeholder {
             color: $success;
         }
@@ -611,7 +376,7 @@ input[type="reset"]{
         }
     }
 
-    > .b-form__message{
+    > #{$namespace}form__message {
         background-color: lighten($success, 50%);
     }
 }

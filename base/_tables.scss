@@ -1,14 +1,10 @@
-//==============================================================================
-// TABLES
-//==============================================================================
-
 // COMPONENT VARIABLES
 // -----------------------------------------------------------------------------
 
 $cellPadding: 1em;
 $tableBorderRadius: 5px;
 
-/*
+/*==============================================================================
 Tables
 
 Markup:
@@ -46,42 +42,42 @@ Markup:
   </tbody>
 </table>
 
-.b-table - default
-.b-table--border - border
-.b-table--zebra - zebra
-.b-table--condense - condense
-.b-table--round - round
-*/
+#{$namespace}table - default
+#{$namespace}table--border - border
+#{$namespace}table--zebra - zebra
+#{$namespace}table--condense - condense
+#{$namespace}table--round - round
+==============================================================================*/
 
 
 
 table {
+    @include rem(margin-bottom, $verticalspace);
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
-    @include rem(margin-bottom, $verticalspace);
 }
 
 
 
-caption{
+caption {
+    @include rem(font-size, 14px);
     font-weight: bold;
     text-transform: uppercase;
-    @include rem(font-size, 14px);
     padding: $cellPadding;
 }
 
 
 
-th{
+th {
     font-weight: bold;
-    background-color: lighten($theme-blue, 20%);
+    background-color: lighten($theme-grey--medium, 20%);
 }
 
 
 
 th,
-td{
+td {
     text-align: left;
     > :last-child,
     > :last-child > :last-child {
@@ -95,85 +91,53 @@ td{
 
 
 
-.b-table{
-    border: 1px solid $theme-blue;
+#{$namespace}table {
+    @include rem(border, 1px, solid $theme-grey--medium);
+
     th,
-    td{
-        border-right: 1px solid $theme-blue;
+    td {
+        @include rem(border-right, 1px, solid $theme-grey--medium);
     }
 }
 
 
 
-.b-table--condensed{
+#{$namespace}table--condensed {
     th,
-    td{
+    td {
         padding: $cellPadding/4 $cellPadding/2;
     }
 }
 
 
 
-.b-table--border{
-    th{
-        border: 1px solid $theme-blue;
+#{$namespace}table--border {
+    th {
+        @include rem(border, 1px, solid $theme-grey--medium);
     }
 
-    td{
-        border: 1px solid lighten($theme-blue, 20%);
+    td {
+        @include rem(border, 1px, solid lighten($theme-grey--medium, 20%));
     }
 }
 
 
 
-.b-table--zebra{
-    tr:nth-child(even){
+#{$namespace}table--zebra {
+    tr:nth-child(even) {
         background-color: darken($color-bg, 5%);
     }
 }
 
 
 
-// @TODO: fix double borders;
-.b-table--round{
-    border-collapse: separate;
-    border:none;
-    thead {
-        > tr:first-child{
-            th{
-                &:first-child{
-                    @include rem(border-radius, $tableBorderRadius 0 0 0);
-                }
-
-                &:last-child{
-                    @include rem(border-radius, 0 $tableBorderRadius 0 0);
-                }
-            }
-        }
-    }
-
-    // Replace tbody with tfoot if you are using it.
-    tbody {
-        > tr:last-child{
-            td{
-                &:first-child{
-                    @include rem(border-radius, 0 0 0 $tableBorderRadius);
-                }
-
-                &:last-child{
-                    @include rem(border-radius, 0 0 $tableBorderRadius 0);
-                }
-            }
-        }
-    }
-}
 
 
-
-/*
+/*==============================================================================
 Column widths
 
-Control the width of the table columns "total must be = 100%" based on https//:github.com/csswizardry/inuit.css/blob/master/inuit.css/partials/base/_tables.scss#L88
+Control the width of the table columns "total must be = 100%"
+based on https//:github.com/csswizardry/inuit.css/blob/master/inuit.css/partials/base/_tables.scss#L88
 
 Markup:
 <table class="{$modifiers}">
@@ -216,7 +180,7 @@ Markup:
 </table>
 
 
-*/
+==============================================================================*/
 
 
 

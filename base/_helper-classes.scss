@@ -2,9 +2,6 @@
 //  GENERIC HELPER CLASSES & PLACEHOLDERS
 //==============================================================================
 
-// HELPER CLASSES
-// -----------------------------------------------------------------------------
-
 .h-visuallyhidden {
     border: 0;
     clip: rect(0 0 0 0);
@@ -46,6 +43,18 @@
     text-shadow: none;
     color: transparent;
     border: 0;
+}
+
+
+
+.h-show {
+    display: block !important;
+}
+
+
+
+.h-hide {
+    display: none !important;
 }
 
 
@@ -99,17 +108,29 @@
 
 
 
-// @TODO: extract this into spacing?
+.h-flat-top {
+    margin-top: 0;
+}
+
+
+
 .h-flat-bottom {
     margin-bottom: 0;
 }
 
 
 
+.h-flat-right {
+    margin-right: 0;
+}
 
 
-// PLACEHOLDERS
-// -----------------------------------------------------------------------------
+
+.h-flat-left {
+    margin-left: 0;
+}
+
+
 
 .h-clearfix,
 %h-clearfix{

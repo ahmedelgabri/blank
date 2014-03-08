@@ -6,12 +6,10 @@
 // To be used when a width is needed prefixed with .s-{n}of{total}-{prefix}
 //
 
-@mixin sizes($prefix: s, $cols: $grid-columns){
+@mixin sizes($prefix: m, $cols: $grid-columns){
     @for $i from 1 through $cols{
-        @for $k from 1 through $i - 1{
-            .s-#{$k}-#{$i}--#{$prefix}{
-                width: percentage($k/$i);
-            }
+        .s-#{$i}-#{$cols}--#{$prefix}{
+            width: percentage($i/$cols);
         }
     }
 }
@@ -53,9 +51,8 @@
 @if $IE{
     @include sizes(l);
 } @else {
-    @include sizes(s);
     @include mq($mq-medium){
-        @include sizes(m);
+        @include sizes(m, 6);
     }
     @include mq($mq-large){
         @include sizes(l);

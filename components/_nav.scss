@@ -1,25 +1,22 @@
-//==============================================================================
-// NAV
-//==============================================================================
+/*==============================================================================
+ Nav Object
 
-// Nav Object
-//
-// Abstruction for the Nav http://csswizardry.com/2011/09/the-nav-abstraction/
-//
-// Markup:
-// <ul class="b-nav">
-//      <li>
-//          something
-//      </li>
-//      <li>
-//          <a href="#"> link </a>
-//      </li>
-// </ul>
-//
-// .b-nav
+ Abstruction for the Nav http://csswizardry.com/2011/09/the-nav-abstraction/
 
+ Markup:
+ <ul class="b-nav">
+      <li>
+          something
+      </li>
+      <li>
+          <a href="#"> link </a>
+      </li>
+ </ul>
 
-.b-nav{
+ #{$namespace}nav
+==============================================================================*/
+
+#{$namespace}nav{
     list-style:none;
     margin-left:0;
     letter-spacing: -0.31em;
@@ -43,25 +40,25 @@
 
 
 
-// Nav Bar
-//
-// Extends `.nav` to create a navigation bar
-//
-// Markup:
-// <ul class="b-list--reset bl-navbar">
-//      <li>
-//          <a href="#"> link </a>
-//      </li>
-//      <li>
-//          <a href="#"> link </a>
-//      </li>
-// </ul>
-//
-// .b-nav--bar
+/*==============================================================================
+ Nav Bar
 
+ Extends `.nav` to create a navigation bar
 
+ Markup:
+ <ul class="b-list--reset bl-navbar">
+      <li>
+          <a href="#"> link </a>
+      </li>
+      <li>
+          <a href="#"> link </a>
+      </li>
+ </ul>
 
-.b-navbar{
+ #{$namespace}nav--bar
+==============================================================================*/
+
+#{$namespace}navbar{
     @include mq($mq-medium){
         display: table;
         width: 100%;
@@ -70,7 +67,7 @@
 
 
 
-.b-navbar__item{
+#{$namespace}navbar__item{
     display: block;
     position: relative;
     width: 100%;
@@ -90,37 +87,37 @@
 
 
 
-// Submenu class
-//
-// This class to be added on an element that you want it to have sub-menu
-//
-// Markup:
-// <ul class="b-list--reset bl-navbar">
-//      <li>
-//          something
-//      </li>
-//      <li class="b-submenu">
-//          <a href="#"> link </a>
-//          <ul class="b-list--reset bl-menu">
-//              <li> <a href="#"> Submenu </a> </li>
-//              <li> <a href="#"> Submenu </a> </li>
-//          </ul>
-//      </li>
-// </ul>
-//
-// .b-menu
+/*==============================================================================
+ Submenu class
 
+ This class to be added on an element that you want it to have sub-menu
 
+ Markup:
+ <ul class="b-list--reset bl-navbar">
+      <li>
+          something
+      </li>
+      <li class="b-submenu">
+          <a href="#"> link </a>
+          <ul class="b-list--reset bl-menu">
+              <li> <a href="#"> Submenu </a> </li>
+              <li> <a href="#"> Submenu </a> </li>
+          </ul>
+      </li>
+ </ul>
 
-.b-submenu{
-    .b-menu{
+ #{$namespace}menu
+==============================================================================*/
+
+#{$namespace}submenu{
+    #{$namespace}menu{
         position: absolute;
         left: -9999px;
     }
 
     &:hover,
     &:focus{
-        .b-menu{
+        #{$namespace}menu{
             left: 0;
             right: 0;
         }
@@ -131,31 +128,31 @@
 
 
 
-// Menu
-//
-// Vertical list of items can be used inside a navbar a submenu
-//
-// Markup:
-// <ul class="b-list--reset bl-menu">
-//      <li>
-//          something
-//      </li>
-//      <li>
-//          <a href="#"> link </a>
-//      </li>
-// </ul>
-//
-// .b-menu
+/*==============================================================================
+ Menu
 
+ Vertical list of items can be used inside a navbar a submenu
 
+ Markup:
+ <ul class="b-list--reset bl-menu">
+      <li>
+          something
+      </li>
+      <li>
+          <a href="#"> link </a>
+      </li>
+ </ul>
 
-.b-menu{
+ #{$namespace}menu
+==============================================================================*/
+
+#{$namespace}menu{
     border: 1px solid;
 }
 
 
 
-.b-menu__item{
+#{$namespace}menu__item{
     border-bottom: 1px solid;
     &:last-of-type{
         border-bottom: none;

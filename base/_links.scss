@@ -1,17 +1,4 @@
-//==============================================================================
-// LINKS
-//==============================================================================
-
-// COMPONENT VARIABLES
-// -----------------------------------------------------------------------------
-
-$linkColor:               red;
-$linkColorHover:          green;
-$tabhighlight:            rgba(200,0,0,0.4);
-
-
-
-/*
+/*==============================================================================
 Links
 
 Links styling
@@ -23,40 +10,38 @@ Markup:
 :active - active state
 :focus - focus state
 :visited - visited state
-*/
-
-
+==============================================================================*/
 
 a {
     -webkit-tap-highlight-color: $tabhighlight;
-    color:$linkColor;
+    color: $linkColor;
 
-    &:visited{
+    &:visited {
 
     }
 
     &:hover,
-    &:active{
+    &:active {
         outline: 0;
     }
 
     &:hover,
-    &:focus{
-        color:$linkColorHover;
+    &:focus {
+        color: $linkColorHover;
     }
 
     &:focus,
-    &:active{
+    &:active {
     }
 
-    &:focus{
+    &:focus {
         outline: thin dotted;
     }
 
-    &.b-block-link{
+    &#{$namespace}block-link {
         display: block;
         color: inherit;
-        &:hover{
+        &:hover {
             text-decoration: none;
             color: inherit;
         }

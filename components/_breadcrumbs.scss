@@ -1,48 +1,48 @@
-//==============================================================================
-// BREADCRUMBS
-//==============================================================================
-
-// Breadcrumbs
-//
-//
-//
-// Markup:
-// <ol class="b-breadcrumbs">
-// <li> <a href="#"> level 1</a> </li>
-// <li> <a href="#"> level 2</a> </li>
-// <li> you are here </li>
-// </ol>
-//
-// .b-breadcrumbs
+/*==============================================================================
+ Breadcrumbs
 
 
 
-.b-breadcrumbs{
-    list-style:none;
-    margin-left:0;
-    letter-spacing: -0.31em;
-    text-rendering: optimizespeed;
+ Markup:
+ <ol class="b-breadcrumbs">
+ <li> <a href="#"> level 1</a> </li>
+ <li> <a href="#"> level 2</a> </li>
+ <li> you are here </li>
+ </ol>
+
+ #{$namespace}breadcrumbs
+ ==============================================================================*/
+
+#{$namespace}breadcrumbs {
+    @include rem(margin-bottom, $verticalspace);
+    list-style: none;
+    margin-left: 0;
     padding: 1em;
     line-height: normal;
+    overflow: hidden;
     background-color: darken($color-bg, 10%);
     color: $color-text;
-    @include rem(margin-bottom, $verticalspace);
+}
 
-    > li {
-        display:inline-block;
-        letter-spacing: normal;
-        text-rendering: auto;
-        margin-right: .5em;
 
-        &:last-of-type{
-            &:after{
-                content: normal;
-            }
-        }
 
+#{$namespace}breadcrumbs__level {
+    display: inline-block;
+    margin-right: .5em;
+
+    > a {
+        display: inline-block;
+    }
+
+    &:last-of-type{
         &:after{
-            content: " \005C ";
+            content: normal;
         }
+    }
+
+    &:after{
+        content: " \005C ";
+        margin-left: .5em;
     }
 }
 

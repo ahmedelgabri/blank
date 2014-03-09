@@ -20,10 +20,10 @@
 // Support for pull & push so it can be used in the grid or anywhere.
 //
 
-@mixin ordering($option: null, $dir: left){
+@mixin ordering($option: null, $direction: left){
     @for $i from 1 through $grid-columns {
         .s-#{$option}-#{$i}-#{$grid-columns}{
-            #{$dir}: if($option == push, percentage($i/$grid-columns) , -1 * percentage($i/$grid-columns));
+            #{$direction}: if($option == push, percentage($i/$grid-columns) , -1 * percentage($i/$grid-columns));
         }
     }
 }
@@ -33,10 +33,10 @@
 // Offsets classes
 //
 
-@mixin offsets($dir: left){
+@mixin offsets($direction: left){
     @for $i from 1 through $grid-columns {
         .s-offset-#{$i}-#{$grid-columns}{
-            margin-#{$dir}: percentage($i/$grid-columns) ;
+            margin-#{$direction}: percentage($i/$grid-columns) ;
         }
     }
 }

@@ -4,11 +4,9 @@ Main Wrapper
 
 
 #{$namespace}wrapper {
-    @include rem(max-width, $grid-width);
     margin-left: auto;
     margin-right: auto;
-    padding:0 5%;
-
+    max-width: 90%;
 }
 
 

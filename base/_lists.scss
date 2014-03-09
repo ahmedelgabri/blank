@@ -18,9 +18,6 @@ Markup:
 ol {
     @include rem(margin-bottom, $verticalspace);
     list-style: decimal;
-    @if $rtl{
-      list-style: arabic-indic;
-    }
 }
 
 

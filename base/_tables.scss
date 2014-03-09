@@ -83,9 +83,6 @@ td {
     > :last-child > :last-child {
         margin-bottom: 0;
     }
-    @if $rtl {
-        text-align: right;
-    }
     padding: $cellPadding/2 $cellPadding;
 }
 

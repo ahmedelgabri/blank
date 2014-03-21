@@ -20,6 +20,7 @@ $MQ                                      : true  !default;
 // TYPOGRAPHY
 // -----------------------------------------------------------------------------
 
+$avenir                                  : Avenir,Helvetica, Arial, sans-serif;
 $helvetica                               : Helvetica, Arial, sans-serif;
 $helvetica-neue                          : "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", $helvetica;
 $georgia                                 : Georgia, Cambria, "Times New Roman", Times, serif;
@@ -27,7 +28,7 @@ $lucidia-grande                          : "Lucida Grande", Tahoma, Verdana, Ari
 $verdana                                 : Verdana, Geneva, sans-serif;
 $monospace                               : Inconsolata, monaco, consolas, 'andale mono', 'lucida console', monospace, monospace;
 
-$font-stack                              : $helvetica;
+$font-stack                              : $avenir;
 $basefont                                : 16px;
 $lineheight                              : 1.5;
 $verticalspace                           : $basefont * $lineheight;

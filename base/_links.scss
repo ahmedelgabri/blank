@@ -15,6 +15,7 @@ Markup:
 a {
     -webkit-tap-highlight-color: $tabhighlight;
     color: $linkColor;
+    text-decoration: none;
 
     &:visited {
 
@@ -28,6 +29,7 @@ a {
     &:hover,
     &:focus {
         color: $linkColorHover;
+        text-decoration: underline;
     }
 
     &:focus,

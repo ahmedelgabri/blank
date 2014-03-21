@@ -41,6 +41,10 @@ $btnGroupInnerRadius: 2px;
     overflow: hidden;
     transition: all 100ms linear;
 
+    &:hover {
+        text-decoration: none;
+    }
+
     @include mq($mq-medium){
         width: auto;
     }
@@ -176,16 +180,12 @@ $btnGroupInnerRadius: 2px;
 
     list-style: none;
     margin-left: 0;
-    letter-spacing: -0.31em;
-    text-rendering: optimizespeed;
 
     > #{$namespace}btn {
         @include mq($mq-medium){
             display: inline-block;
         }
 
-        letter-spacing: normal;
-        text-rendering: auto;
         vertical-align: top;
     }
 }

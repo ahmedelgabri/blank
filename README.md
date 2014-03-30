@@ -22,11 +22,10 @@ The main principles behind this are:
 * [Harry Roberts](https://twitter.com/csswizardry)
 
 ---
-
-###### Todo
+#### Todo
 - Add Howto to the readme.
 
-# LICENSE & COPYRIGHT
+### LICENSE & COPYRIGHT
 The source code and documentation for Blank is licensed under the incredibly permissive [MIT License](http://opensource.org/licenses/MIT).
 
 Copyright © [Ahmed El Gabri](http://gabri.me) | [@ahmedelgabri](http://twitter.comahmedelgabri)

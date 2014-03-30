@@ -1,14 +1,4 @@
-//==============================================================================
-// LISTS
-//==============================================================================
-
-/*
-Lists
-
-List styling: ordered, unordered & defination lists.
-*/
-
-/*
+/*==============================================================================
 [Un]Ordered lists
 
 Markup:
@@ -21,46 +11,41 @@ Markup:
  </ol|ul>
 </ol|ul>
 
-.b-list--numbered      - Automatic numbering for multi-levels deep **Must be used with `.b-list--reset`**
-.b-list--reset         - can be added on ordered or unordered lists to reset it's styling.
-*/
+#{$namespace}list--numbered      - Automatic numbering for multi-levels deep **Must be used with `#{$namespace}list--reset`**
+#{$namespace}list--reset         - can be added on ordered or unordered lists to reset it's styling.
+==============================================================================*/
 
-
-
-ol{
-    list-style: decimal;
+ol {
     @include rem(margin-bottom, $verticalspace);
-// @include rtl{ //@NOTE: If needed.
-//   list-style: arabic-indic;
-// }
+    list-style: decimal;
 }
 
 
 
-ul{
-    list-style: square;
+ul {
     @include rem(margin-bottom, $verticalspace);
+    list-style: square;
 }
 
 
 
 ul,
-ol{
-    padding-left:1em;
+ol {
+    padding-left: 1em;
 
     ol,
-    ul{
+    ul {
         margin: .5em 0 .5em .5em;
     }
 }
 
 
 
-li{
-    line-height:$lineheight;
+li {
+    line-height: $lineheight;
 
     + ul,
-    + ol{}
+    + ol {}
 }
 
 
@@ -71,7 +56,7 @@ li{
 // Modifires classes
 //==============================================================================
 
-.b-list--reset{
+#{$namespace}list--reset {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -79,13 +64,13 @@ li{
 
 
 
-.b-list--numbered{
+#{$namespace}list--numbered {
     @include auto-numbers(li,".", item, ul);
 }
 
 
 
-/*
+/*==============================================================================
 Definition lists
 
 Markup:
@@ -93,30 +78,28 @@ Markup:
   <dt>Definition term<dt>
   <dd> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, saepe, ab quo obcaecati a rerum quis quod vel autem nam maxime temporibus magni unde et nulla molestias veniam libero explicabo. </dd>
 </dl>
-*/
+==============================================================================*/
 
-
-
-dl{
+dl {
     @include rem(margin, 0 0 $verticalspace);
 }
 
 
 
-dt{
+dt {
     font-weight: bold;
 }
 
 
 
-dd{
+dd {
     @include rem(margin, 0 0 $verticalspace);
 }
 
 
 
 dt,
-dd{
+dd {
     > :last-child,
     > :last-child > :last-child {
         margin-bottom: 0;

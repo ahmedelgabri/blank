@@ -6,12 +6,10 @@
 // To be used when a width is needed prefixed with .s-{n}of{total}-{prefix}
 //
 
-@mixin sizes($prefix: s, $cols: $grid-columns){
+@mixin sizes($prefix: m, $cols: $grid-columns){
     @for $i from 1 through $cols{
-        @for $k from 1 through $i - 1{
-            .s-#{$k}-#{$i}--#{$prefix}{
-                width: percentage($k/$i);
-            }
+        .s-#{$i}-#{$cols}--#{$prefix}{
+            width: percentage($i/$cols);
         }
     }
 }
@@ -22,10 +20,10 @@
 // Support for pull & push so it can be used in the grid or anywhere.
 //
 
-@mixin ordering($option: null, $dir: left){
+@mixin ordering($option: null, $direction: left){
     @for $i from 1 through $grid-columns {
         .s-#{$option}-#{$i}-#{$grid-columns}{
-            #{$dir}: if($option == push, percentage($i/$grid-columns) , -1 * percentage($i/$grid-columns));
+            #{$direction}: if($option == push, percentage($i/$grid-columns) , -1 * percentage($i/$grid-columns));
         }
     }
 }
@@ -35,10 +33,10 @@
 // Offsets classes
 //
 
-@mixin offsets($dir: left){
+@mixin offsets($direction: left){
     @for $i from 1 through $grid-columns {
         .s-offset-#{$i}-#{$grid-columns}{
-            margin-#{$dir}: percentage($i/$grid-columns) ;
+            margin-#{$direction}: percentage($i/$grid-columns) ;
         }
     }
 }
@@ -53,9 +51,8 @@
 @if $IE{
     @include sizes(l);
 } @else {
-    @include sizes(s);
     @include mq($mq-medium){
-        @include sizes(m);
+        @include sizes(m, 6);
     }
     @include mq($mq-large){
         @include sizes(l);

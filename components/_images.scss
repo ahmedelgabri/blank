@@ -1,36 +1,27 @@
-//==============================================================================
-// IMAGES
-//==============================================================================
+/*==============================================================================
+ Images
 
-// COMPONENT VARIABLES
-// -----------------------------------------------------------------------------
+ Images styling
 
-$roundedRadius: 50%;
+ Markup:
+ <img class="{$modifiers}" src="http://placehold.it/300/300">
 
-// Images
-//
-// Images styling
-//
-// Markup:
-// <img class="{$modifiers}" src="http://placehold.it/300/300">
-//
-// .b-img--rounded - rounded
-// .b-img--polaroid - polaroid
+ #{$namespace}img--rounded - rounded
+ #{$namespace}img--polaroid - polaroid
+ ==============================================================================*/
 
-
-
-.b-img{
+#{$namespace}img {
 }
 
 
 
-.b-img--rounded{
-    border-radius: $roundedRadius;
+#{$namespace}img--rounded {
+    border-radius: 50%;
 }
 
 
 
-.b-img--polaroid{
+#{$namespace}img--polaroid {
     padding: 1em;
     background-color: #fff;
     border: 1px solid $color-text;

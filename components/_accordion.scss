@@ -1,28 +1,24 @@
-//==============================================================================
-// ACCORDION
-//==============================================================================
+/*==============================================================================
+ Accrodions
 
-// Accrodions
-//
-// Accrodion, can be used with ul/ol too
-//
-// Markup:
-// <dl class="b-accordion">
-//     <dt class="b-accordion__title"> Title </dt>
-//     <dd class="b-accordion__contnet"> Content </dd>
-// </dl>
-//
-// .b-accrodion
+ Accrodion, can be used with ul/ol/divs too
 
+ Markup:
+ <dl class="b-accordion">
+     <dt class="b-accordion__title"> Title </dt>
+     <dd class="b-accordion__contnet"> Content </dd>
+ </dl>
 
+ #{$namespace}accrodion
+ ==============================================================================*/
 
-.b-accordion{
+#{$namespace}accordion {
     @include rem(margin-bottom, $verticalspace);
 }
 
 
 
-.b-accordion__title{
+#{$namespace}accordion__title {
     padding: 1em;
     background-color: $theme-grey;
     display: block;
@@ -40,18 +36,18 @@
     }
 
     &.is-active,
-    &:hover{
-        background-color: $theme-blue;
+    &:hover {
+        background-color: $theme-grey--medium;
         color: inherit;
     }
 }
 
 
 
-.b-accordion__content{
+#{$namespace}accordion__content {
     margin-bottom: 0;
     background-color: white;
-    > div{
+    > div {
         padding: 1em;
     }
 
@@ -69,7 +65,7 @@
 
     &.is-active{
         opacity: 1;
-        max-height: 9999em; //Hack to make it look like 100%
+        max-height: 9999em; //Hack to fake 100% animation
     }
 }
 

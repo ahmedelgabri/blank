@@ -4,7 +4,7 @@
 // Email: ahmed@gabri.me
 // Twitter: @ahmedelgabri
 // Version: 1
-// Project: http://www.
+// License: is distrubuted under MIT License
 // ********************************
 
 // Config
@@ -23,7 +23,7 @@
 @import 'base/_typography';
 @import 'base/_lists';
 @import 'base/_tables';
-@import 'base/_media';
+@import 'base/_rich-media';
 @import 'base/_forms';
 @import 'base/_helper-classes';
 
@@ -38,7 +38,6 @@
 @import 'components/_pagination';
 @import 'components/_media';
 @import 'components/_banner';
-@import 'components/_matrix';
 @import 'components/_alerts';
 @import 'components/_badges';
 @import 'components/_breadcrumbs';
@@ -69,7 +68,6 @@
 
 // Extras
 @import 'extras/_print';
-@import 'extras/_rtl';
 
 
 
@@ -82,7 +80,7 @@
 
 
 
-// Debug: this can be turned on/off from store/_config.scss file
+// Debug: this can be turned on/off from _config.scss file
 @import 'extras/_debug';
 
 

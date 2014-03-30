@@ -12,22 +12,19 @@
 
 
 
-//  HEADERS
-// -----------------------------------------------------------------------------
+/*==============================================================================
+ Headers
 
-// Headers
-//
-// You can get the same styling anywhere using classes .h1-.h6
-//
-// Markup:
-// <h1>Header 1</h1>
-// <h2>Header 2</h2>
-// <h3>Header 3</h3>
-// <h4>Header 4</h4>
-// <h5>Header 5</h5>
-// <h6>Header 6</h6>
+ You can get the same styling anywhere using classes .h1-.h6
 
-
+ Markup:
+ <h1>Header 1</h1>
+ <h2>Header 2</h2>
+ <h3>Header 3</h3>
+ <h4>Header 4</h4>
+ <h5>Header 5</h5>
+ <h6>Header 6</h6>
+==============================================================================*/
 
 h1,h2,h3,h4,h5,h6,
 .h1,.h2,.h3,.h4,.h5,.h6 {
@@ -37,28 +34,28 @@ h1,h2,h3,h4,h5,h6,
 
 h1,
 .h1 {
-    @include headers(48px);
+    @include headers(3);
 }
 
 
 
 h2,
 .h2 {
-    @include headers(36px);
+    @include headers(2.75);
 }
 
 
 
 h3,
 .h3 {
-    @include headers(24px);
+    @include headers(2);
 }
 
 
 
 h4,
 .h4 {
-    @include headers(21px);
+    @include headers(1.8);
 }
 
 
@@ -67,66 +64,66 @@ h5,
 .h5,
 h6,
 .h6 {
-    @include headers(18px);
+    @include headers(1);
+}
+
+
+/*==============================================================================
+ Section titles
+
+ Markup:
+ <h5 class="b-title {$modifiers}"> Header 5 as a title</h5>
+
+ #{$namespace}title--primary - Primary title
+ #{$namespace}title--secondary - Secondary title
+==============================================================================*/
+
+#{$namespace}title {
 }
 
 
 
-// Section titles
-//
-// Markup:
-// <h5 class="b-title {$modifiers}"> Header 5 as a title</h5>
-//
-// .b-title--primary - Primary title
-// .b-title--secondary - Secondary title
-
-
-
-.b-title {
+#{$namespace}title--primary {
 }
 
 
 
-.b-title--primary {
+#{$namespace}title--secondary {
 }
 
 
 
-.b-title--secondary {
-}
+/*==============================================================================
+ Section subtitles
+
+ Markup:
+ <h5 class="b-subtitle {$modifiers}"> Header 5 as a subtitle</h5>
+ <p class="b-subtitle {$modifiers}"> Paragraph 5 as a subtitle</p>
+
+ #{$namespace}subtitle - Primary subtitle
+ ==============================================================================*/
 
 
-
-// Section subtitles
-//
-// Markup:
-// <h5 class="b-subtitle {$modifiers}"> Header 5 as a subtitle</h5>
-// <p class="b-subtitle {$modifiers}"> Paragraph 5 as a subtitle</p>
-//
-// .b-subtitle - Primary subtitle
-
-
-
-.b-subtitle {
-
+#{$namespace}subtitle {
 }
 
 
 
 
 
-// Text
-// -----------------------------------------------------------------------------
+/*==============================================================================
+Paragraphs
 
-// Paragraphs
-//
-// Markup:
-// <p class="{$modifiers}"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, deleniti adipisci cupiditate quibusdam labore saepe! Cumque, et, fuga assumenda tempora nisi similique quae dicta ab repellendus eum nam aperiam quas.</p>
-//
-// .b-p--big - big paragraph, maybe for intros & stuff like this"
-// .b-p--small - small paragraph, don't use instead of the "small" element
+Markup:
+    <p class="{$modifiers}"> Lorem ipsum dolor sit amet, consectetur adipisicing
+    elit. Vero, deleniti adipisci cupiditate quibusdam labore saepe! Cumque, et,
+    fuga assumenda tempora nisi similique quae dicta ab repellendus eum nam
+    aperiam quas.</p>
 
-
+    #{$namespace}text--normal - body type size
+    #{$namespace}text--big - big paragraph, maybe for intros & stuff like this"
+    #{$namespace}text--small - small paragraph, don't use instead of the "small" element
+==============================================================================*/
 
 p {
     @include rem(margin, 0 0 $verticalspace);
@@ -135,66 +132,36 @@ p {
 
 
 p,
-.b-normal-text {
+#{$namespace}text--normal {
     @include rem(font-size, $basefont);
 }
 
 
 
-.b-text--big {
-    font-size: 1.4em;
+#{$namespace}text--big {
+    @include rem(font-size, $basefont * 1.5 );
 }
 
 
 
-.b-text--small {
-    font-size: .9em;
+#{$namespace}text--small {
+    @include rem(font-size, $basefont * .9 );
 }
 
 
+/*==============================================================================
+Blockquotes
 
-// Blockquotes
-//
-//
-//
-// Markup:
-// <blockquote class="{$modifiers}">
-// This is a blockquote
-// <cite class="blockquote-source"> Someone </cite>
-// </blockquote>
-//
-// .b-blockquote--left - aligned left
-// .b-blockquote--right - aligned right
-// .b-blockquote--center - centered
+Markup:
+    <blockquote class="{$modifiers}">
+        This is a blockquote
+        <footer class="blockquote-source"> Someone </footer>
+    </blockquote>
 
-
-
-blockquote {
-    quotes: "“" "”";
-}
-
-
-
-blockquote p:before {
-    content: "“";
-    content: open-quote;
-}
-
-
-
-blockquote p:after {
-    content: "";
-    content: no-close-quote;
-}
-
-
-
-blockquote p:last-of-type:after {
-    content: "”";
-    content: close-quote;
-}
-
-
+    #{$namespace}blockquote--left - aligned left
+    #{$namespace}blockquote--right - aligned right
+    #{$namespace}blockquote--center - centered
+==============================================================================*/
 
 blockquote {
     @include rem(margin, 0 0 $verticalspace);
@@ -207,14 +174,14 @@ blockquote {
 
 
 
-.b-blockquote--left{
+#{$namespace}blockquote--left{
     border-left: .3em solid #222;
     padding-left: 1em;
 }
 
 
 
-.b-blockquote--right{
+#{$namespace}blockquote--right{
     border-right: .3em solid #222;
     padding-right: 1em;
     text-align: right;
@@ -222,7 +189,7 @@ blockquote {
 
 
 
-.b-blockquote--center{
+#{$namespace}blockquote--center{
     border-top: .3em solid #222;
     border-bottom: .3em solid #222;
     padding: 1em;
@@ -231,13 +198,13 @@ blockquote {
 
 
 
-.b-blockquote__source{
+#{$namespace}blockquote__source{
     @include rem(font-size, 12px);
 }
 
 
 
-.b-blockquote-source:before{
+#{$namespace}blockquote-source:before{
     content:"—";
 }
 
@@ -253,7 +220,7 @@ q {
 
 
 small,
-.b-small-text {
+#{$namespace}small-text {
     font-size: 75%;
 }
 
@@ -312,16 +279,16 @@ samp {
 
 
 pre {
+    @include rem(margin-bottom, $verticalspace);
+    @include rem(font-size, 13px);
+    @include rem(border, 1px, solid #ddd);
+    @include rem(box-shadow, 0 0 20px, rgba(0,0,0,.1) inset);
     white-space: pre;
     white-space: pre-wrap;
     word-wrap: break-word;
     padding: 1em;
     max-height: 20em;
     overflow: auto;
-    @include rem(margin-bottom, $verticalspace);
-    @include rem(font-size, 13px);
-    box-shadow: inset 0 0 20px rgba(0,0,0,.1);
-    border: 1px solid #ddd;
     display: block;
     clear: both;
 }
@@ -330,23 +297,6 @@ pre {
 
 code {
     line-height: 1;
-}
-
-
-
-ins{
-    background-color: #ff9;
-    color: #000;
-    text-decoration: none;
-}
-
-
-
-mark{
-    background-color: #ff9;
-    color: #000;
-    font-style: italic;
-    font-weight: bold;
 }
 
 

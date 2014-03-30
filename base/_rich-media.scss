@@ -10,6 +10,10 @@ object,
 embed {
     max-width : 100%;
     height: auto;
+
+    &[width] {
+        max-width: auto;
+    }
 }
 
 
@@ -32,26 +36,22 @@ img {
 // Figure
 //==============================================================================
 
-figure{
+figure {
     @include rem(margin, 0 0 $verticalspace);
 }
 
 
 
-figcaption{
-    font-style: italic;
+figcaption {
     @include rem(font-size, 12px);
+    font-style: italic;
 }
 
 
 
 
 
-//==============================================================================
-// Video
-//==============================================================================
-
-/*
+/*==============================================================================
 Responsive Videos/Embeds
 
 Markup:
@@ -60,23 +60,21 @@ Markup:
     <iframe clas="bl-embed--{ratio}"></iframe>
 </figure>
 
-.b-embed-wrapper   - on the parent element
-.b-embed--{widescreen|fourbythree|other-ratio}  - on the element itself
-*/
+#{$namespace}embed-wrapper   - on the parent element
+#{$namespace}embed--{widescreen|fourbythree|other-ratio}  - on the element itself
+==============================================================================*/
 
-
-
-.b-embed-wrapper{
+#{$namespace}embed-wrapper {
+    @include rem(margin-bottom, $verticalspace);
     position: relative;
     display: block;
     height: 0;
-    @include rem(margin-bottom, $verticalspace);
 
-    &.b-embed--widescreen{
+    &#{$namespace}embed--hd {
         padding-top: 56.25%;
     }
 
-    &.b-embed--fourbythree{
+    &#{$namespace}embed--fourbythree {
         padding-top: 75%;
     }
 
@@ -95,10 +93,10 @@ Markup:
 
 
 
-video{
+video {
+    @include rem(margin-bottom, $verticalspace);
     width: 100%;
     max-width: 100%;
-    @include rem(margin-bottom, $verticalspace);
 }
 
 
@@ -109,7 +107,7 @@ video{
 // Audio
 //==============================================================================
 
-audio{
+audio {
     &:not([controls]) {
         display: none;
     }

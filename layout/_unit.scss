@@ -1,28 +1,25 @@
-//==============================================================================
-// UNIT
-//==============================================================================
+/*==============================================================================
+ UNIT
 
-// UNIT
-//
-// A generic component can be used with grid or separately
-//
-// Markup:
-// <div class="b-unit">
-//      [content...]
-// </div>
+ A generic component can be used with grid or separately
 
-.b-unit{
-    display: inline-block;
+ Markup:
+ <div class="b-unit">
+      [content...]
+ </div>
+==============================================================================*/
+
+#{$namespace}unit {
     @include rem(font-size, $basefont);
+    display: inline-block;
     width: 100%;
-    text-align: left;
     position: relative;
     vertical-align: top;
 }
 
 
 
-.b-unit--centered{
+#{$namespace}unit--centered {
     display: block;
     margin: 0 auto;
 }

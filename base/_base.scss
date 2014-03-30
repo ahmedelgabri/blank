@@ -22,41 +22,20 @@ summary {
 
 audio,
 canvas,
-video{
+video {
     display: inline-block;
 }
 
 
 
-::-moz-selection {
-    text-shadow: none;
-    background-color: #bada55;
-    color: black;
+@include _selection() {
+    background-color: #232731;
+    color: gold;
 }
 
 
 
-::selection {
-    text-shadow: none;
-    background-color: #bada55;
-    color: black;
-}
-
-
-
-::selection:window-inactive {
-    text-shadow: none;
-}
-
-
-
-image::-moz-selection {
-    background: transparent;
-}
-
-
-
-image::selection {
+@include _img-selection() {
     background: transparent;
 }
 
@@ -86,8 +65,8 @@ template {
 
 
 html,
-body{
-    min-height:100%;
+body {
+    height: 100%;
 }
 
 
@@ -112,12 +91,12 @@ html {
 body {
     @include rem(font-size, $basefont);
     margin: 0;
-    line-height:$lineheight;
+    line-height: $lineheight;
     font-family: $font-stack;
     background: $color-bg;
     color: $color-text;
 
-    @include mq($mq-medium){
+    @include mq($mq-large){
         text-rendering: optimizeLegibility;
     }
 
@@ -125,21 +104,21 @@ body {
 
 
 
-@if $IE != true {
-    @-webkit-viewport{
-        width:device-width
+@if not $IE {
+    @-webkit-viewport {
+        width: device-width
     }
-    @-moz-viewport{
-        width:device-width
+    @-moz-viewport {
+        width: device-width
     }
-    @-ms-viewport{
-        width:device-width
+    @-ms-viewport {
+        width: device-width
     }
-    @-o-viewport{
-        width:device-width
+    @-o-viewport {
+        width: device-width
     }
     @viewport{
-        width:device-width
+        width: device-width
     }
 }
 

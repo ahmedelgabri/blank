@@ -1,7 +1,3 @@
-//==============================================================================
-// BUTTON
-//==============================================================================
-
 // COMPONENT VARIABLES
 // -----------------------------------------------------------------------------
 
@@ -12,26 +8,22 @@ $btnGroupInnerRadius: 2px;
 
 
 
+/*==============================================================================
+ Buttons
 
-// Buttons
-//
-// Styling for buttons
-//
-// Markup:
-// <a href="#" class="b-btn {$modifiers}"> link </a>
-// <button class="b-btn {$modifiers}"> Button </button>
-// <input type="submit" class="b-btn {$modifiers}" value="input">
-//
-// .b-btn--primary - Primary button styling
-// .b-btn--secondary - Secondary button styling
+ Styling for buttons
 
+ Markup:
+ <a href="#" class="b-btn {$modifiers}"> link </a>
+ <button class="b-btn {$modifiers}"> Button </button>
+ <input type="submit" class="b-btn {$modifiers}" value="input">
 
+ #{$namespace}btn--primary - Primary button styling
+ #{$namespace}btn--secondary - Secondary button styling
+ ==============================================================================*/
 
-.b-btn {
-    -webkit-user-select:none;
-    -moz-user-select:none;
-    -ms-user-select:none;
-    user-select:none;
+#{$namespace}btn {
+    user-select: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -49,6 +41,10 @@ $btnGroupInnerRadius: 2px;
     overflow: hidden;
     transition: all 100ms linear;
 
+    &:hover {
+        text-decoration: none;
+    }
+
     @include mq($mq-medium){
         width: auto;
     }
@@ -56,31 +52,31 @@ $btnGroupInnerRadius: 2px;
 
 
 
-.b-btn--full{
+#{$namespace}btn--full {
     width: 100%;
 }
 
 
 
-.b-btn--large{
+#{$namespace}btn--large {
     font-size: 150%;
 }
 
 
 
-.b-btn--small{
+#{$namespace}btn--small {
     font-size: 50%;
 }
 
 
 
-.b-btn--pill{
+#{$namespace}btn--pill {
     border-radius: 100px;
 }
 
 
 
-.b-btn--rounded{
+#{$namespace}btn--rounded {
     border-radius: $btnRoundedRadius;
 }
 
@@ -92,35 +88,40 @@ $btnGroupInnerRadius: 2px;
 // BUTTON VARIATIONS
 //==============================================================================
 
-$btns: primary, secondary;
-$btncolor-bgs: $btn-primary-bg, $btn-secondary-bg;
-$btncolor-texts: $btn-primary-text, $btn-secondary-text;
+#{$namespace}btn--primary{
+    background-color: $btn-primary-bg;
+    color: $btn-primary-text;
 
-@each $btn in $btns{
-    $i: index($btns, $btn);
+    &:hover,
+    &:focus{
+        background-color: lighten($btn-primary-bg, 50%);
+        color: lighten($btn-primary-text, 50%);
+    }
+}
 
-    .b-btn--#{$btn}{
-        background-color: nth($btncolor-bgs, $i);
-        color: nth($btncolor-texts, $i);
 
-        &:hover,
-        &:focus{
-            background-color: lighten(nth($btncolor-bgs, $i), 50%);
-            color: lighten(nth($btncolor-texts, $i), 50%);
-        }
+
+#{$namespace}btn--secondary{
+    background-color: $btn-secondary-bg;
+    color: $btn-secondary-text;
+
+    &:hover,
+    &:focus{
+        background-color: lighten($btn-secondary-bg, 50%);
+        color: lighten($btn-secondary-text, 50%);
     }
 }
 
 
 
 // Disbaled buttons
-.b-btn--disabled,
-[disabled],
-[disabled="disabled"]{
+#{$namespace}btn--disabled,
+#{$namespace}btn[disabled],
+#{$namespace}btn[disabled="disabled"]{
     &,
     &:hover,
     &:active,{
-        background-color: lighten(#444, 20%);
+        background-color: lighten($color-text, 20%);
         opacity: 0.5;
         cursor: not-allowed;
         pointer-events: none;
@@ -129,110 +130,79 @@ $btncolor-texts: $btn-primary-text, $btn-secondary-text;
 
 
 
-// Buttons with icons
-//
-// Buttons with Icons
-//
-// Markup:
-// <a href="#" class="b-btn {$modifiers}"> <i class="b-btn__icon"></i>link </a>
-// <button class="b-btn {$modifiers}"> <i class="b-btn__icon"></i> Button </button>
-// <input type="submit" class="b-btn bl-btn--icon {$modifiers}" value="input">
-//
-// .b-btn__icon
-// .b-btn--icon               - for input[submit] only
+/*==============================================================================
+ Buttons with icons
 
+ Buttons with Icons
 
+ Markup:
+ <a href="#" class="b-btn bl-btn--icon {$modifiers}"> link </a>
+ <button class="b-btn bl-btn--icon {$modifiers}"> Button </button>
+ <input type="submit" class="b-btn bl-btn--icon {$modifiers}" value="input">
 
-$icons: twitter, facebook, rss;
+ #{$namespace}btn--icon
+ ==============================================================================*/
 
-@each $icon in $icons{
-    .b-btn--icon--#{$icon},
-    .b-btn__icon--#{$icon}{
-        background-image: url(../img/#{$icon}.png);
-    }
-}
-
-
-
-.b-btn--icon,
-.b-btn__icon{
+#{$namespace}btn--icon {
+    padding-left: $btnPadding*2.5;
+    background-repeat: no-repeat;
+    background-position: $btnPadding 50%;
     background-image: url(http://placehold.it/16x16);
 }
 
 
 
-.b-btn--icon{
-    padding-left: $btnPadding*2.5;
-    background-repeat: no-repeat;
-    background-position: $btnPadding 50%;
-}
 
 
+/*==============================================================================
+ Buttons Group
 
-.b-btn__icon{
-    width: 1em;
-    height: 1em;
-    display: inline-block;
-    vertical-align: -.2em;
-    margin-right: .5em;
-}
+ Buttons Group
 
+ Markup:
+ <div class="b-btn-group">
+    <a href="#" class="b-btn bl-btn--icon {$modifiers}"> link </a>
+    <button class="b-btn bl-btn--icon {$modifiers}"> Button </button>
+    <input type="submit" class="b-btn bl-btn--icon {$modifiers}" value="input">
+ </div>
 
+ #{$namespace}btn-group
+ ==============================================================================*/
 
-// Buttons Group
-//
-// Buttons Group
-//
-// Markup:
-// <div class="b-btn-group">
-//    <a href="#" class="b-btn bl-btn--icon {$modifiers}"> link </a>
-//    <button class="b-btn bl-btn--icon {$modifiers}"> Button </button>
-//    <input type="submit" class="b-btn bl-btn--icon {$modifiers}" value="input">
-// </div>
-//
-// .b-btn-group
-
-
-
-
-
-.b-btn-group{
+#{$namespace}btn-group {
     @include rem(margin-bottom, $verticalspace);
     @include mq($mq-large){
         margin-right: $btnPadding;
-        &:only-of-type{
+        &:only-of-type {
             margin-right: 0;
         }
     }
 
-    list-style:none;
-    margin-left:0;
-    letter-spacing: -0.31em;
-    text-rendering: optimizespeed;
+    list-style: none;
+    margin-left: 0;
 
-    > .b-btn{
+    > #{$namespace}btn {
         @include mq($mq-medium){
-            display:inline-block;
+            display: inline-block;
         }
 
-        letter-spacing: normal;
-        text-rendering: auto;
+        vertical-align: top;
     }
 }
 
 
 
-.b-btn-group--spaced{
-    > .b-btn{
+#{$namespace}btn-group--spaced {
+    > #{$namespace}btn {
         margin-bottom: $btnPadding;
 
-        &:last-child{
+        &:last-child {
             margin-bottom: 0;
         }
     }
 
     @include mq($mq-large){
-        > .b-btn{
+        > #{$namespace}btn {
             margin-right: $btnPadding;
             margin-bottom: 0;
 
@@ -245,18 +215,30 @@ $icons: twitter, facebook, rss;
 
 
 
-.b-btn-group--round{
+#{$namespace}btn-group--round {
     border-radius: $btnGroupOuterRadius;
 
-    > .b-btn{
-        &:first-child{
-            border-radius: $btnGroupInnerRadius 0 0 $btnGroupInnerRadius;
+    > #{$namespace}btn {
+        &:first-child {
+            border-radius: $btnGroupInnerRadius $btnGroupInnerRadius 0 0;
         }
 
-        &:last-child{
-            border-radius: 0 $btnGroupInnerRadius $btnGroupInnerRadius 0;
+        &:last-child {
+            border-radius: 0 0 $btnGroupInnerRadius $btnGroupInnerRadius;
         }
     }
+
+    @include mq($mq-medium){
+        > #{$namespace}btn {
+            &:first-child {
+                border-radius: $btnGroupInnerRadius 0 0 $btnGroupInnerRadius;
+            }
+
+            &:last-child {
+                border-radius: 0 $btnGroupInnerRadius $btnGroupInnerRadius 0;
+            }
+        }
+    };
 }
 
 

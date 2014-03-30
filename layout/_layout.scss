@@ -1,50 +1,12 @@
-.b-wrapper{
+/*
+Main Wrapper
+*/
+
+
+#{$namespace}wrapper {
     margin-left: auto;
     margin-right: auto;
-    padding:0 5%;
-    @include rem(max-width, $grid-width);
-    @include mq($mq-large){
-        padding: 0 2em;
-    }
-}
-
-
-
-//==============================================================================
-// LAYOUTS
-//==============================================================================
-
-/*body*/.b-layout-a{
-    main{
-        width:100%;
-        padding: $grid-gutter;
-    }
-}
-
-
-
-/*body*/.b-layout-b{
-    main{
-        float: none;
-        width: 100%;
-        padding: $grid-gutter;
-
-        @include mq($mq-small){
-            float: left;
-            // width: percentage();
-        }
-    }
-
-    .side{
-        float: none;
-        width: 100%;
-        padding: $grid-gutter;
-
-        @include mq($mq-small){
-            float: right;
-            // width: percentage();
-        }
-    }
+    max-width: 90%;
 }
 
 
@@ -55,24 +17,17 @@
 // MAIN HEADER & FOOTER
 //==============================================================================
 
-.b-header{
+#{$namespace}header {
 
 }
 
 
 
-.b-footer{
+#{$namespace}footer {
 
 }
 
 
 
-
-
-//==============================================================================
-// PAGE SPECIFIFC
-//==============================================================================
-
-// .p-<pagename> for page specific styling
 
 

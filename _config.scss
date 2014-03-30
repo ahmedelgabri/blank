@@ -2,33 +2,36 @@
 // BLANK CONFIGURATIONS
 //==============================================================================
 
+// Global scope, Namespacing & CSS https : //medium.com/front-end-development/681bda44c43e
+// if you don't want a namespace just add "."
+$namespace                               : ".b-" !default;
 
 // PROJECT OPTIONS
 // -----------------------------------------------------------------------------
 
-$rtl            : false !default;
-$print          : true  !default;
-$IE             : false !default;
-$MQ             : true  !default;
+$print                                   : true  !default;
+$IE                                      : false !default;
+$MQ                                      : true  !default;
 
 
 
 
 
-// TYPOGRAPHY BASICS
+// TYPOGRAPHY
 // -----------------------------------------------------------------------------
 
-$helvetica      : Helvetica, Arial, sans-serif;
-$helvetica-neue : "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", $helvetica;
-$georgia        : Georgia, Cambria, "Times New Roman", Times, serif;
-$lucidia-grande : "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
-$verdana        : Verdana, Geneva, sans-serif;
-$monospace      : Inconsolata, monaco, consolas, 'andale mono', 'lucida console', monospace, monospace;
+$avenir                                  : Avenir,Helvetica, Arial, sans-serif;
+$helvetica                               : Helvetica, Arial, sans-serif;
+$helvetica-neue                          : "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", $helvetica;
+$georgia                                 : Georgia, Cambria, "Times New Roman", Times, serif;
+$lucidia-grande                          : "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
+$verdana                                 : Verdana, Geneva, sans-serif;
+$monospace                               : Inconsolata, monaco, consolas, 'andale mono', 'lucida console', monospace, monospace;
 
-$font-stack     : $helvetica;
-$basefont       : 16px;
-$lineheight     : 1.5;
-$verticalspace  : $basefont * $lineheight;
+$font-stack                              : $avenir;
+$basefont                                : 16px;
+$lineheight                              : 1.5;
+$verticalspace                           : $basefont * $lineheight;
 
 
 
@@ -37,9 +40,8 @@ $verticalspace  : $basefont * $lineheight;
 // GRID SETTINGS
 // -----------------------------------------------------------------------------
 
-$grid-columns   : 12;
-$grid-gutter    : 20px; // Will be converted to %
-$grid-width     : 1000px; // Used to calculate the grid & "if wanted" to be used as max-width
+$grid-columns                            : 12;
+$grid-gutter                             : 20px; // Will be converted to %
 
 
 
@@ -49,9 +51,9 @@ $grid-width     : 1000px; // Used to calculate the grid & "if wanted" to be used
 // -----------------------------------------------------------------------------
 
 // These are in Pixels, wil be converted to ems by Sass
-$mq-large       : 1200;
-$mq-medium      : 760;
-$mq-small       : 480;
+$mq-large                                : 1200;
+$mq-medium                               : 760;
+$mq-small                                : 480;
 
 
 
@@ -60,6 +62,6 @@ $mq-small       : 480;
 // DEBUG
 // -----------------------------------------------------------------------------
 
-$debug-mode     : false !default;
+$debug-mode                              : false !default;
 
 

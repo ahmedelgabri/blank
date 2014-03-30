@@ -1,5 +1,3 @@
-// @TODO: See if I can abstract more code into functions
-
 //==============================================================================
 // Typography
 //==============================================================================
@@ -8,7 +6,7 @@
 @function em($target, $base: strip-units($basefont)) {
     // only one number
     @if type-of($target) == "number" {
-        @return ($target / $base) + em;
+        @return ($target / strip-units($base)) + em;
     // more than one number
     } @else {
     // create a list to hold the ems
@@ -18,7 +16,7 @@
         @if $value == 0 or $value == 'auto' {
             $list: append($list, $value);
         } @else {
-            $list: append($list, ($value / $base) + em);
+            $list: append($list, ($value / strip-units($base)) + em);
         }
     }
         @return $list;

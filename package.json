@@ -1,0 +1,35 @@
+{
+  "name": "blank",
+  "version": "0.0.1",
+  "description": "Minimal, Device agnostic & responsive barebone framework.",
+  "main": "Gruntfile.coffee",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahmedelgabri/blank"
+  },
+  "keywords": [
+    "scss",
+    "sass",
+    "bem",
+    "oocss"
+  ],
+  "author": {
+    "name": "Ahmed El Gabri",
+    "email": "ahmed@gabri.me",
+    "url": "http://gabri.me"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ahmedelgabri/blank/issues"
+  },
+  "homepage": "https://github.com/ahmedelgabri/blank",
+  "devDependencies": {
+    "grunt-contrib-sass": "^0.7.3",
+    "grunt": "^0.4.4",
+    "grunt-autoprefixer": "^0.7.2",
+    "grunt-csso": "^0.6.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-contrib-clean": "^0.5.0",
+    "coffee-script": "^1.7.1"
+  }
+}

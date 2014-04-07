@@ -11,6 +11,14 @@ The main principles behind this are:
 * Predictable
 * Scalable
 
+### Browser support
+
+* IE 8+
+* Firefox
+* Safari 6+
+* Chrome
+* Opera
+
 ### Build on top of these methodologies
 * [OOCSS](https://github.com/stubbornella/oocss)
 * [BEM](http://bem.info/method/)
@@ -23,7 +31,7 @@ The main principles behind this are:
 
 ---
 #### Todo
-- Add Howto to the readme.
+- Documentation.
 
 ### LICENSE & COPYRIGHT
 The source code and documentation for Blank is licensed under the incredibly permissive [MIT License](http://opensource.org/licenses/MIT).

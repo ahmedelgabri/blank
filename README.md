@@ -22,6 +22,7 @@ The main principles behind this are:
 ### Build on top of these methodologies
 * [OOCSS](https://github.com/stubbornella/oocss)
 * [BEM](http://bem.info/method/)
+* [Namespacing](http://gabri.me/2013/08/global-scope-namespacing-css/)
 
 ### Inspired by the work of
 * [Nicolas Gallagher](https://twitter.com/necolas)

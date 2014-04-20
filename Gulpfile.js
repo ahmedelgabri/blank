@@ -3,7 +3,6 @@ var sass         = require('gulp-ruby-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var csso         = require('gulp-csso');
 var rename       = require('gulp-rename');
-var exec         = require('child_process').exec;
 
 var config = {
     scss : ['./scss/main.scss', './scss/extras/ie.scss'],
@@ -24,11 +23,6 @@ gulp.task('sass', function(){
             extname : '.css'
         }))
         .pipe(gulp.dest(config.dest));
-});
-
-
-gulp.task('docs', function(){
-    exec('hologram');
 });
 
 

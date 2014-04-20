@@ -8,52 +8,56 @@
 // ********************************
 
 // Config
-@import 'utils/_functions';
-@import 'utils/_mixins';
-@import 'utils/_colors';
-@import '_config';
+@import
+    'utils/_functions',
+    'utils/_mixins',
+    'utils/_colors',
+    '_config';
 
 
 
 
 
 // Base
-@import 'base/_base';
-@import 'base/_links';
-@import 'base/_typography';
-@import 'base/_lists';
-@import 'base/_tables';
-@import 'base/_rich-media';
-@import 'base/_forms';
-@import 'base/_helper-classes';
+@import
+    'base/_base',
+    'base/_links',
+    'base/_typography',
+    'base/_lists',
+    'base/_tables',
+    'base/_rich-media',
+    'base/_forms',
+    'base/_helper-classes';
 
 
 
 
 
 // Components
-@import 'components/_nav';
-@import 'components/_box';
-@import 'components/_buttons';
-@import 'components/_pagination';
-@import 'components/_media';
-@import 'components/_banner';
-@import 'components/_alerts';
-@import 'components/_badges';
-@import 'components/_breadcrumbs';
-@import 'components/_tabs';
-@import 'components/_accordion';
-@import 'components/_images';
+@import
+    'components/_nav',
+    'components/_box',
+    'components/_buttons',
+    'components/_pagination',
+    'components/_media',
+    'components/_banner',
+    'components/_alerts',
+    'components/_badges',
+    'components/_breadcrumbs',
+    'components/_tabs',
+    'components/_accordion',
+    'components/_images';
 
 
 
 
 
 // Layout
-@import 'layout/_grid';
-@import 'layout/_unit';
-@import 'layout/_sizes';
-@import 'layout/_layout';
+@import
+    'layout/_grid',
+    'layout/_unit',
+    'layout/_sizes',
+    'layout/_layout';
 
 
 
@@ -82,5 +86,3 @@
 
 // Debug: this can be turned on/off from _config.scss file
 @import 'extras/_debug';
-
-

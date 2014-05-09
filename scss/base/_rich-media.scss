@@ -55,13 +55,13 @@ figcaption {
 Responsive Videos/Embeds
 
 Markup:
-<figure class="b-embed-wrapper">
-    <video class="b-embed--{ratio}"></video>
-    <iframe clas="bl-embed--{ratio}"></iframe>
+<figure class="b-embed-wrapper b-embed--{ratio}">
+    <video></video>
+    <iframe ></iframe>
 </figure>
 
 #{$namespace}embed-wrapper   - on the parent element
-#{$namespace}embed--{widescreen|fourbythree|other-ratio}  - on the element itself
+#{$namespace}embed--{ratio}  - on the element itself
 ==============================================================================*/
 
 #{$namespace}embed-wrapper {
@@ -70,11 +70,11 @@ Markup:
     display: block;
     height: 0;
 
-    &#{$namespace}embed--hd {
+    &#{$namespace}embed--16-9 {
         padding-top: 56.25%;
     }
 
-    &#{$namespace}embed--fourbythree {
+    &#{$namespace}embed--4-3 {
         padding-top: 75%;
     }
 
@@ -112,5 +112,3 @@ audio {
         display: none;
     }
 }
-
-

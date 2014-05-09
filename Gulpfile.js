@@ -1,4 +1,5 @@
 var gulp         = require('gulp');
+var utils        = require('gulp-util');
 var sass         = require('gulp-ruby-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var csso         = require('gulp-csso');
@@ -27,11 +28,17 @@ gulp.task('sass', function(){
 });
 
 
-gulp.task('docs', function(){
-    exec('hologram');
+gulp.task('watch', function(){
+    gulp.watch('./scss/**/*.scss', ['sass']);
 });
 
 
-gulp.task('watch', function(){
-    gulp.watch('./scss/**/*.scss', ['sass']);
+gulp.task('default', function(){
+    var tasks = Object.keys(gulp.tasks).sort();
+
+    utils.log(utils.colors.yellow('You have the following tasks to run:'));
+    tasks.forEach(function(t){
+        if(t === 'default') return;
+        utils.log(utils.colors.yellow('• gulp '+ t ));
+    });
 });

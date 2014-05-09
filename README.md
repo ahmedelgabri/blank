@@ -19,6 +19,20 @@ The main principles behind this are:
 * Chrome
 * Opera
 
+### Installation
+
+#### Prerequisites
+* Sass 3.3 `$ gem install sass`
+* Nodejs `$ brew install node` _Using [Homebrew](http://brew.sh/)_
+* Gulp `$ npm install --global gulp`
+
+```shell
+$ git clone https://github.com/ahmedelgabri/blank.git
+$ cd blank/
+$ bundle install && npm install
+$ gulp # This will list all the available tasks.
+```
+
 ### Build on top of these methodologies
 * [OOCSS](https://github.com/stubbornella/oocss)
 * [BEM](http://bem.info/method/)
@@ -29,10 +43,6 @@ The main principles behind this are:
 * [Nicole Sullivan](https://twitter.com/stubbornella)
 * [Jonathan Snook](https://twitter.com/snookca)
 * [Harry Roberts](https://twitter.com/csswizardry)
-
----
-#### Todo
-- Documentation.
 
 ### LICENSE & COPYRIGHT
 The source code and documentation for Blank is licensed under the incredibly permissive [MIT License](http://opensource.org/licenses/MIT).

@@ -2,7 +2,7 @@
   "name": "blank",
   "version": "0.0.1",
   "description": "Minimal, Device agnostic & responsive barebone framework.",
-  "main": "Gruntfile.coffee",
+  "main": "Gulpfile.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/ahmedelgabri/blank"
@@ -27,7 +27,8 @@
     "gulp-rename": "^1.2.0",
     "gulp-ruby-sass": "^0.4.3",
     "gulp-csso": "^0.2.7",
-    "gulp": "^3.6.1",
-    "gulp-autoprefixer": "0.0.7"
+    "gulp": "^3.6.2",
+    "gulp-autoprefixer": "0.0.7",
+    "gulp-util": "^2.2.14"
   }
 }

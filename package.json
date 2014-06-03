@@ -1,8 +1,7 @@
 {
   "name": "blank",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Minimal, Device agnostic & responsive barebone framework.",
-  "main": "Gulpfile.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/ahmedelgabri/blank"
@@ -10,8 +9,11 @@
   "keywords": [
     "scss",
     "sass",
+    "css"
     "bem",
-    "oocss"
+    "oocss",
+    "blank",
+    "blank-css"
   ],
   "author": {
     "name": "Ahmed El Gabri",

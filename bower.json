@@ -1,7 +1,8 @@
 {
   "name": "blank",
+  "version": "0.0.3",
   "description": "Minimal, Device agnostic & responsive barebone framework.",
-  "version": "0.0.2",
+  "main": "./scss/main.scss",
   "homepage": "https://github.com/ahmedelgabri/blank",
   "authors": [
     {
@@ -13,13 +14,12 @@
   "keywords": [
     "scss",
     "sass",
-    "css"
+    "css",
     "bem",
     "oocss",
     "blank",
     "blank-css"
   ],
-  "main": "./scss/main.scss",
   "license": "MIT",
   "ignore": [
     "**/.*",

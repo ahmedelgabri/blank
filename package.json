@@ -1,7 +1,12 @@
 {
   "name": "blank",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Minimal, Device agnostic & responsive barebone framework.",
+  "author": {
+    "name": "Ahmed El Gabri",
+    "email": "ahmed@gabri.me",
+    "url": "http://gabri.me"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ahmedelgabri/blank"
@@ -9,17 +14,12 @@
   "keywords": [
     "scss",
     "sass",
-    "css"
+    "css",
     "bem",
     "oocss",
     "blank",
     "blank-css"
   ],
-  "author": {
-    "name": "Ahmed El Gabri",
-    "email": "ahmed@gabri.me",
-    "url": "http://gabri.me"
-  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ahmedelgabri/blank/issues"

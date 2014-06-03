@@ -38,6 +38,7 @@ a {
 
     &:focus {
         outline: thin dotted;
+        outline-offset: -5px;
     }
 
     &#{$namespace}block-link {
@@ -49,5 +50,3 @@ a {
         }
     }
 }
-
-

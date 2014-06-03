@@ -48,22 +48,18 @@
 // TYPOGRAPHY
 //==============================================================================
 
-@mixin font-face($fontname, $filename, $path, $stack: $font-stack){
+@mixin font-face($fontname, $filename, $path, $stack: $font-stack, $legacy: false){
     @font-face {
         font-family: #{$fontname}, $stack;
-        src: url('#{$path}/#{filename}.eot');
-        src: url('#{$path}/#{filename}.eot?#iefix') format('embedded-opentype'),
-        url('#{$path}/#{filename}.woff') format('woff'),
-        url('#{$path}/#{filename}.ttf') format('truetype'),
-        url('#{$path}/#{filename}.svg#svgFontName') format('svg');
-    }
-
-    // For Chrome on Windows http://www.fontspring.com/blog/smoother-rendering-in-chrome-update
-    @media screen and (-webkit-min-device-pixel-ratio:0) {
-      @font-face {
-          font-family: #{$fontname}, $stack;
-          src: url(‘#{$path}/#{$filename}.svg#svgFontName’) format(‘svg’);
-      }
+        @if $legacy == true {
+            src: url('#{$path}/#{$filename}.eot');
+            src: url('#{$path}/#{$filename}.eot?#iefix') format('embedded-opentype'),
+                 url('#{$path}/#{$filename}.woff') format('woff'),
+                 url('#{$path}/#{$filename}.ttf') format('truetype'),
+                 url('#{$path}/#{$filename}.svg#svgFontName') format('svg');
+        } @else {
+            src: url('#{$path}/#{$filename}.woff') format('woff');
+        }
     }
 }
 

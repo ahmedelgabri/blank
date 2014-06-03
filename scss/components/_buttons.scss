@@ -45,6 +45,11 @@ $btnGroupInnerRadius: 2px;
         text-decoration: none;
     }
 
+    &:focus {
+        outline: thin dotted;
+        outline-offset: -5px;
+    }
+
     @include mq($mq-medium){
         width: auto;
     }
@@ -240,5 +245,3 @@ $btnGroupInnerRadius: 2px;
         }
     };
 }
-
-

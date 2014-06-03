@@ -27,8 +27,12 @@ gulp.task('sass', function(){
 });
 
 
+var feedback = function(event) {
+  console.log( 'File '+ utils.colors.yellow(event.path) +' was '+ event.type );
+};
+
 gulp.task('watch', function(){
-    gulp.watch('./scss/**/*.scss', ['sass']);
+    gulp.watch('./scss/**/*.scss', ['sass']).on('change', feedback);
 });
 
 

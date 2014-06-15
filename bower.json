@@ -1,6 +1,6 @@
 {
   "name": "blank-css",
-  "version": "0.0.3",
+  "version": "1.1.3",
   "description": "Minimal, Device agnostic & responsive barebone framework.",
   "main": "./scss/main.scss",
   "homepage": "https://github.com/ahmedelgabri/blank",

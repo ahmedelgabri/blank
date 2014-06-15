@@ -245,11 +245,7 @@ In ie.css
 //==============================================================================
 
 @mixin mq($point, $query1: min, $query2: width) {
-    @if $MQ {
-        @media screen and (#{$query1}-#{$query2}: $point / 16 +em) {
-            @content;
-        }
-    } @else {
+    @media screen and (#{$query1}-#{$query2}: $point / 16 +em) {
         @content;
     }
 }

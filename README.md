@@ -13,7 +13,7 @@ The main principles behind this are:
 
 ### Browser support
 
-* IE 8+
+* IE 9+
 * Firefox
 * Safari 6+
 * Chrome

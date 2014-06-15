@@ -48,23 +48,6 @@
 // TYPOGRAPHY
 //==============================================================================
 
-@mixin font-face($fontname, $filename, $path, $stack: $font-stack, $legacy: false){
-    @font-face {
-        font-family: #{$fontname}, $stack;
-        @if $legacy == true {
-            src: url('#{$path}/#{$filename}.eot');
-            src: url('#{$path}/#{$filename}.eot?#iefix') format('embedded-opentype'),
-                 url('#{$path}/#{$filename}.woff') format('woff'),
-                 url('#{$path}/#{$filename}.ttf') format('truetype'),
-                 url('#{$path}/#{$filename}.svg#svgFontName') format('svg');
-        } @else {
-            src: url('#{$path}/#{$filename}.woff') format('woff');
-        }
-    }
-}
-
-
-
 // Headers & vertical rhythm
 @mixin headers($size){
     @include rem(font-size, ($size * $basefont) );
@@ -170,28 +153,22 @@ In ie.css
     // Convert the baseline into rems
     $baseline-rem: 16px / 1rem;
 
-    @if $IE {
-        // Print the first line in pixel values
-        #{$property}: $px-values #{$extra};
+    // If there is only one (numeric) value, return the property/value line for it.
+    @if type-of($px-values) == "number" {
+        #{$property}: $px-values / $baseline-rem #{$extra};
     } @else {
-        // If there is only one (numeric) value, return the property/value line for it.
-        @if type-of($px-values) == "number" {
-            #{$property}: $px-values / $baseline-rem #{$extra};
-        }
-        @else {
-            // Create an empty list that we can dump values into
-            $rem-values: unquote("");
-            @each $value in $px-values {
-            // If the value is zero, return 0
-                @if $value == 0 or $value == 'auto' {
-                    $rem-values: append($rem-values, $value);
-                } @else {
-                    $rem-values: append($rem-values, $value / $baseline-rem);
-                }
+        // Create an empty list that we can dump values into
+        $rem-values: unquote("");
+        @each $value in $px-values {
+        // If the value is zero, return 0
+            @if $value == 0 or $value == 'auto' {
+                $rem-values: append($rem-values, $value);
+            } @else {
+                $rem-values: append($rem-values, $value / $baseline-rem);
             }
+        }
         // Return the property and its list of converted values
         #{$property}: $rem-values #{$extra};
-        }
     }
 }
 

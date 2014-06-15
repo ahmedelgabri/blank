@@ -6,8 +6,13 @@
 // -----------------------------------------------------------------------------
 
 // If having local font-face fonts import them like so
-// @include font-face($fontname, $filename, $path, $fontstack: $sans-serif);
+// To support older browsers check http://www.fontspring.com/blog/smoother-rendering-in-chrome-update
 
+// @font-face {
+//    font-family: <fontname>, $stack;
+//    src: url('<path to fontfile>.woff') format('woff'),
+//         url('<path to fontfile>.ttf') format('truetype');
+// }
 
 
 

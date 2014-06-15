@@ -48,15 +48,11 @@
 // SIZES
 // -----------------------------------------------------------------------------
 
-@if $IE{
+@include mq($mq-medium){
+    @include sizes(m, 6);
+}
+@include mq($mq-large){
     @include sizes(l);
-} @else {
-    @include mq($mq-medium){
-        @include sizes(m, 6);
-    }
-    @include mq($mq-large){
-        @include sizes(l);
-    }
 }
 
 

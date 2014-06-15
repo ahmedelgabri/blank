@@ -248,36 +248,28 @@ Forms
  ==============================================================================*/
 
 #{$namespace}select {
-        // IE
-    @if $IE {
-        background-image: none;
-    } @else {
-        // Not-IE
-        padding: $fieldPadding/2 $fieldPadding;
-        box-shadow: 0 .15em .15em rgba($fieldBorderColor, .5);
-        background-repeat: no-repeat;
-        background-position: right 50%;
-        background-image: url(../img/select-arrow.svg);
-        background-size: 11px 41%;
+    padding: $fieldPadding/2 $fieldPadding;
+    box-shadow: 0 .15em .15em rgba($fieldBorderColor, .5);
+    background-repeat: no-repeat;
+    background-position: right 50%;
+    background-image: url(../img/select-arrow.svg);
+    background-size: 11px 41%;
 
-        // IE 10+
-        &::-ms-expand {
-            display: none;
-        }
+    // IE 10+
+    &::-ms-expand {
+        display: none;
+    }
 
-        // FF https://gist.github.com/joaocunha/6273016
-        @-moz-document url-prefix() {
-            & {
-                -moz-appearance: none;
-                text-indent: 0.01px;
-                text-overflow: "";
-            }
+    // FF hack doesn't work anymore https://gist.github.com/joaocunha/6273016
+    @-moz-document url-prefix() {
+        & {
+            background-image: none;
         }
+    }
 
-        // Others who doesn't support SVG
-        .no-svg &{
-            background-image: url(../img/select-arrow.png);
-        }
+    // Others who doesn't support SVG
+    .no-svg &{
+        background-image: url(../img/select-arrow.png);
     }
 
     &:hover,

@@ -11,6 +11,7 @@
 
 #{$namespace}unit {
     @include rem(font-size, $basefont);
+    font-size: ($basefont)\9; // IE8 & below hack cause they don't support rems & it's a must to reset the font size here.
     display: inline-block;
     width: 100%;
     position: relative;

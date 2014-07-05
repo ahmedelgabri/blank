@@ -43,12 +43,13 @@ video {
 
 svg {
     fill: currentColor; // So SVG can inherit it's parent color by default
+
+    &:not(:root) {
+        overflow: hidden;
+    }
 }
 
 
-svg:not(:root) {
-    overflow: hidden;
-}
 
 
 
@@ -86,7 +87,7 @@ html {
         font-size: 100%;
     }
 
-    @include mq($mq-large){
+    @include mq($mq-xlarge){
         font-size: 120%;
     }
 }

@@ -1,9 +1,22 @@
 //==============================================================================
-// FORMS
+// Componenet dependences & settings
 //==============================================================================
 
-// FORM VARIABLES
-// -----------------------------------------------------------------------------
+@mixin _placeholder() {
+    ::-webkit-input-placeholder {
+        @content;
+    }
+
+    input:-moz-placeholder {
+        @content;
+    }
+
+    input:-ms-input-placeholder {
+        @content;
+    }
+}
+
+
 
 $fieldPadding: .5em;
 $fieldBorderColor: #ccc;
@@ -40,7 +53,8 @@ input[type="button"],
 input[type="submit"],
 input[type="reset"],
 input[type="image"],
-button {
+button,
+select {
     cursor: pointer;
 }
 
@@ -70,16 +84,9 @@ input[type="search"] {
 
 
 
-
 @include _placeholder {
     font-style: italic;
 };
-
-
-
-select {
-    cursor: pointer;
-}
 
 
 
@@ -94,30 +101,6 @@ textarea {
 input[type="checkbox"],
 input[type="radio"] {
     @include rem(margin-right, 5px);
-}
-
-
-
-input[type="color"]{
-}
-
-
-
-input[type="range"]{
-}
-
-
-
-input[type="image"]{
-}
-
-
-
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="datetime"],
-input[type="datetime-local"]{
 }
 
 
@@ -163,10 +146,10 @@ Forms
 
  </form>
 
- #{$namespace}form    - Generic class for forms
+ .#{$namespace}form    - Generic class for forms
  ==============================================================================*/
 
-#{$namespace}form {
+.#{$namespace}form {
     &,
     fieldset {
         @include rem(margin-bottom, $verticalspace);
@@ -190,10 +173,10 @@ Forms
     Form elements here
  </div>
 
- #{$namespace}form__holder
+ .#{$namespace}form__holder
  ==============================================================================*/
 
-#{$namespace}form__holder {
+.#{$namespace}form__holder {
     @include rem(margin-bottom, $verticalspace);
 }
 
@@ -209,10 +192,10 @@ Forms
  Markup:
  <input class="b-form__field">
 
- #{$namespace}form__field
+ .#{$namespace}form__field
  ==============================================================================*/
 
-#{$namespace}form__field {
+.#{$namespace}form__field {
     border: 1px solid $fieldBorderColor;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -244,10 +227,10 @@ Forms
  <select class="b-select">
  </select>
 
- #{$namespace}select
+ .#{$namespace}select
  ==============================================================================*/
 
-#{$namespace}select {
+.#{$namespace}select {
     padding: $fieldPadding/2 $fieldPadding;
     box-shadow: 0 .15em .15em rgba($fieldBorderColor, .5);
     background-repeat: no-repeat;
@@ -267,11 +250,6 @@ Forms
         }
     }
 
-    // Others who doesn't support SVG
-    .no-svg &{
-        background-image: url(../img/select-arrow.png);
-    }
-
     &:hover,
     &:focus {
 
@@ -279,94 +257,5 @@ Forms
 }
 
 
-
-
-
-// FORM MESSAGES
-// -----------------------------------------------------------------------------
-
-/*==============================================================================
- Form Messages
-
- Error, Succes or info messages in forms
-
- Markup:
- <form class="b-form">
-     <ul>
-         <li class="b-form__holder bl-form__message--error|success">
-             <label>Label</label>
-             <input>
-             <span class="b-form-message">Message</span>
-         </li>
-     </ul>
- </form>
-
- #{$namespace}form__message--error|success   - remove the class for an info message
- #{$namespace}form__message
- ==============================================================================*/
-
-#{$namespace}form__message {
-    font-size: 75%;
-    padding: .5em;
-    display: block;
-}
-
-
-
-#{$namespace}form__message--error {
-    > label,
-    > #{$namespace}form__field,
-    > #{$namespace}form__message {
-        color: $error;
-        border-color: $error;
-    }
-
-    > #{$namespace}form__field {
-        &::-webkit-input-placeholder {
-            color: $error;
-        }
-
-        &:-moz-placeholder {
-            color: $error;
-        }
-
-        &:-ms-input-placeholder {
-            color: $error;
-        }
-    }
-
-    > #{$namespace}form__message {
-        background-color: lighten($error, 50%);
-    }
-}
-
-
-
-#{$namespace}form__message--success {
-    > label,
-    > #{$namespace}form__field,
-    > #{$namespace}form__message {
-        color: $success;
-        border-color: $success;
-    }
-
-    > #{$namespace}form__field{
-        &::-webkit-input-placeholder {
-            color: $success;
-        }
-
-        &:-moz-placeholder {
-            color: $success;
-        }
-
-        &:-ms-input-placeholder {
-            color: $success;
-        }
-    }
-
-    > #{$namespace}form__message {
-        background-color: lighten($success, 50%);
-    }
-}
 
 

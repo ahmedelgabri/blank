@@ -8,63 +8,56 @@
 // ********************************
 
 // Config
-@import
-    'utils/_functions',
-    'utils/_mixins',
-    'utils/_colors',
-    '_config';
+@import 'utils/_functions';
+@import 'utils/_mixins';
+@import 'utils/_colors';
+@import '_config';
 
 
 
 
 
 // Base
-@import
-    'base/_base',
-    'base/_links',
-    'base/_typography',
-    'base/_lists',
-    'base/_tables',
-    'base/_rich-media',
-    'base/_forms',
-    'base/_helper-classes';
+@import 'global/_base';
+@import 'global/_links';
+@import 'global/_typography';
+@import 'global/_lists';
+@import 'global/_tables';
+@import 'global/_rich-media';
+@import 'global/_forms';
 
 
 
 
 
 // Components
-@import
-    'components/_nav',
-    'components/_box',
-    'components/_buttons',
-    'components/_pagination',
-    'components/_media',
-    'components/_banner',
-    'components/_alerts',
-    'components/_badges',
-    'components/_breadcrumbs',
-    'components/_tabs',
-    'components/_accordion',
-    'components/_images';
+@import 'components/_nav';
+@import 'components/_box';
+@import 'components/_buttons';
+@import 'components/_pagination';
+@import 'components/_media';
+@import 'components/_banner';
+@import 'components/_alerts';
+@import 'components/_badges';
+@import 'components/_breadcrumbs';
+@import 'components/_tabs';
+@import 'components/_images';
 
 
 
 
 
 // Layout
-@import
-    'layout/_grid',
-    'layout/_unit',
-    'layout/_sizes',
-    'layout/_layout';
+@import 'layout/_grid';
+@import 'layout/_unit';
+@import 'layout/_sizes';
+@import 'layout/_layout';
 
 
 
 
-
-// Vendor
-// @import 'vendor/';
+// utils
+@import 'utils/_helper-classes';
 
 
 
@@ -77,7 +70,7 @@
 
 
 
-// Shame for quick fixes http://csswizardry.com/2013/04/shame-css/
+// // Shame for quick fixes http://csswizardry.com/2013/04/shame-css/
 @import '_shame';
 
 

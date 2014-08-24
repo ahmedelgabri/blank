@@ -1,3 +1,13 @@
+//==============================================================================
+// Componenet dependences & settings
+//==============================================================================
+
+$linkColor: navyblue;
+
+
+
+
+
 /*==============================================================================
 [Un]Ordered lists
 
@@ -11,19 +21,21 @@ Markup:
  </ol|ul>
 </ol|ul>
 
-#{$namespace}list--numbered      - Automatic numbering for multi-levels deep **Must be used with `#{$namespace}list--reset`**
-#{$namespace}list--reset         - can be added on ordered or unordered lists to reset it's styling.
+.#{$namespace}list--reset - can be added on ordered or unordered lists to reset it's styling.
 ==============================================================================*/
 
+ul,
 ol {
     @include rem(margin-bottom, $verticalspace);
+}
+
+ol {
     list-style: decimal;
 }
 
 
 
 ul {
-    @include rem(margin-bottom, $verticalspace);
     list-style: square;
 }
 
@@ -43,30 +55,18 @@ ol {
 
 li {
     line-height: $lineheight;
-
-    + ul,
-    + ol {}
 }
 
 
 
 
-
-//==============================================================================
-// Modifires classes
-//==============================================================================
-
-#{$namespace}list--reset {
+.#{$namespace}list--reset {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
 
-
-#{$namespace}list--numbered {
-    @include auto-numbers(li,".", item, ul);
-}
 
 
 
@@ -80,7 +80,8 @@ Markup:
 </dl>
 ==============================================================================*/
 
-dl {
+dl,
+dd {
     @include rem(margin, 0 0 $verticalspace);
 }
 
@@ -90,11 +91,6 @@ dt {
     font-weight: bold;
 }
 
-
-
-dd {
-    @include rem(margin, 0 0 $verticalspace);
-}
 
 
 

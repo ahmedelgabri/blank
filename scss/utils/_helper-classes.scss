@@ -16,11 +16,8 @@
 
 
 .h-break {
-    -ms-word-break: break-all;
     word-break: break-all;
     word-break: break-word;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
     hyphens: auto;
 }
 
@@ -30,8 +27,6 @@
     max-width: 100%;
     white-space: nowrap;
     overflow: hidden;
-    -ms-text-overflow: ellipsis; // Required for IE8
-    -o-text-overflow: ellipsis; // Required for Opera
     text-overflow: ellipsis;
 }
 

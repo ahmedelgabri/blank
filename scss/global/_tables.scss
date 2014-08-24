@@ -1,0 +1,128 @@
+//==============================================================================
+// Componenet dependences & settings
+//==============================================================================
+
+$cellPadding: 1em;
+$zebraStripesColor: grey;
+
+/*==============================================================================
+Tables
+
+Markup:
+<table class="{$modifiers}">
+  <thead>
+      <tr>
+          <th> Table header </th>
+          <th> Table header </th>
+          <th> Table header </th>
+      </tr>
+  </thead>
+  <tfoot>
+      <tr>
+          <td> Table footer </td>
+          <td> Table footer </td>
+          <td> Table footer </td>
+      </tr>
+  </tfoot>
+  <tbody>
+      <tr>
+          <td> Table cell </td>
+          <td> Table cell </td>
+          <td> Table cell </td>
+      </tr>
+      <tr>
+          <td> Table cell </td>
+          <td> Table cell </td>
+          <td> Table cell </td>
+      </tr>
+      <tr>
+          <td> Table cell </td>
+          <td> Table cell </td>
+          <td> Table cell </td>
+      </tr>
+  </tbody>
+</table>
+
+.#{$namespace}table - default
+.#{$namespace}table--border - border
+.#{$namespace}table--zebra - zebra
+.#{$namespace}table--condense - condense
+.#{$namespace}table--round - round
+==============================================================================*/
+
+table {
+    @include rem(margin-bottom, $verticalspace);
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+
+
+caption {
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: $cellPadding;
+}
+
+
+
+th {
+    font-weight: bold;
+    background-color: lighten(grey, 20%);
+}
+
+
+
+th,
+td {
+    text-align: left;
+    > :last-child,
+    > :last-child > :last-child {
+        margin-bottom: 0;
+    }
+    padding: $cellPadding/2 $cellPadding;
+}
+
+
+
+.#{$namespace}table {
+    border: 1px solid currentColor;
+
+    th,
+    td {
+        border-right: 1px solid currentColor;
+    }
+}
+
+
+
+.#{$namespace}table--condense {
+    th,
+    td {
+        padding: $cellPadding/4 $cellPadding/2;
+    }
+}
+
+
+
+.#{$namespace}table--border {
+    th {
+        border: 1px solid currentColor;
+    }
+
+    td {
+        border: 1px solid currentColor;
+    }
+}
+
+
+
+.#{$namespace}table--zebra {
+    tr:nth-child(even) {
+        background-color: lighten($zebraStripesColor, 30%);
+    }
+}
+
+
+

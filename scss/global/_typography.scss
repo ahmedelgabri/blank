@@ -1,4 +1,14 @@
 //==============================================================================
+// Componenet dependences & settings
+//==============================================================================
+
+@mixin headers($size){
+    @include rem(font-size, ($size * $basefont) );
+    @include rem(margin, 0 0 (strip-units($verticalspace) * 1px) );
+}
+
+
+//==============================================================================
 // TYPOGRAPHY
 //==============================================================================
 
@@ -73,46 +83,6 @@ h6,
 }
 
 
-/*==============================================================================
- Section titles
-
- Markup:
- <h5 class="b-title {$modifiers}"> Header 5 as a title</h5>
-
- #{$namespace}title--primary - Primary title
- #{$namespace}title--secondary - Secondary title
-==============================================================================*/
-
-#{$namespace}title {
-}
-
-
-
-#{$namespace}title--primary {
-}
-
-
-
-#{$namespace}title--secondary {
-}
-
-
-
-/*==============================================================================
- Section subtitles
-
- Markup:
- <h5 class="b-subtitle {$modifiers}"> Header 5 as a subtitle</h5>
- <p class="b-subtitle {$modifiers}"> Paragraph 5 as a subtitle</p>
-
- #{$namespace}subtitle - Primary subtitle
- ==============================================================================*/
-
-
-#{$namespace}subtitle {
-}
-
-
 
 
 
@@ -125,9 +95,9 @@ Markup:
     fuga assumenda tempora nisi similique quae dicta ab repellendus eum nam
     aperiam quas.</p>
 
-    #{$namespace}text--normal - body type size
-    #{$namespace}text--big - big paragraph, maybe for intros & stuff like this"
-    #{$namespace}text--small - small paragraph, don't use instead of the "small" element
+    .#{$namespace}text--normal - body type size
+    .#{$namespace}text--big - big paragraph, maybe for intros & stuff like this"
+    .#{$namespace}text--small - small paragraph, don't use instead of the "small" element
 ==============================================================================*/
 
 p {
@@ -137,19 +107,19 @@ p {
 
 
 p,
-#{$namespace}text--normal {
+.#{$namespace}text--normal {
     @include rem(font-size, $basefont);
 }
 
 
 
-#{$namespace}text--big {
+.#{$namespace}text--big {
     @include rem(font-size, $basefont * 1.5 );
 }
 
 
 
-#{$namespace}text--small {
+.#{$namespace}text--small {
     @include rem(font-size, $basefont * .9 );
 }
 
@@ -163,9 +133,9 @@ Markup:
         <footer class="blockquote-source"> Someone </footer>
     </blockquote>
 
-    #{$namespace}blockquote--left - aligned left
-    #{$namespace}blockquote--right - aligned right
-    #{$namespace}blockquote--center - centered
+    .#{$namespace}blockquote--left - aligned left
+    .#{$namespace}blockquote--right - aligned right
+    .#{$namespace}blockquote--center - centered
 ==============================================================================*/
 
 blockquote {
@@ -179,37 +149,33 @@ blockquote {
 
 
 
-#{$namespace}blockquote--left{
-    border-left: .3em solid #222;
+.#{$namespace}blockquote--left{
     padding-left: 1em;
 }
 
 
 
-#{$namespace}blockquote--right{
-    border-right: .3em solid #222;
+.#{$namespace}blockquote--right{
     padding-right: 1em;
     text-align: right;
 }
 
 
 
-#{$namespace}blockquote--center{
-    border-top: .3em solid #222;
-    border-bottom: .3em solid #222;
+.#{$namespace}blockquote--center{
     padding: 1em;
     text-align: center;
 }
 
 
 
-#{$namespace}blockquote__source{
+.#{$namespace}blockquote__source{
     @include rem(font-size, 12px);
 }
 
 
 
-#{$namespace}blockquote-source:before{
+.#{$namespace}blockquote-source:before{
     content:"—";
 }
 
@@ -225,7 +191,7 @@ q {
 
 
 small,
-#{$namespace}small-text {
+.#{$namespace}small-text {
     font-size: 75%;
 }
 
@@ -286,8 +252,6 @@ samp {
 pre {
     @include rem(margin-bottom, $verticalspace);
     @include rem(font-size, 13px);
-    @include rem(border, 1px, solid #ddd);
-    @include rem(box-shadow, 0 0 20px, rgba(0,0,0,.1) inset);
     white-space: pre;
     white-space: pre-wrap;
     word-wrap: break-word;
@@ -315,19 +279,6 @@ s {
 
 q {
     quotes: "\201C" "\201D" "\2018" "\2019";
-}
-
-
-
-hr {
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #cccccc; // change border colour to suit your needs
-    margin:1em 0;
-    padding: 0;
 }
 
 

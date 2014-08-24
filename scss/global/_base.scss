@@ -28,18 +28,6 @@ video {
 
 
 
-@include _selection() {
-    background-color: #232731;
-    color: gold;
-}
-
-
-
-@include _img-selection() {
-    background: transparent;
-}
-
-
 
 svg {
     fill: currentColor; // So SVG can inherit it's parent color by default
@@ -78,16 +66,23 @@ body {
 
 
 html {
-    -webkit-overflow-scrolling: touch;
+    font: 82.5%/1.5 $font-stack; // 14px on mobile
+    background-color: #fff;
+    color: #444;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
-    font-size: 87.5%;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
 
-    @include mq($mq-medium){
+    @include mq(mq-large){
+        text-rendering: optimizeLegibility;
+    }
+
+    @include mq(mq-medium){
         font-size: 100%;
     }
 
-    @include mq($mq-xlarge){
+    @include mq(mq-xlarge){
         font-size: 120%;
     }
 }
@@ -95,17 +90,7 @@ html {
 
 
 body {
-    @include rem(font-size, $basefont);
     margin: 0;
-    line-height: $lineheight;
-    font-family: $font-stack;
-    background: $color-bg;
-    color: $color-text;
-
-    @include mq($mq-large){
-        text-rendering: optimizeLegibility;
-    }
-
 }
 
 

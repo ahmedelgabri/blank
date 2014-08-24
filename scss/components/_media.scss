@@ -13,16 +13,16 @@ Markup:
    </div>
 </div>
 
-#{$namespace}media--rev - filps the image to the right
+.#{$namespace}media--rev - filps the image to the right
 ==============================================================================*/
 
-#{$namespace}media {
+.#{$namespace}media {
     @extend %h-clearfix;
 }
 
 
 
-#{$namespace}media__figure {
+.#{$namespace}media__figure {
     float: left;
     @include rem(margin-right, $grid-gutter);
 
@@ -31,7 +31,7 @@ Markup:
         margin-bottom: 0;
     }
 
-    #{$namespace}media--rev & {
+    .#{$namespace}media--rev & {
         @include rem(margin-left, $grid-gutter);
         float: right;
         margin-right: 0;
@@ -40,7 +40,7 @@ Markup:
 
 
 
-#{$namespace}media__figure {
+.#{$namespace}media__figure {
     > img{
         display: block;
     }
@@ -48,7 +48,7 @@ Markup:
 
 
 
-#{$namespace}media__body {
+.#{$namespace}media__body {
     display: table-cell;
     width: 10000px;
 

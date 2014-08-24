@@ -1,7 +1,7 @@
 /*==============================================================================
  Grid
 
- Fully fluid 12 columns Grid. `#{$namespace}grid` for padded grid add `#{$namespace}grid--pad`
+ Fully fluid 12 columns Grid. `.#{$namespace}grid` for padded grid add `.#{$namespace}grid--pad`
 
  Markup:
  <div class="b-grid">
@@ -22,51 +22,51 @@
 
 $gutter: 20px; // Percentage gutter
 
-#{$namespace}grid{
+.#{$namespace}grid{
     list-style: none;
     font-size: 0;
     text-align: left;
 }
 
 
-#{$namespace}grid--rev{
+.#{$namespace}grid--rev{
     text-align: right;
 }
 
 
 
-#{$namespace}grid--center{
+.#{$namespace}grid--center{
     text-align: center;
 }
 
 
 
-#{$namespace}grid--pad{
+.#{$namespace}grid--pad{
     margin:0 -1 * $gutter/2;
-    > #{$namespace}unit{
+    > .#{$namespace}unit{
         padding: 0 $gutter/2;
     }
 }
 
 
 
-#{$namespace}grid--middle{
-    > #{$namespace}unit{
+.#{$namespace}grid--middle{
+    > .#{$namespace}unit{
         vertical-align: middle;
     }
 }
 
 
 
-#{$namespace}grid--bottom{
-    > #{$namespace}unit{
+.#{$namespace}grid--bottom{
+    > .#{$namespace}unit{
         vertical-align: bottom;
     }
 }
 
 
 
-#{$namespace}grid--matrix {
+.#{$namespace}grid--matrix {
     text-align: justify;
 
     &:after{

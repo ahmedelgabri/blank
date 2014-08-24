@@ -1,3 +1,16 @@
+//==============================================================================
+// Componenet dependences & settings
+//==============================================================================
+
+$default            : #1c7285;
+$success            : adjust-hue($default, 290);
+$error              : adjust-hue($default, 170);
+$info               : adjust-hue($default, 220);
+
+
+
+
+
 /*==============================================================================
  Badges
 
@@ -7,14 +20,14 @@
  <span class="b-badge {$modifiers}"> 100 </span>
  <span class="b-badge {$modifiers}"> DANGER! </span>
 
- #{$namespace}badge--default - default
- #{$namespace}badge--info - info
- #{$namespace}badge--success - success
- #{$namespace}badge--error - error
+ .#{$namespace}badge--default - default
+ .#{$namespace}badge--info - info
+ .#{$namespace}badge--success - success
+ .#{$namespace}badge--error - error
  ==============================================================================*/
 
 
-#{$namespace}badge {
+.#{$namespace}badge {
     @include rem(padding, 2px 4px);
     @include rem(border-radius, 3px);
     font-size: 65%;
@@ -26,7 +39,7 @@
 
 
 
-#{$namespace}badge--default {
+.#{$namespace}badge--default {
     color: $default;
     background-color: lighten($default, 50%);
     border-color: $default;
@@ -34,7 +47,7 @@
 
 
 
-#{$namespace}badge--info {
+.#{$namespace}badge--info {
     color: $info;
     background-color: lighten($info, 50%);
     border-color: $info;
@@ -42,7 +55,7 @@
 
 
 
-#{$namespace}badge--error {
+.#{$namespace}badge--error {
     color: $error;
     background-color: lighten($error, 50%);
     border-color: $error;
@@ -50,7 +63,7 @@
 
 
 
-#{$namespace}badge--success {
+.#{$namespace}badge--success {
     color: $success;
     background-color: lighten($success, 50%);
     border-color: $success;

@@ -1,3 +1,16 @@
+//==============================================================================
+// Componenet dependences & settings
+//==============================================================================
+
+$default            : #1c7285;
+$success            : adjust-hue($default, 290);
+$error              : adjust-hue($default, 170);
+$info               : adjust-hue($default, 220);
+
+
+
+
+
 /*==============================================================================
  Alerts
 
@@ -6,13 +19,13 @@
  Markup:
  <div class="b-alert {$modifiers}"> Alert </div>
 
- #{$namespace}alert--default - default
- #{$namespace}alert--info - info
- #{$namespace}alert--success - success
- #{$namespace}alert--error - error
+ .#{$namespace}alert--default - default
+ .#{$namespace}alert--info - info
+ .#{$namespace}alert--success - success
+ .#{$namespace}alert--error - error
  ==============================================================================*/
 
-#{$namespace}alert {
+.#{$namespace}alert {
     @include rem(margin-bottom, $verticalspace);
     display: block;
     padding: 1em;
@@ -28,14 +41,14 @@
 
 
 
-#{$namespace}alert__header {
+.#{$namespace}alert__header {
     @include rem(margin-bottom, $verticalspace);
 }
 
 
 
-#{$namespace}alert__header,
-#{$namespace}alert__body {
+.#{$namespace}alert__header,
+.#{$namespace}alert__body {
     > :last-child,
     > :last-child > :last-child {
         margin-bottom: 0;
@@ -44,7 +57,7 @@
 
 
 
-#{$namespace}alert--default {
+.#{$namespace}alert--default {
     color: $default;
     background-color: lighten($default, 50%);
     border-color: $default;
@@ -52,7 +65,7 @@
 
 
 
-#{$namespace}alert--success {
+.#{$namespace}alert--success {
     color: $success;
     background-color: lighten($success, 50%);
     border-color: $success;
@@ -60,7 +73,7 @@
 
 
 
-#{$namespace}alert--error {
+.#{$namespace}alert--error {
     color: $error;
     background-color: lighten($error, 50%);
     border-color: $error;
@@ -68,7 +81,7 @@
 
 
 
-#{$namespace}alert--info {
+.#{$namespace}alert--info {
     color: $info;
     background-color: lighten($info, 50%);
     border-color: $info;

@@ -13,17 +13,17 @@
       </li>
  </ul>
 
- #{$namespace}nav
+ .#{$namespace}nav
 ==============================================================================*/
 
-#{$namespace}nav{
+.#{$namespace}nav{
     list-style:none;
     margin-left:0;
     letter-spacing: -0.31em;
     text-rendering: optimizespeed;
 
     > li{
-        @include mq($mq-medium){
+        @include mq(mq-medium){
             display:inline-block;
             vertical-align: top;
         }
@@ -55,11 +55,11 @@
       </li>
  </ul>
 
- #{$namespace}nav--bar
+ .#{$namespace}nav--bar
 ==============================================================================*/
 
-#{$namespace}navbar{
-    @include mq($mq-medium){
+.#{$namespace}navbar{
+    @include mq(mq-medium){
         display: table;
         width: 100%;
     };
@@ -67,7 +67,7 @@
 
 
 
-#{$namespace}navbar__item{
+.#{$namespace}navbar__item{
     display: block;
     position: relative;
     width: 100%;
@@ -77,7 +77,7 @@
         padding: .5em 1em;
     }
 
-    @include mq($mq-small){
+    @include mq(mq-small){
         display: table-cell;
         width: auto;
     };
@@ -106,18 +106,18 @@
       </li>
  </ul>
 
- #{$namespace}menu
+ .#{$namespace}menu
 ==============================================================================*/
 
-#{$namespace}submenu{
-    #{$namespace}menu{
+.#{$namespace}submenu{
+    .#{$namespace}menu{
         position: absolute;
         left: -9999px;
     }
 
     &:hover,
     &:focus{
-        #{$namespace}menu{
+        .#{$namespace}menu{
             left: 0;
             right: 0;
         }
@@ -143,16 +143,16 @@
       </li>
  </ul>
 
- #{$namespace}menu
+ .#{$namespace}menu
 ==============================================================================*/
 
-#{$namespace}menu{
+.#{$namespace}menu{
     border: 1px solid;
 }
 
 
 
-#{$namespace}menu__item{
+.#{$namespace}menu__item{
     border-bottom: 1px solid;
     &:last-of-type{
         border-bottom: none;

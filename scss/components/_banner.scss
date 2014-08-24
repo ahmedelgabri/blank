@@ -13,20 +13,20 @@ Markup:
    </div>
 </div>
 
-#{$namespace}banner--rev - filps the image to the right
-#{$namespace}banner--top - aligns text to top
-#{$namespace}banner--bottom - aligns text to bottom
+.#{$namespace}banner--rev - filps the image to the right
+.#{$namespace}banner--top - aligns text to top
+.#{$namespace}banner--bottom - aligns text to bottom
 ==============================================================================*/
 
-#{$namespace}banner{
+.#{$namespace}banner{
     display: table;
     width: 100%;
 }
 
 
 
-#{$namespace}banner__figure,
-#{$namespace}banner__body{
+.#{$namespace}banner__figure,
+.#{$namespace}banner__body{
     display: table-cell;
     vertical-align: middle;
 
@@ -35,18 +35,18 @@ Markup:
         margin-bottom: 0;
     }
 
-    #{$namespace}banner--top &{
+    .#{$namespace}banner--top &{
         vertical-align: top;
     }
 
-    #{$namespace}banner--bottom &{
+    .#{$namespace}banner--bottom &{
         vertical-align: bottom;
     }
 }
 
 
 
-#{$namespace}banner__figure{
+.#{$namespace}banner__figure{
     @include rem(padding-right, $grid-gutter);
 
     > img{
@@ -54,7 +54,7 @@ Markup:
         max-width: none;
     }
 
-    #{$namespace}banner--rev &{
+    .#{$namespace}banner--rev &{
         padding-right: 0;
         @include rem(padding-left, $grid-gutter);
     }
@@ -62,7 +62,7 @@ Markup:
 
 
 
-#{$namespace}banner__body{
+.#{$namespace}banner__body{
     width: 100%;
 }
 

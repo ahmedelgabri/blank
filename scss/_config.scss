@@ -2,9 +2,9 @@
 // BLANK CONFIGURATIONS
 //==============================================================================
 
-// Global scope, Namespacing & CSS https : //medium.com/front-end-development/681bda44c43e
-// if you don't want a namespace just add "."
-$namespace                               : ".b-" !default;
+// Global scope, Namespacing & CSS https://medium.com/front-end-development/681bda44c43e
+// if you don't want a namespace just add ""
+$namespace                               : "b-" !default;
 
 
 
@@ -43,10 +43,12 @@ $grid-gutter                             : 20px; // Will be converted to %
 // -----------------------------------------------------------------------------
 
 // These are in Pixels, wil be converted to ems by Sass
-$mq-xlarge                               : 1600;
-$mq-large                                : 1440;
-$mq-medium                               : 760;
-$mq-small                                : 480;
+$breakpoints: (
+    "mq-xlarge" : ( "min-width", 1600 ),
+    "mq-large" : ( "min-width", 1440 ),
+    "mq-medium" : ( "min-width", 760 ),
+    "mq-small" : ( "min-width", 480 )
+);
 
 
 

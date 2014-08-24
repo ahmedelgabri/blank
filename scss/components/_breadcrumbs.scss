@@ -5,15 +5,15 @@
 
  Markup:
  <ol class="b-breadcrumbs">
- <li> <a href="#"> level 1</a> </li>
- <li> <a href="#"> level 2</a> </li>
- <li> you are here </li>
+     <li> <a href="#"> level 1</a> </li>
+     <li> <a href="#"> level 2</a> </li>
+     <li> you are here </li>
  </ol>
 
- #{$namespace}breadcrumbs
+ .#{$namespace}breadcrumbs
  ==============================================================================*/
 
-#{$namespace}breadcrumbs {
+.#{$namespace}breadcrumbs {
     @include rem(margin-bottom, $verticalspace);
     list-style: none;
     margin-left: 0;
@@ -26,7 +26,7 @@
 
 
 
-#{$namespace}breadcrumbs__level {
+.#{$namespace}breadcrumbs__level {
     display: inline-block;
     margin-right: .5em;
 

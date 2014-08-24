@@ -8,9 +8,9 @@
     Box
  </div>
 
- #{$namespace}box - default
- #{$namespace}box--large - large
- #{$namespace}box--small - small
+ .#{$namespace}box - default
+ .#{$namespace}box--large - large
+ .#{$namespace}box--small - small
  ==============================================================================*/
 
 %box {
@@ -19,21 +19,21 @@
 
 
 
-#{$namespace}box {
+.#{$namespace}box {
     @extend %box;
     padding: 1em;
 }
 
 
 
-#{$namespace}box--large {
+.#{$namespace}box--large {
     @extend %box;
     padding: 2em;
 }
 
 
 
-#{$namespace}box--small {
+.#{$namespace}box--small {
     @extend %box;
     padding: .5em;
 }

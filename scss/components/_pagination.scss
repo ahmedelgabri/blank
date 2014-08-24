@@ -18,10 +18,10 @@
      <li><a href="#">14</a></li>
  </ol>
 
- #{$namespace}pagination
+ .#{$namespace}pagination
  ==============================================================================*/
 
-#{$namespace}pagination {
+.#{$namespace}pagination {
     @include rem(margin-bottom, $verticalspace);
     overflow: hidden;
 

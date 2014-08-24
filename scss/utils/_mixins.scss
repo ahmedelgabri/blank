@@ -244,8 +244,14 @@ In ie.css
 // MEDIA QUERIES
 //==============================================================================
 
-@mixin mq($point, $query1: min, $query2: width) {
-    @media screen and (#{$query1}-#{$query2}: $point / 16 +em) {
-        @content;
+@mixin mq( $point ) {
+    $query: map-get($breakpoints, $point);
+
+    @if not $query {
+        @warn "Oh shit! You are requesting an invalid breakpoint: `#{$point}`. :(";
+    } @else {
+        @media screen and ( nth($query,1): (nth($query,2) / 16) + em ) {
+            @content;
+        }
     }
 }

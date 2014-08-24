@@ -50,7 +50,7 @@ $btnGroupInnerRadius: 2px;
         outline-offset: -5px;
     }
 
-    @include mq($mq-medium){
+    @include mq(mq-medium){
         width: auto;
     }
 }
@@ -176,7 +176,7 @@ $btnGroupInnerRadius: 2px;
 
 #{$namespace}btn-group {
     @include rem(margin-bottom, $verticalspace);
-    @include mq($mq-large){
+    @include mq(mq-large){
         margin-right: $btnPadding;
         &:only-of-type {
             margin-right: 0;
@@ -187,7 +187,7 @@ $btnGroupInnerRadius: 2px;
     margin-left: 0;
 
     > #{$namespace}btn {
-        @include mq($mq-medium){
+        @include mq(mq-medium){
             display: inline-block;
         }
 
@@ -206,7 +206,7 @@ $btnGroupInnerRadius: 2px;
         }
     }
 
-    @include mq($mq-large){
+    @include mq(mq-large){
         > #{$namespace}btn {
             margin-right: $btnPadding;
             margin-bottom: 0;
@@ -233,7 +233,7 @@ $btnGroupInnerRadius: 2px;
         }
     }
 
-    @include mq($mq-medium){
+    @include mq(mq-medium){
         > #{$namespace}btn {
             &:first-child {
                 border-radius: $btnGroupInnerRadius 0 0 $btnGroupInnerRadius;

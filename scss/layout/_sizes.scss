@@ -48,13 +48,13 @@
 // SIZES
 // -----------------------------------------------------------------------------
 
-@include mq($mq-medium){
+@include mq(mq-medium){
     @include sizes(m, 6);
     @include offsets();
     @include ordering(push);
     @include ordering(pull);
 }
-@include mq($mq-large){
+@include mq(mq-large){
     @include sizes(l);
 }
 

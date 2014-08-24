@@ -83,11 +83,11 @@ html {
     -ms-text-size-adjust: 100%;
     font-size: 87.5%;
 
-    @include mq($mq-medium){
+    @include mq(mq-medium){
         font-size: 100%;
     }
 
-    @include mq($mq-xlarge){
+    @include mq(mq-xlarge){
         font-size: 120%;
     }
 }
@@ -102,7 +102,7 @@ body {
     background: $color-bg;
     color: $color-text;
 
-    @include mq($mq-large){
+    @include mq(mq-large){
         text-rendering: optimizeLegibility;
     }
 

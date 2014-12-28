@@ -7,7 +7,7 @@ var gulp         = require('gulp'),
     rename       = require('gulp-rename');
 
 var config = {
-    scss: [ './scss/main.scss' ],
+    scss: [ '.main.scss' ],
     dest: './css'
 };
 

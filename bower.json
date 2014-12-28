@@ -1,15 +1,11 @@
 {
   "name": "blank-css",
-  "version": "1.2.4",
+  "version": "2.0.0",
   "description": "Minimal, Device agnostic & responsive barebone framework.",
-  "main": "./scss/main.scss",
+  "main": "main.scss",
   "homepage": "https://github.com/ahmedelgabri/blank",
   "authors": [
-    {
-      "name": "Ahmed El Gabri",
-      "email": "ahmed@gabri.me",
-      "homepage": "http://gabri.me"
-    }
+    "Ahmed El Gabri <ahmed@gabri.me>"
   ],
   "keywords": [
     "scss",
@@ -26,6 +22,34 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
-  ]
+    "tests",
+    "Gemfile",
+    "Gulpfile.js",
+    "package.json"
+  ],
+  "dependencies": {
+    "blank-css-config": "~0.1.0",
+    "blank-css-rem": "~0.1.0",
+    "blank-css-mq": "~0.1.0",
+    "blank-css-base": "~0.1.0",
+    "blank-css-typography": "~0.1.0",
+    "blank-css-links": "~0.1.0",
+    "blank-css-lists": "~0.1.0",
+    "blank-css-media": "~0.1.0",
+    "blank-css-tables": "~0.1.0",
+    "blank-css-forms": "~0.1.0",
+    "blank-css-grid": "~0.1.0",
+    "blank-css-unit": "~0.1.0",
+    "blank-css-sizes": "~0.1.0",
+    "blank-css-alerts": "~0.1.0",
+    "blank-css-badges": "~0.1.0",
+    "blank-css-box": "~0.1.0",
+    "blank-css-breadcrumbs": "~0.1.0",
+    "blank-css-buttons": "~0.1.0",
+    "blank-css-nav": "~0.1.0",
+    "blank-css-pagination": "~0.1.0",
+    "blank-css-flag": "~0.1.0",
+    "blank-css-clearfix": "~0.1.0",
+    "blank-css-media-object": "~0.1.0"
+  }
 }

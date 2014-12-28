@@ -55,3 +55,7 @@ Thumbs.db
 *.psd
 *.ai
 *.eps
+
+# Bower                       #
+###############################
+bower_components/

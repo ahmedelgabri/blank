@@ -7,7 +7,7 @@ var gulp         = require('gulp'),
     rename       = require('gulp-rename');
 
 var config = {
-    scss: [ '.main.scss' ],
+    scss: [ './main.scss' ],
     dest: './css'
 };
 
@@ -32,7 +32,7 @@ var feedback = function(event) {
 };
 
 gulp.task('watch', function() {
-    gulp.watch('./scss/**/*.scss', [ 'sass' ]).on('change', feedback);
+    gulp.watch('./main.scss', [ 'sass' ]).on('change', feedback);
 });
 
 gulp.task('default', function() {

@@ -49,6 +49,10 @@ List of components available:
 * [blank-css-media-object](http://github.com/ahmedelgabri/blank-component-media-object)
 * [blank-css-clearfix](http://github.com/ahmedelgabri/blank-helper-clearfix)
 
+
+### NOTE:
+blank assumes that you use [Autoprefixer](https://github.com/postcss/autoprefixer) in your workflow.
+
 ---
 ### Browser support
 

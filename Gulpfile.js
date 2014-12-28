@@ -7,7 +7,7 @@ var gulp         = require('gulp'),
     rename       = require('gulp-rename');
 
 var config = {
-    scss: [ './scss/main.scss' ],
+    scss: [ '.main.scss' ],
     dest: './css'
 };
 
@@ -18,7 +18,7 @@ gulp.task('sass', function() {
             style: 'compressed',
             precision: 3
         }))
-        .pipe(autoprefixer('> 1%', 'last 2 version', 'ie9', 'android 4', 'ios 6'))
+        .pipe(autoprefixer('> 1%', 'last 2 version', 'ie 9', 'android 4', 'ios 6'))
         .pipe(csso())
         .pipe(rename({
             suffix: '.min',

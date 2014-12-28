@@ -2,7 +2,6 @@
   "name": "blank-css",
   "version": "2.0.0",
   "description": "Minimal, Device agnostic & responsive barebone framework.",
-  "main": "main.scss",
   "homepage": "https://github.com/ahmedelgabri/blank",
   "authors": [
     "Ahmed El Gabri <ahmed@gabri.me>"
@@ -23,8 +22,6 @@
     "bower_components",
     "test",
     "tests",
-    "Gemfile",
-    "Gulpfile.js",
     "package.json"
   ],
   "dependencies": {

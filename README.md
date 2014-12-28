@@ -19,7 +19,44 @@ $ bower install --save blank-css
 
 ### NPM _WIP_
 
----
+Then you can import the components like so: __The order is important, especially for the config & helpers__
+
+```scss
+// Config
+@import 'bower_components/blank-css-config/config';
+@import 'bower_components/blank-css-rem/rem';
+@import 'bower_components/blank-css-mq/mq';
+
+// Global
+@import 'bower_components/blank-css-base/base';
+@import 'bower_components/blank-css-typography/typography';
+@import 'bower_components/blank-css-links/links';
+@import 'bower_components/blank-css-lists/lists';
+@import 'bower_components/blank-css-media/media';
+@import 'bower_components/blank-css-tables/tables';
+@import 'bower_components/blank-css-forms/forms';
+
+// Layout & Grid
+@import 'bower_components/blank-css-grid/grid';
+@import 'bower_components/blank-css-unit/unit';
+@import 'bower_components/blank-css-sizes/sizes';
+
+// Components
+@import 'bower_components/blank-css-alerts/alerts';
+@import 'bower_components/blank-css-badges/badges';
+@import 'bower_components/blank-css-box/box';
+@import 'bower_components/blank-css-breadcrumbs/breadcrumbs';
+@import 'bower_components/blank-css-buttons/buttons';
+@import 'bower_components/blank-css-media-object/media-object';
+@import 'bower_components/blank-css-nav/nav';
+@import 'bower_components/blank-css-pagination/pagination';
+@import 'bower_components/blank-css-flag/flag';
+
+// Helper
+@import 'bower_components/blank-css-clearfix/clearfix';
+
+```
+
 ## Components
 
 All components are available as separate individual components that you can use alone in your projects.

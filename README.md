@@ -20,9 +20,9 @@ $ bower install --save blank-css
 ### NPM _WIP_
 
 ---
-## Componenents
+## Components
 
-All compoenents are available as seperate indiviual compoenents that you can use alone in your projects.
+All components are available as separate individual components that you can use alone in your projects.
 
 List of components available:
 * [blank-css-config](http://github.com/ahmedelgabri/blank-default-config)
@@ -76,4 +76,4 @@ blank assumes that you use [Autoprefixer](https://github.com/postcss/autoprefixe
 ### LICENSE & COPYRIGHT
 The source code and documentation for Blank is licensed under the incredibly permissive [MIT License](http://opensource.org/licenses/MIT).
 
-Copyright © [Ahmed El Gabri](http://gabri.me) | [@ahmedelgabri](http://twitter.comahmedelgabri)
+Copyright © [Ahmed El Gabri](http://gabri.me) | [@ahmedelgabri](https://twitter.com/ahmedelgabri)

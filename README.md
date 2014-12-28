@@ -2,8 +2,6 @@
 
 Minimal, Device agnostic & responsive barebone framework.
 
-_In beta_
-
 The main principles behind this are:
 
 * Reusable
@@ -11,6 +9,47 @@ The main principles behind this are:
 * Predictable
 * Scalable
 
+## Installation
+
+### Bower
+
+```shell
+$ bower install --save blank-css
+```
+
+### NPM _WIP_
+
+---
+## Componenents
+
+All compoenents are available as seperate indiviual compoenents that you can use alone in your projects.
+
+List of components available:
+* [blank-css-config](http://github.com/ahmedelgabri/blank-default-config)
+* [blank-css-rem](http://github.com/ahmedelgabri/blank-utilities-rem)
+* [blank-css-mq](http://github.com/ahmedelgabri/blank-utilities-mq)
+* [blank-css-base](http://github.com/ahmedelgabri/blank-global-base)
+* [blank-css-typography](http://github.com/ahmedelgabri/blank-global-typography)
+* [blank-css-links](http://github.com/ahmedelgabri/blank-global-links)
+* [blank-css-lists](http://github.com/ahmedelgabri/blank-global-lists)
+* [blank-css-media](http://github.com/ahmedelgabri/blank-global-media)
+* [blank-css-tables](http://github.com/ahmedelgabri/blank-global-tables)
+* [blank-css-forms](http://github.com/ahmedelgabri/blank-global-forms)
+* [blank-css-grid](http://github.com/ahmedelgabri/blank-layout-grid)
+* [blank-css-unit](http://github.com/ahmedelgabri/blank-layout-unit)
+* [blank-css-sizes](http://github.com/ahmedelgabri/blank-layout-sizes)
+* [blank-css-alerts](http://github.com/ahmedelgabri/blank-component-alerts)
+* [blank-css-badges](http://github.com/ahmedelgabri/blank-component-badges)
+* [blank-css-box](http://github.com/ahmedelgabri/blank-component-box)
+* [blank-css-breadcrumbs](http://github.com/ahmedelgabri/blank-component-breadcrumbs)
+* [blank-css-buttons](http://github.com/ahmedelgabri/blank-component-buttons)
+* [blank-css-nav](http://github.com/ahmedelgabri/blank-component-nav)
+* [blank-css-pagination](http://github.com/ahmedelgabri/blank-component-pagination)
+* [blank-css-flag](http://github.com/ahmedelgabri/blank-component-flag)
+* [blank-css-media-object](http://github.com/ahmedelgabri/blank-component-media-object)
+* [blank-css-clearfix](http://github.com/ahmedelgabri/blank-helper-clearfix)
+
+---
 ### Browser support
 
 * IE 9+
@@ -19,26 +58,12 @@ The main principles behind this are:
 * Chrome
 * Opera
 
-### Installation
-
-#### Prerequisites
-* Sass 3.3 `$ gem install sass`
-* Nodejs `$ brew install node` _Using [Homebrew](http://brew.sh/)_
-* Gulp `$ npm install --global gulp`
-
-```shell
-$ git clone https://github.com/ahmedelgabri/blank.git
-$ cd blank/
-$ bundle install && npm install
-$ gulp # This will list all the available tasks.
-```
-
-### Build on top of these methodologies
+##### Built on top of these methodologies
 * [OOCSS](https://github.com/stubbornella/oocss)
 * [BEM](http://bem.info/method/)
 * [Namespacing](http://gabri.me/2013/08/global-scope-namespacing-css/)
 
-### Inspired by the work of
+##### Inspired by the work of
 * [Nicolas Gallagher](https://twitter.com/necolas)
 * [Nicole Sullivan](https://twitter.com/stubbornella)
 * [Jonathan Snook](https://twitter.com/snookca)

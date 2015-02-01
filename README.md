@@ -62,7 +62,7 @@ Then you can import the components like so: __The order is important, especially
 All components are available as separate individual components that you can use alone in your projects.
 
 List of components available:
-* [blank-css-config](http://github.com/ahmedelgabri/blank-default-config)
+* [blank-css-config](http://github.com/ahmedelgabri/blank-config)
 * [blank-css-rem](http://github.com/ahmedelgabri/blank-utilities-rem)
 * [blank-css-mq](http://github.com/ahmedelgabri/blank-utilities-mq)
 * [blank-css-base](http://github.com/ahmedelgabri/blank-global-base)
